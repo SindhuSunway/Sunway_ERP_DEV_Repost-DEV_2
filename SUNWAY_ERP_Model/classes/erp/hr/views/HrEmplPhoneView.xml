@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="HrEmplPhoneView"
+  Version="12.1.3.2.1"
+  InheritPersonalization="merge"
+  SelectListFlags="1"
+  FromListFlags="1"
+  WhereFlags="1"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  SelectAllAttributes="false"
+  PageIterMode="Full">
+  <ListBinding
+    Name="LOV_PhoneType"
+    ListVOName="HrEmplPhone.HrLookupTblView1"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="PhoneType"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="LookupCode"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Meaning"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Prefered"
+    ListVOName="HrEmplPhone.HrLookupTblView2"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Prefered"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="LookupCode"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Meaning"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="HrEmplPhone"
+    Entity="erp.hr.entities.HrEmplPhone"/>
+  <ViewAttribute
+    Name="EmployeeNo"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="EmployeeNo"
+    EntityUsage="HrEmplPhone"
+    AliasName="EMPLOYEE_NO">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erp.hr.views.HrEmplPhoneView.EmployeeNo_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="PhoneType"
+    PrecisionRule="true"
+    EntityAttrName="PhoneType"
+    EntityUsage="HrEmplPhone"
+    AliasName="PHONE_TYPE"
+    LOVName="LOV_PhoneType">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+        <LABEL
+          ResId="erp.hr.views.HrEmplPhoneView.PhoneType_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="CountryCode"
+    PrecisionRule="true"
+    EntityAttrName="CountryCode"
+    EntityUsage="HrEmplPhone"
+    AliasName="COUNTRY_CODE">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erp.hr.views.HrEmplPhoneView.CountryCode_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="PhoneNo"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="PhoneNo"
+    EntityUsage="HrEmplPhone"
+    AliasName="PHONE_NO">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erp.hr.views.HrEmplPhoneView.PhoneNo_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Extesion"
+    PrecisionRule="true"
+    EntityAttrName="Extesion"
+    EntityUsage="HrEmplPhone"
+    AliasName="EXTESION">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erp.hr.views.HrEmplPhoneView.Extesion_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Prefered"
+    PrecisionRule="true"
+    EntityAttrName="Prefered"
+    EntityUsage="HrEmplPhone"
+    AliasName="PREFERED"
+    LOVName="LOV_Prefered">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+        <LABEL
+          ResId="erp.hr.views.HrEmplPhoneView.Prefered_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="erp.model.SUNWAY_ERP_ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

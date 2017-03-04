@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="HrAppraisalYearView"
+  Version="12.1.3.10.8"
+  InheritPersonalization="merge"
+  SelectListFlags="1"
+  FromListFlags="1"
+  WhereFlags="1"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  SelectAllAttributes="false"
+  PageIterMode="Full">
+  <ViewAccessor
+    Name="HrEmplJobView1"
+    ViewObjectName="erp.hr.views.HrEmplJobView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Search_lookupView1"
+    ViewObjectName="erp.hr.views.Search_lookupView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="HrEmplJobView2"
+    ViewObjectName="erp.hr.views.HrEmplJobView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="HrEmplInfoView2"
+    ViewObjectName="erp.hr.views.HrEmplInfoView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="HrNewjobsInfoView1"
+    ViewObjectName="erp.hr.views.HrNewjobsInfoView"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_AppraisalType"
+    ListVOName="Search_lookupView1"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="AppraisalType"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Appraisal_type"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Appraisal_type"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_JobTitle"
+    ListVOName="HrNewjobsInfoView1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="JobTitle"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="JobTitle"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="JobTitle"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_EmployeeNo"
+    ListVOName="HrEmplInfoView2"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="EmployeeNo"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="EmployeeNo"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="EmployeeNo"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="HrAppraisalYear"
+    Entity="erp.hr.entities.HrAppraisalYear"/>
+  <ViewAttribute
+    Name="AppraisalYear"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="AppraisalYear"
+    EntityUsage="HrAppraisalYear"
+    AliasName="APPRAISAL_YEAR">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erp.hr.views.HrAppraisalYearView.AppraisalYear_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="AppraisalType"
+    PrecisionRule="true"
+    EntityAttrName="AppraisalType"
+    EntityUsage="HrAppraisalYear"
+    AliasName="APPRAISAL_TYPE"
+    LOVName="LOV_AppraisalType">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erp.hr.views.HrAppraisalYearView.AppraisalType_LABEL"/>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="JobTitle"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="JobTitle"
+    EntityUsage="HrAppraisalYear"
+    AliasName="JOB_TITLE"
+    LOVName="LOV_JobTitle">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erp.hr.views.HrAppraisalYearView.JobTitle_LABEL"/>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="EmployeeNo"
+    PrecisionRule="true"
+    EntityAttrName="EmployeeNo"
+    EntityUsage="HrAppraisalYear"
+    AliasName="EMPLOYEE_NO"
+    LOVName="LOV_EmployeeNo">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="NotesRemarks"
+    PrecisionRule="true"
+    EntityAttrName="NotesRemarks"
+    EntityUsage="HrAppraisalYear"
+    AliasName="NOTES_REMARKS">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erp.hr.views.HrAppraisalYearView.NotesRemarks_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewCriteria
+    Name="Appraisal_Year_Search"
+    ViewObjectName="erp.hr.views.HrAppraisalYearView"
+    Conjunction="AND">
+    <Properties>
+      <CustomProperties>
+        <Property
+          Name="autoExecute"
+          Value="true"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="false"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+        <Property
+          Name="displayName"
+          ResId="erp.hr.views.HrAppraisalYearView.Appraisal_Year_Search_displayName"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="HrAppraisalYearViewCriteria_row_0"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="AppraisalYear"
+        ViewAttribute="AppraisalYear"
+        Operator="="
+        Conjunction="AND"
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="Appraisal_Year_Search_HrAppraisalYearViewCriteria_row_0_AppraisalType"
+        ViewAttribute="AppraisalType"
+        Operator="="
+        Conjunction="OR"
+        Required="Optional"/>
+    </ViewCriteriaRow>
+  </ViewCriteria>
+  <ViewLinkAccessor
+    Name="HrAppraisalsView"
+    ViewLink="erp.hr.links.Appraisal_AppraisalYearLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="HrEmplInfoView"
+    ViewLink="erp.hr.links.AppraisalYear_EmployeesViewLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="HrEmplInfoView1"
+    ViewLink="erp.hr.links.AppraisalYear_EMPLsViewLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="erp.model.SUNWAY_ERP_ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

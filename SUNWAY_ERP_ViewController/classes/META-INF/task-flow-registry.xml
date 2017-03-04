@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<task-flow-registry xmlns="http://xmlns.oracle.com/adf/controller/rc">
+   <task-flow-descriptor path="WEB-INF/inv_Purchase.xml" id="inv_Purchase" type="task-flow-definition" uses-page-fragments="false" library-internal="false" remote-invocable="false" train="true" critical="false" page-type="jsp"/>
+   <task-flow-descriptor path="WEB-INF/hr_Employee_Profile.xml" id="taskFlowCall1" type="task-flow-definition" uses-page-fragments="false" library-internal="false" remote-invocable="false" train="true" critical="false" page-type="jsp"/>
+   <task-flow-descriptor path="WEB-INF/inv_Sales.xml" id="inv_Sales" type="task-flow-definition" uses-page-fragments="false" library-internal="false" remote-invocable="false" train="false" critical="false" page-type="jsp"/>
+   <task-flow-descriptor path="WEB-INF/Fin_Task_Flow.xml" id="Fin_Task_Flow" type="task-flow-definition" uses-page-fragments="false" library-internal="false" remote-invocable="false" train="false" critical="false" page-type="jsp"/>
+   <task-flow-descriptor path="WEB-INF/hr_Job_Info.xml" id="Job_Info" type="task-flow-definition" uses-page-fragments="false" library-internal="false" remote-invocable="false" train="true" critical="false" page-type="jsp"/>
+   <task-flow-descriptor path="WEB-INF/HR_Main_Task_Flow.xml" id="HR_Task_Flow" type="task-flow-definition" uses-page-fragments="false" library-internal="false" remote-invocable="false" train="false" critical="false" page-type="jsp"/>
+   <task-flow-descriptor path="WEB-INF/hr_Leaves.xml" id="hr_Leaves" type="task-flow-definition" uses-page-fragments="false" library-internal="false" remote-invocable="false" train="true" critical="false" page-type="jsp"/>
+   <task-flow-descriptor path="WEB-INF/hr_Employee_OverView.xml" id="Employee_OverView" type="task-flow-definition" uses-page-fragments="false" library-internal="false" remote-invocable="false" train="false" critical="false" page-type="jsp"/>
+   <task-flow-descriptor path="META-INF/adfc-config.xml" id="" type="" uses-page-fragments="false" library-internal="false" remote-invocable="false" train="false" critical="false" page-type="unspecified"/>
+   <task-flow-descriptor path="WEB-INF/Main_app_Entrance.xml" id="" type="" uses-page-fragments="false" library-internal="false" remote-invocable="false" train="false" critical="false" page-type="jsp"/>
+   <task-flow-descriptor path="WEB-INF/Employee_profile.xml" id="Employee_profile" type="task-flow-definition" uses-page-fragments="false" library-internal="false" remote-invocable="false" train="true" critical="false" page-type="jsp"/>
+   <task-flow-descriptor path="WEB-INF/Salary_Compensations.xml" id="Salary_Compensations" type="task-flow-definition" uses-page-fragments="false" library-internal="false" remote-invocable="false" train="true" critical="false" page-type="jsp"/>
+   <task-flow-descriptor path="WEB-INF/hr_Trainings.xml" id="hr_Trainings" type="task-flow-definition" uses-page-fragments="false" library-internal="false" remote-invocable="false" train="true" critical="false" page-type="jsp"/>
+   <task-flow-descriptor path="WEB-INF/hr_Relatives.xml" id="hr_Relatives" type="task-flow-definition" uses-page-fragments="false" library-internal="false" remote-invocable="false" train="true" critical="false" page-type="jsp"/>
+   <task-flow-descriptor path="WEB-INF/Inv_Main_Task_Flow.xml" id="Inv_Task_Flow" type="task-flow-definition" uses-page-fragments="false" library-internal="false" remote-invocable="false" train="false" critical="false" page-type="jsp"/>
+   <task-flow-descriptor path="WEB-INF/hr_Loans.xml" id="hr_Loans" type="task-flow-definition" uses-page-fragments="false" library-internal="false" remote-invocable="false" train="true" critical="false" page-type="jsp"/>
+</task-flow-registry>

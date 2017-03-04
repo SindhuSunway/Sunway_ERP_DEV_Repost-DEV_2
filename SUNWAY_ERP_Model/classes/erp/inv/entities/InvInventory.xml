@@ -1,0 +1,532 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="InvInventory"
+  Version="12.1.3.2.1"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="INV_INVENTORY"
+  AliasName="InvInventory"
+  BindingStyle="OracleName"
+  xmlns:validation="http://xmlns.oracle.com/adfm/validation"
+  RowClass="erp.hr.entities.InvInventoryImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <ViewAccessor
+    Name="HrLookupTblView1"
+    ViewObjectName="erp.hr.views.HrLookupTblView"
+    RowLevelBinds="true">
+    <ParameterMap>
+      <PIMap Variable="BindLookupType">
+        <TransientExpression
+          trustMode="untrusted"><![CDATA['variance_reason']]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
+  <ViewAccessor
+    Name="HrLookupTblView2"
+    ViewObjectName="erp.hr.views.HrLookupTblView"
+    RowLevelBinds="true">
+    <ParameterMap>
+      <PIMap Variable="BindLookupType">
+        <TransientExpression
+          trustMode="untrusted"><![CDATA['Transfer_Reason']]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
+  <ViewAccessor
+    Name="HrLookupTblView3"
+    ViewObjectName="erp.hr.views.HrLookupTblView"
+    RowLevelBinds="true">
+    <ParameterMap>
+      <PIMap Variable="BindLookupType">
+        <TransientExpression
+          trustMode="untrusted"><![CDATA['Transfer_Status']]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
+  <Attribute
+    Name="ItemCode"
+    ColumnName="ITEM_CODE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="NUMBER"
+    TableName="INV_INVENTORY"
+    PrimaryKey="true"
+    IsNotNull="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="32"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="SerialNumber"
+    IsNotNull="true"
+    ColumnName="SERIAL_NUMBER"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="INV_INVENTORY"
+    PrimaryKey="true">
+    <validation:CompareValidationBean
+      Name="SerialNumberRule0"
+      ResId="erp.inv.view.InvInventoryView.SerialNumber_Rule0"
+      OnAttribute="SerialNumber"
+      OperandType="LITERAL"
+      Inverse="false"
+      CompareType="GREATERTHAN"
+      CompareValue="0"/>
+  </Attribute>
+  <Attribute
+    Name="Location"
+    Precision="32"
+    ColumnName="LOCATION"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="INV_INVENTORY"
+    PrimaryKey="true"
+    IsNotNull="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ProductCategory"
+    Precision="20"
+    ColumnName="PRODUCT_CATEGORY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="INV_INVENTORY">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Brand"
+    Precision="16"
+    ColumnName="BRAND"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="INV_INVENTORY">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="64"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ProductName"
+    Precision="32"
+    ColumnName="PRODUCT_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="INV_INVENTORY"
+    IsNotNull="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="64"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ItemType"
+    Precision="16"
+    ColumnName="ITEM_TYPE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="INV_INVENTORY">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="64"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ItemDescription"
+    Precision="64"
+    ColumnName="ITEM_DESCRIPTION"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="INV_INVENTORY">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1000"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="QuantityReceived"
+    ColumnName="QUANTITY_RECEIVED"
+    SQLType="NUMERIC"
+    Type="java.lang.Integer"
+    ColumnType="NUMBER"
+    TableName="INV_INVENTORY"
+    IsNotNull="true">
+    <validation:CompareValidationBean
+      Name="QuantityReceivedRule0"
+      ResId="erp.inv.view.InvInventoryView.QuantityReceived_Rule0"
+      OnAttribute="QuantityReceived"
+      OperandType="LITERAL"
+      Inverse="false"
+      CompareType="GREATERTHAN"
+      CompareValue="0"/>
+  </Attribute>
+  <Attribute
+    Name="QuantitySale"
+    ColumnName="QUANTITY_SALE"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="INV_INVENTORY"/>
+  <Attribute
+    Name="UnitSalePrice"
+    ColumnName="UNIT_SALE_PRICE"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="INV_INVENTORY"
+    IsNotNull="true">
+    <validation:CompareValidationBean
+      Name="UnitSalePriceRule0"
+      ResId="erp.hr.views.InvInventoryView.UnitSalePrice_Rule0"
+      OnAttribute="UnitSalePrice"
+      OperandType="LITERAL"
+      Inverse="false"
+      CompareType="GREATERTHAN"
+      CompareValue="0"/>
+  </Attribute>
+  <Attribute
+    Name="DateReceived"
+    ColumnName="DATE_RECEIVED"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="INV_INVENTORY"
+    IsNotNull="true"/>
+  <Attribute
+    Name="SaleByDate"
+    ColumnName="SALE_BY_DATE"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="INV_INVENTORY">
+    <validation:CompareValidationBean
+      Name="SaleByDateRule0"
+      ResId="erp.inv.view.InvInventoryView.SaleByDate_Rule"
+      OnAttribute="SaleByDate"
+      OperandType="EXPR"
+      Inverse="false"
+      CompareType="GREATERTHANEQUALTO">
+      <validation:TransientExpression
+        trustMode="untrusted"><![CDATA[adf.currentDate;]]></validation:TransientExpression>
+    </validation:CompareValidationBean>
+  </Attribute>
+  <Attribute
+    Name="Minimum"
+    ColumnName="MINIMUM"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="INV_INVENTORY">
+    <validation:CompareValidationBean
+      Name="MinimumRule0"
+      ResId="erp.inv.view.InvInventoryView.Minimum_Rule"
+      OnAttribute="Minimum"
+      OperandType="EXPR"
+      Inverse="false"
+      CompareType="LESSTHAN">
+      <validation:TransientExpression
+        trustMode="untrusted"><![CDATA[Maximum]]></validation:TransientExpression>
+    </validation:CompareValidationBean>
+    <validation:CompareValidationBean
+      Name="MinimumRule1"
+      ResId="erp.inv.view.InvInventoryView.Minimum_Rule1"
+      OnAttribute="Minimum"
+      OperandType="LITERAL"
+      Inverse="false"
+      CompareType="GREATERTHAN"
+      CompareValue="0"/>
+  </Attribute>
+  <Attribute
+    Name="Maximum"
+    ColumnName="MAXIMUM"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="INV_INVENTORY">
+    <validation:CompareValidationBean
+      Name="MaximumRule0"
+      ResId="erp.inv.view.InvInventoryView.Maximum_Rule"
+      OnAttribute="Maximum"
+      OperandType="EXPR"
+      Inverse="false"
+      CompareType="GREATERTHAN">
+      <validation:TransientExpression
+        trustMode="untrusted"><![CDATA[Minimum;]]></validation:TransientExpression>
+    </validation:CompareValidationBean>
+    <validation:CompareValidationBean
+      Name="MaximumRule1"
+      ResId="erp.inv.view.InvInventoryView.Maximum_Rule1"
+      OnAttribute="Maximum"
+      OperandType="LITERAL"
+      Inverse="false"
+      CompareType="GREATERTHAN"
+      CompareValue="0"/>
+  </Attribute>
+  <Attribute
+    Name="Notesremarks"
+    Precision="1000"
+    ColumnName="NOTESREMARKS"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="INV_INVENTORY">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1000"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Variance"
+    ColumnName="VARIANCE"
+    SQLType="NUMERIC"
+    Type="java.lang.Integer"
+    ColumnType="NUMBER"
+    TableName="INV_INVENTORY"/>
+  <Attribute
+    Name="VarianceReason"
+    Precision="20"
+    ColumnName="VARIANCE_REASON"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="INV_INVENTORY">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ProductStatus"
+    Precision="32"
+    ColumnName="PRODUCT_STATUS"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="INV_INVENTORY">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="32"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="QuantityOnHande"
+    ColumnName="QUANTITY_ON_HANDE"
+    SQLType="NUMERIC"
+    Type="java.lang.Integer"
+    ColumnType="NUMBER"
+    TableName="INV_INVENTORY"
+    IsNotNull="true">
+    <validation:CompareValidationBean
+      Name="QuantityOnHandeRule0"
+      ResId="erp.hr.views.InvInventoryView.QuantityOnHande_Rule0"
+      OnAttribute="QuantityOnHande"
+      OperandType="LITERAL"
+      Inverse="false"
+      CompareType="GREATERTHAN"
+      CompareValue="0"/>
+  </Attribute>
+  <Attribute
+    Name="ItemPic"
+    IsQueriable="false"
+    ColumnName="ITEM_PIC"
+    SQLType="BLOB"
+    Type="oracle.jbo.domain.BlobDomain"
+    ColumnType="BLOB"
+    TableName="INV_INVENTORY">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erp.hr.entities.InvInventory.ItemPic_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Quantitytotransfer"
+    ColumnName="QUANTITYTOTRANSFER"
+    SQLType="NUMERIC"
+    Type="java.lang.Integer"
+    ColumnType="NUMBER"
+    TableName="INV_INVENTORY"/>
+  <Attribute
+    Name="Tolocation"
+    Precision="20"
+    ColumnName="TOLOCATION"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="INV_INVENTORY">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Transferdate"
+    ColumnName="TRANSFERDATE"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="INV_INVENTORY"/>
+  <Attribute
+    Name="Transfernote"
+    Precision="1000"
+    ColumnName="TRANSFERNOTE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="INV_INVENTORY">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1000"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Transferreason"
+    Precision="20"
+    ColumnName="TRANSFERREASON"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="INV_INVENTORY">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Transferstatus"
+    Precision="20"
+    ColumnName="TRANSFERSTATUS"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="INV_INVENTORY">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="RetailPrice"
+    ColumnName="RETAIL_PRICE"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="INV_INVENTORY">
+    <validation:CompareValidationBean
+      Name="RetailPriceRule0"
+      ResId="erp.inv.view.InvInventoryView.RetailPrice_Rule0"
+      OnAttribute="RetailPrice"
+      OperandType="EXPR"
+      Inverse="false"
+      CompareType="GREATERTHAN">
+      <validation:TransientExpression
+        trustMode="untrusted"><![CDATA[UnitSalePrice]]></validation:TransientExpression>
+    </validation:CompareValidationBean>
+  </Attribute>
+  <Key
+    Name="InvInventoryDateReceivedCheck">
+    <DesignTime>
+      <Attr Name="_isNotNull" Value="true"/>
+      <Attr Name="_DBObjectName" Value="INV_INVENTORY_DATE_RECEIVED_CH"/>
+      <Attr Name="_checkCondition" Value='"DATE_RECEIVED" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="erp.hr.entities.InvInventory.DateReceived"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="InvInventoryItemCodeCheck">
+    <DesignTime>
+      <Attr Name="_isNotNull" Value="true"/>
+      <Attr Name="_DBObjectName" Value="INV_INVENTORY_ITEM_CODE_CHECK"/>
+      <Attr Name="_checkCondition" Value='"ITEM_CODE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="erp.hr.entities.InvInventory.ItemCode"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="InvInventoryLocationCheck">
+    <DesignTime>
+      <Attr Name="_isNotNull" Value="true"/>
+      <Attr Name="_DBObjectName" Value="INV_INVENTORY_LOCATION_CHECK"/>
+      <Attr Name="_checkCondition" Value='"LOCATION" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="erp.hr.entities.InvInventory.Location"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="InvInventoryPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="INV_INVENTORY_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="erp.hr.entities.InvInventory.ItemCode"/>
+      <Item Value="erp.hr.entities.InvInventory.SerialNumber"/>
+      <Item Value="erp.hr.entities.InvInventory.Location"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="InvInventoryProductNameCheck">
+    <DesignTime>
+      <Attr Name="_isNotNull" Value="true"/>
+      <Attr Name="_DBObjectName" Value="INV_INVENTORY_PRODUCT_NAME_CHE"/>
+      <Attr Name="_checkCondition" Value='"PRODUCT_NAME" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="erp.hr.entities.InvInventory.ProductName"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="InvInventoryQuantityOnHandeCheck">
+    <DesignTime>
+      <Attr Name="_isNotNull" Value="true"/>
+      <Attr Name="_DBObjectName" Value="INV_INVENTORY_QUANTITY_ON_HAND"/>
+      <Attr Name="_checkCondition" Value='"QUANTITY_ON_HANDE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="erp.hr.entities.InvInventory.QuantityOnHande"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="InvInventoryQuantityReceivedCheck">
+    <DesignTime>
+      <Attr Name="_isNotNull" Value="true"/>
+      <Attr Name="_DBObjectName" Value="INV_INVENTORY_QUANTITY_RECEIVE"/>
+      <Attr Name="_checkCondition" Value='"QUANTITY_RECEIVED" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="erp.hr.entities.InvInventory.QuantityReceived"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="InvInventoryUnitSalePriceCheck">
+    <DesignTime>
+      <Attr Name="_isNotNull" Value="true"/>
+      <Attr Name="_DBObjectName" Value="INV_INVENTORY_UNIT_SALE_PRICE_"/>
+      <Attr Name="_checkCondition" Value='"UNIT_SALE_PRICE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="erp.hr.entities.InvInventory.UnitSalePrice"/>
+    </AttrArray>
+  </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="erp.model.SUNWAY_ERP_ModelBundle"/>
+  </ResourceBundle>
+</Entity>

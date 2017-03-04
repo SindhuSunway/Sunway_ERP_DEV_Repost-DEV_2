@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.2.1" id="employee_profilePageDef"
+                Package="erp.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="HrEmplInfoView1" RangeSize="25" DataControl="HR_AppModuleDataControl"
+              id="HrEmplInfoView1Iterator"/>
+    <iterator Binds="HrEmplAddressView2" RangeSize="25" DataControl="HR_AppModuleDataControl"
+              id="HrEmplAddressView2Iterator"/>
+    <iterator Binds="HrEmplPhoneView2" RangeSize="25" DataControl="HR_AppModuleDataControl"
+              id="HrEmplPhoneView2Iterator"/>
+    <iterator Binds="HrEmplEmailView2" RangeSize="25" DataControl="HR_AppModuleDataControl"
+              id="HrEmplEmailView2Iterator"/>
+    <iterator Binds="HrEmplAddressView1" RangeSize="25" DataControl="HR_AppModuleDataControl"
+              id="HrEmplAddressView1Iterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="HrEmplInfoView1Iterator" id="EmplPic">
+      <AttrNames>
+        <Item Value="EmplPic"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplInfoView1Iterator" id="EmployeeNo">
+      <AttrNames>
+        <Item Value="EmployeeNo"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="HrEmplInfoView1Iterator" StaticList="false" Uses="LOV_Prefix" id="Prefix" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="HrEmplInfoView1Iterator" id="FirstName">
+      <AttrNames>
+        <Item Value="FirstName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplInfoView1Iterator" id="MiddleName">
+      <AttrNames>
+        <Item Value="MiddleName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplInfoView1Iterator" id="LastName">
+      <AttrNames>
+        <Item Value="LastName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplInfoView1Iterator" id="DateOfBirth">
+      <AttrNames>
+        <Item Value="DateOfBirth"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="HrEmplInfoView1Iterator" StaticList="false" Uses="LOV_Gender" id="Gender" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject"/>
+    <list IterBinding="HrEmplInfoView1Iterator" StaticList="false" Uses="LOV_MarStatus" id="MarStatus"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="HrEmplInfoView1Iterator" id="Nationality">
+      <AttrNames>
+        <Item Value="Nationality"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="HrEmplInfoView1Iterator" StaticList="false" Uses="LOV_EmplStatus" id="EmplStatus"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="HrEmplInfoView1Iterator" id="EmplId">
+      <AttrNames>
+        <Item Value="EmplId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplInfoView1Iterator" id="Notesremarks">
+      <AttrNames>
+        <Item Value="Notesremarks"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="HrEmplInfoView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="HR_AppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction"
+            DataControl="HR_AppModuleDataControl"/>
+    <attributeValues IterBinding="HrEmplAddressView2Iterator" id="EmployeeNo1">
+      <AttrNames>
+        <Item Value="EmployeeNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplAddressView2Iterator" id="EffectFrom">
+      <AttrNames>
+        <Item Value="EffectFrom"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="HrEmplAddressView2Iterator" StaticList="false" Uses="LOV_AddressType" id="AddressType"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="HrEmplAddressView2Iterator" StaticList="false" Uses="LOV_Preferred" id="Preferred"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="HrEmplAddressView2Iterator" id="Street">
+      <AttrNames>
+        <Item Value="Street"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplAddressView2Iterator" id="City">
+      <AttrNames>
+        <Item Value="City"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplAddressView2Iterator" id="State">
+      <AttrNames>
+        <Item Value="State"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplAddressView2Iterator" id="Country">
+      <AttrNames>
+        <Item Value="Country"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="HrEmplPhoneView2Iterator" StaticList="false" Uses="LOV_PhoneType" id="PhoneType"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="HrEmplPhoneView2Iterator" id="CountryCode">
+      <AttrNames>
+        <Item Value="CountryCode"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplPhoneView2Iterator" id="PhoneNo">
+      <AttrNames>
+        <Item Value="PhoneNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplPhoneView2Iterator" id="Extesion">
+      <AttrNames>
+        <Item Value="Extesion"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="HrEmplPhoneView2Iterator" StaticList="false" Uses="LOV_Prefered" id="Prefered"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="HrEmplEmailView2Iterator" StaticList="false" Uses="LOV_EmailType" id="EmailType"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="HrEmplEmailView2Iterator" id="EmailAddress">
+      <AttrNames>
+        <Item Value="EmailAddress"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="HrEmplEmailView2Iterator" StaticList="false" Uses="LOV_Prefered" id="Prefered1"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <action IterBinding="HrEmplAddressView2Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="HrEmplAddressView2Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="HrEmplPhoneView2Iterator" id="Next1" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="HrEmplPhoneView2Iterator" id="Previous1" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="HrEmplEmailView2Iterator" id="Next2" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="HrEmplEmailView2Iterator" id="Previous2" RequiresUpdateModel="true" Action="previous"/>
+    <attributeValues IterBinding="HrEmplAddressView1Iterator" id="EffectFrom1">
+      <AttrNames>
+        <Item Value="EffectFrom"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="HrEmplAddressView1Iterator" StaticList="false" Uses="LOV_AddressType" id="AddressType1"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="HrEmplAddressView1Iterator" StaticList="false" Uses="LOV_Preferred" id="Preferred1"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="HrEmplAddressView1Iterator" id="Street1">
+      <AttrNames>
+        <Item Value="Street"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplAddressView1Iterator" id="City1">
+      <AttrNames>
+        <Item Value="City"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplAddressView1Iterator" id="State1">
+      <AttrNames>
+        <Item Value="State"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplAddressView1Iterator" id="Country1">
+      <AttrNames>
+        <Item Value="Country"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="HrEmplAddressView1Iterator" id="CreateInsert1" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="HrEmplAddressView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+  </bindings>
+</pageDefinition>

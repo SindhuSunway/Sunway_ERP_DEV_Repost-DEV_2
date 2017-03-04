@@ -1,0 +1,658 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="HrNewjobsInfoView"
+  Version="12.1.3.10.8"
+  InheritPersonalization="merge"
+  SelectListFlags="1"
+  FromListFlags="1"
+  WhereFlags="1"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  SelectAllAttributes="false"
+  PageIterMode="Full">
+  <ViewAccessor
+    Name="HrEmplInfoView1"
+    ViewObjectName="erp.hr.views.HrEmplInfoView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="HrEmplInfoView2"
+    ViewObjectName="erp.hr.views.HrEmplInfoView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="HrDepartmentsView1"
+    ViewObjectName="erp.hr.views.HrDepartmentsView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="HrDepartmentsView2"
+    ViewObjectName="erp.hr.views.HrDepartmentsView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="HrDirectoresView1"
+    ViewObjectName="erp.hr.views.HrDirectoresView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="HrLookupTblView1"
+    ViewObjectName="erp.hr.views.HrLookupTblView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="HrGradesView1"
+    ViewObjectName="erp.hr.views.HrGradesView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Search_lookupView1"
+    ViewObjectName="erp.hr.views.Search_lookupView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Search_lookupView2"
+    ViewObjectName="erp.hr.views.Search_lookupView"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_JobLevel"
+    ListVOName="HrNewjobsInfo.HrLookupTblView1"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="JobLevel"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="LookupCode"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Meaning"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_ContractType"
+    ListVOName="HrNewjobsInfo.HrLookupTblView2"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ContractType"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="LookupCode"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Meaning"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_EmplCategory"
+    ListVOName="HrNewjobsInfo.HrLookupTblView3"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="EmplCategory"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="LookupCode"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Meaning"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_RegTemp"
+    ListVOName="HrNewjobsInfo.HrLookupTblView7"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="RegTemp"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="LookupCode"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Meaning"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_ReportsTo"
+    ListVOName="HrEmplInfoView1"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ReportsTo"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="EmployeeNo"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="FirstName"/>
+      <Item Value="LastName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_SupervisorId"
+    ListVOName="HrEmplInfoView2"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="SupervisorId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="EmployeeNo"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="FirstName"/>
+      <Item Value="LastName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Grade"
+    ListVOName="HrGradesView1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Grade"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Grade"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Grade"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_DepartmentCode"
+    ListVOName="HrDepartmentsView1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="DepartmentCode"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DepartmentCode"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="DepartmentCode"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Department"
+    ListVOName="HrDepartmentsView2"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Department"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DepartmentName"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="DepartmentName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_BusinessUnit"
+    ListVOName="HrDirectoresView1"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="BusinessUnit"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DirectorateCode"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="DirectorateCode"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_FullPart"
+    ListVOName="HrNewjobsInfo.HrLookupTblView4"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="FullPart"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="LookupCode"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Meaning"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_JobStatus"
+    ListVOName="Search_lookupView2"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="JobStatus"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="JOB_STATUS"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="JOB_STATUS"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="HrNewjobsInfo"
+    Entity="erp.hr.entities.HrNewjobsInfo"/>
+  <ViewAttribute
+    Name="PositionNbr"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="PositionNbr"
+    EntityUsage="HrNewjobsInfo"
+    AliasName="POSITION_NBR">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erp.hr.views.HrNewjobsInfoView.PositionNbr_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="PositionDate"
+    PrecisionRule="true"
+    EntityAttrName="PositionDate"
+    EntityUsage="HrNewjobsInfo"
+    AliasName="POSITION_DATE">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erp.hr.views.HrNewjobsInfoView.PositionDate_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="JobCode"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="JobCode"
+    EntityUsage="HrNewjobsInfo"
+    AliasName="JOB_CODE">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erp.hr.views.HrNewjobsInfoView.JobCode_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="JobTitle"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="JobTitle"
+    EntityUsage="HrNewjobsInfo"
+    AliasName="JOB_TITLE">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erp.hr.views.HrNewjobsInfoView.JobTitle_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="JobLevel"
+    PrecisionRule="true"
+    EntityAttrName="JobLevel"
+    EntityUsage="HrNewjobsInfo"
+    AliasName="JOB_LEVEL"
+    LOVName="LOV_JobLevel">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erp.hr.views.HrNewjobsInfoView.JobLevel_LABEL"/>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="DepartmentCode"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="DepartmentCode"
+    EntityUsage="HrNewjobsInfo"
+    AliasName="DEPARTMENT_CODE"
+    LOVName="LOV_DepartmentCode">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erp.hr.views.HrNewjobsInfoView.DepartmentCode_LABEL"/>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Department"
+    PrecisionRule="true"
+    EntityAttrName="Department"
+    EntityUsage="HrNewjobsInfo"
+    AliasName="DEPARTMENT"
+    LOVName="LOV_Department">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erp.hr.views.HrNewjobsInfoView.Department_LABEL"/>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="BusinessUnit"
+    PrecisionRule="true"
+    EntityAttrName="BusinessUnit"
+    EntityUsage="HrNewjobsInfo"
+    AliasName="BUSINESS_UNIT"
+    LOVName="LOV_BusinessUnit">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erp.hr.views.HrNewjobsInfoView.BusinessUnit_LABEL"/>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Location"
+    PrecisionRule="true"
+    EntityAttrName="Location"
+    EntityUsage="HrNewjobsInfo"
+    AliasName="LOCATION">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erp.hr.views.HrNewjobsInfoView.Location_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Grade"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Grade"
+    EntityUsage="HrNewjobsInfo"
+    AliasName="GRADE"
+    LOVName="LOV_Grade">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erp.hr.views.HrNewjobsInfoView.Grade_LABEL"/>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="SupervisorId"
+    PrecisionRule="true"
+    EntityAttrName="SupervisorId"
+    EntityUsage="HrNewjobsInfo"
+    AliasName="SUPERVISOR_ID"
+    LOVName="LOV_SupervisorId">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erp.hr.views.HrNewjobsInfoView.SupervisorId_LABEL"/>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ReportsTo"
+    PrecisionRule="true"
+    EntityAttrName="ReportsTo"
+    EntityUsage="HrNewjobsInfo"
+    AliasName="REPORTS_TO"
+    LOVName="LOV_ReportsTo">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+        <LABEL
+          ResId="erp.hr.views.HrNewjobsInfoView.ReportsTo_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="RegTemp"
+    PrecisionRule="true"
+    EntityAttrName="RegTemp"
+    EntityUsage="HrNewjobsInfo"
+    AliasName="REG_TEMP"
+    LOVName="LOV_RegTemp">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erp.hr.views.HrNewjobsInfoView.RegTemp_LABEL"/>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="FullPart"
+    PrecisionRule="true"
+    EntityAttrName="FullPart"
+    EntityUsage="HrNewjobsInfo"
+    AliasName="FULL_PART"
+    LOVName="LOV_FullPart">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erp.hr.views.HrNewjobsInfoView.FullPart_LABEL"/>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="StartDate"
+    PrecisionRule="true"
+    EntityAttrName="StartDate"
+    EntityUsage="HrNewjobsInfo"
+    AliasName="START_DATE">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erp.hr.views.HrNewjobsInfoView.StartDate_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="EndDate"
+    PrecisionRule="true"
+    EntityAttrName="EndDate"
+    EntityUsage="HrNewjobsInfo"
+    AliasName="END_DATE">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erp.hr.views.HrNewjobsInfoView.EndDate_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ContractType"
+    PrecisionRule="true"
+    EntityAttrName="ContractType"
+    EntityUsage="HrNewjobsInfo"
+    AliasName="CONTRACT_TYPE"
+    LOVName="LOV_ContractType">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erp.hr.views.HrNewjobsInfoView.ContractType_LABEL"/>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ContractNbr"
+    PrecisionRule="true"
+    EntityAttrName="ContractNbr"
+    EntityUsage="HrNewjobsInfo"
+    AliasName="CONTRACT_NBR">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erp.hr.views.HrNewjobsInfoView.ContractNbr_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="StandardHrs"
+    PrecisionRule="true"
+    EntityAttrName="StandardHrs"
+    EntityUsage="HrNewjobsInfo"
+    AliasName="STANDARD_HRS">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erp.hr.views.HrNewjobsInfoView.StandardHrs_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="LaborAgremnt"
+    PrecisionRule="true"
+    EntityAttrName="LaborAgremnt"
+    EntityUsage="HrNewjobsInfo"
+    AliasName="LABOR_AGREMNT">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erp.hr.views.HrNewjobsInfoView.LaborAgremnt_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="EmplCategory"
+    PrecisionRule="true"
+    EntityAttrName="EmplCategory"
+    EntityUsage="HrNewjobsInfo"
+    AliasName="EMPL_CATEGORY"
+    LOVName="LOV_EmplCategory">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erp.hr.views.HrNewjobsInfoView.EmplCategory_LABEL"/>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="JobStatus"
+    PrecisionRule="true"
+    EntityAttrName="JobStatus"
+    EntityUsage="HrNewjobsInfo"
+    AliasName="JOB_STATUS"
+    LOVName="LOV_JobStatus">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erp.hr.views.HrNewjobsInfoView.JobStatus_LABEL"/>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewCriteria
+    Name="Search_by_Job_Status"
+    ViewObjectName="erp.hr.views.HrNewjobsInfoView"
+    Conjunction="AND">
+    <Properties>
+      <CustomProperties>
+        <Property
+          Name="autoExecute"
+          Value="true"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="false"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+        <Property
+          Name="displayName"
+          ResId="erp.hr.views.HrNewjobsInfoView.Search_by_Job_Status_displayName"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="HrNewjobsInfoViewCriteria_row_0"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="JobTitle"
+        ViewAttribute="JobTitle"
+        Operator="="
+        Conjunction="AND"
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="JobStatus"
+        ViewAttribute="JobStatus"
+        Operator="="
+        Conjunction="AND"
+        Required="Optional"
+        Value="'New'"/>
+    </ViewCriteriaRow>
+  </ViewCriteria>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="erp.model.SUNWAY_ERP_ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

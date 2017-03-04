@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.2.1" id="hr_EntrancePageDef"
+                Package="erp.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="HrEmplInfoView1" RangeSize="25" DataControl="HR_AppModuleDataControl"
+              id="HrEmplInfoView1Iterator"/>
+    <searchRegion Criteria="Search_Employee" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="HrEmplInfoView1Iterator" id="SearchEmployeeQuery"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="HrEmplInfoView1Iterator" id="HrEmplInfoView1">
+      <nodeDefinition DefName="erp.hr.views.HrEmplInfoView" Name="HrEmplInfoView10">
+        <AttrNames>
+          <Item Value="EmployeeNo"/>
+          <Item Value="FirstName"/>
+          <Item Value="LastName"/>
+          <Item Value="Nationality"/>
+          <Item Value="EmplStatus"/>
+          <Item Value="Department"/>
+          <Item Value="Grade"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

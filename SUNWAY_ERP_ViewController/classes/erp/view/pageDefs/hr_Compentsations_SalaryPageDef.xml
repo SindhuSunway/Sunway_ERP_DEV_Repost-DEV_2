@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.2.1" id="hr_Compentsations_SalaryPageDef"
+                Package="erp.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="HrEmplInfoView1" RangeSize="25" DataControl="HR_AppModuleDataControl"
+              id="HrEmplInfoView1Iterator"/>
+    <iterator Binds="HrEmplCompensationsView2" RangeSize="25" DataControl="HR_AppModuleDataControl"
+              id="HrEmplCompensationsView2Iterator"/>
+    <iterator Binds="HrEmplBankInfoView2" RangeSize="25" DataControl="HR_AppModuleDataControl"
+              id="HrEmplBankInfoView2Iterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="HrEmplCompensationsView2Iterator" id="EmployeeNo">
+      <AttrNames>
+        <Item Value="EmployeeNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplCompensationsView2Iterator" id="EffectFrom">
+      <AttrNames>
+        <Item Value="EffectFrom"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplCompensationsView2Iterator" id="CompStatus">
+      <AttrNames>
+        <Item Value="CompStatus"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplCompensationsView2Iterator" id="BasicSalary">
+      <AttrNames>
+        <Item Value="BasicSalary"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="HrEmplCompensationsView2Iterator" StaticList="false" Uses="LOV_HousingYn" id="HousingYn"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="HrEmplCompensationsView2Iterator" id="HousingAlwn">
+      <AttrNames>
+        <Item Value="HousingAlwn"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplCompensationsView2Iterator" id="GsmAlwn">
+      <AttrNames>
+        <Item Value="GsmAlwn"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="HrEmplCompensationsView2Iterator" StaticList="false" Uses="LOV_TranspYn" id="TranspYn"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="HrEmplCompensationsView2Iterator" id="TranspAlwn">
+      <AttrNames>
+        <Item Value="TranspAlwn"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="HrEmplCompensationsView2Iterator" StaticList="false" Uses="LOV_DeductionType"
+          id="DeductionType" DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="HrEmplCompensationsView2Iterator" id="Deduction">
+      <AttrNames>
+        <Item Value="Deduction"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplCompensationsView2Iterator" id="TicketAlwn">
+      <AttrNames>
+        <Item Value="TicketAlwn"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplCompensationsView2Iterator" id="WorkPeriod">
+      <AttrNames>
+        <Item Value="WorkPeriod"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplCompensationsView2Iterator" id="OtherComp">
+      <AttrNames>
+        <Item Value="OtherComp"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplCompensationsView2Iterator" id="Notesremarks">
+      <AttrNames>
+        <Item Value="Notesremarks"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="HrEmplCompensationsView2Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction"
+            DataControl="HR_AppModuleDataControl"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="HR_AppModuleDataControl"/>
+    <attributeValues IterBinding="HrEmplInfoView1Iterator" id="EmployeeNo1">
+      <AttrNames>
+        <Item Value="EmployeeNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplBankInfoView2Iterator" id="EmployeeNo2">
+      <AttrNames>
+        <Item Value="EmployeeNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplBankInfoView2Iterator" id="BankName">
+      <AttrNames>
+        <Item Value="BankName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplBankInfoView2Iterator" id="BranchName">
+      <AttrNames>
+        <Item Value="BranchName"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="HrEmplBankInfoView2Iterator" StaticList="false" Uses="LOV_Accounttype" id="Accounttype"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="HrEmplBankInfoView2Iterator" id="SwiftCode">
+      <AttrNames>
+        <Item Value="SwiftCode"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplBankInfoView2Iterator" id="AccountNo">
+      <AttrNames>
+        <Item Value="AccountNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplBankInfoView2Iterator" id="Location">
+      <AttrNames>
+        <Item Value="Location"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplBankInfoView2Iterator" id="City">
+      <AttrNames>
+        <Item Value="City"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplBankInfoView2Iterator" id="State">
+      <AttrNames>
+        <Item Value="State"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplBankInfoView2Iterator" id="Country">
+      <AttrNames>
+        <Item Value="Country"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplBankInfoView2Iterator" id="Notes">
+      <AttrNames>
+        <Item Value="Notes"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="HrEmplBankInfoView2Iterator" id="CreateInsert1" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+  </bindings>
+</pageDefinition>

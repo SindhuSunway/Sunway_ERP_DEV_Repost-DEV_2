@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="HrEmplLeavesView"
+  Version="12.1.3.10.8"
+  InheritPersonalization="merge"
+  SelectListFlags="1"
+  FromListFlags="1"
+  WhereFlags="1"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  SelectAllAttributes="false"
+  PageIterMode="Full">
+  <ViewAccessor
+    Name="HrEmplInfoView1"
+    ViewObjectName="erp.hr.views.HrEmplInfoView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="HrEmplInfoView2"
+    ViewObjectName="erp.hr.views.HrEmplInfoView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Search_lookupView1"
+    ViewObjectName="erp.hr.views.Search_lookupView"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_LeaveType"
+    ListVOName="HrEmplLeaves.HrLookupTblView1"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="LeaveType"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="LookupCode"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Meaning"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_ExitPermit"
+    ListVOName="HrEmplLeaves.HrLookupTblView3"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ExitPermit"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="LookupCode"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Meaning"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Approver"
+    ListVOName="HrEmplInfoView1"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Approver"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="EmployeeNo"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="FirstName"/>
+      <Item Value="LastName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_LeaveStatus"
+    ListVOName="Search_lookupView1"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="LeaveStatus"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="LEAVE_STATUS"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="LEAVE_STATUS"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="HrEmplLeaves"
+    Entity="erp.hr.entities.HrEmplLeaves"/>
+  <ViewAttribute
+    Name="EmployeeNo"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="EmployeeNo"
+    EntityUsage="HrEmplLeaves"
+    AliasName="EMPLOYEE_NO"/>
+  <ViewAttribute
+    Name="LeaveType"
+    PrecisionRule="true"
+    EntityAttrName="LeaveType"
+    EntityUsage="HrEmplLeaves"
+    AliasName="LEAVE_TYPE"
+    LOVName="LOV_LeaveType">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="LeaveCode"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="LeaveCode"
+    EntityUsage="HrEmplLeaves"
+    AliasName="LEAVE_CODE"/>
+  <ViewAttribute
+    Name="StartDate"
+    PrecisionRule="true"
+    EntityAttrName="StartDate"
+    EntityUsage="HrEmplLeaves"
+    AliasName="START_DATE"/>
+  <ViewAttribute
+    Name="EndDate"
+    PrecisionRule="true"
+    EntityAttrName="EndDate"
+    EntityUsage="HrEmplLeaves"
+    AliasName="END_DATE"/>
+  <ViewAttribute
+    Name="TotalDaysOnVac"
+    PrecisionRule="true"
+    EntityAttrName="TotalDaysOnVac"
+    EntityUsage="HrEmplLeaves"
+    AliasName="TOTAL_DAYS_ON_VAC"/>
+  <ViewAttribute
+    Name="LeaveBalance"
+    PrecisionRule="true"
+    EntityAttrName="LeaveBalance"
+    EntityUsage="HrEmplLeaves"
+    AliasName="LEAVE_BALANCE"/>
+  <ViewAttribute
+    Name="LeaveStatus"
+    PrecisionRule="true"
+    EntityAttrName="LeaveStatus"
+    EntityUsage="HrEmplLeaves"
+    AliasName="LEAVE_STATUS"
+    LOVName="LOV_LeaveStatus">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="DateReported"
+    PrecisionRule="true"
+    EntityAttrName="DateReported"
+    EntityUsage="HrEmplLeaves"
+    AliasName="DATE_REPORTED">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erp.hr.views.HrEmplLeavesView.DateReported_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Delegation"
+    PrecisionRule="true"
+    EntityAttrName="Delegation"
+    EntityUsage="HrEmplLeaves"
+    AliasName="DELEGATION"/>
+  <ViewAttribute
+    Name="NotesToDelegation"
+    PrecisionRule="true"
+    EntityAttrName="NotesToDelegation"
+    EntityUsage="HrEmplLeaves"
+    AliasName="NOTES_TO_DELEGATION"/>
+  <ViewAttribute
+    Name="Approver"
+    PrecisionRule="true"
+    EntityAttrName="Approver"
+    EntityUsage="HrEmplLeaves"
+    AliasName="APPROVER"
+    LOVName="LOV_Approver">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="NotesApprover"
+    PrecisionRule="true"
+    EntityAttrName="NotesApprover"
+    EntityUsage="HrEmplLeaves"
+    AliasName="NOTES_APPROVER"/>
+  <ViewAttribute
+    Name="ExitPermit"
+    PrecisionRule="true"
+    EntityAttrName="ExitPermit"
+    EntityUsage="HrEmplLeaves"
+    AliasName="EXIT_PERMIT"
+    LOVName="LOV_ExitPermit">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+        <LABEL
+          ResId="erp.hr.views.HrEmplLeavesView.ExitPermit_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Notesremarks"
+    PrecisionRule="true"
+    EntityAttrName="Notesremarks"
+    EntityUsage="HrEmplLeaves"
+    AliasName="NOTESREMARKS"/>
+  <ViewCriteria
+    Name="HrEmplLeavesViewCriteria"
+    ViewObjectName="erp.hr.views.HrEmplLeavesView"
+    Conjunction="AND">
+    <Properties>
+      <CustomProperties>
+        <Property
+          Name="autoExecute"
+          Value="true"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="false"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+        <Property
+          Name="displayName"
+          ResId="erp.hr.views.HrEmplLeavesView.HrEmplLeavesViewCriteria_displayName"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="HrEmplLeavesViewCriteria_row_0"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="LeaveStatus"
+        ViewAttribute="LeaveStatus"
+        Operator="="
+        Conjunction="AND"
+        Required="Optional"
+        Value="'REQUESTED'"/>
+    </ViewCriteriaRow>
+  </ViewCriteria>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="erp.model.SUNWAY_ERP_ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

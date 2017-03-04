@@ -1,0 +1,9 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig version="11.1" xmlns="http://xmlns.oracle.com/bc4j/configuration">
+   <AppModuleConfigBag ApplicationName="erp.hr.views.AppModule">
+      <AppModuleConfig name="AppModuleLocal"/>
+      <AppModuleConfig name="AppModuleShared"/>
+      <AppModuleConfig name="AppModuleLocal1"/>
+      <AppModuleConfig name="AppModuleShared1"/>
+   </AppModuleConfigBag>
+</BC4JConfig>

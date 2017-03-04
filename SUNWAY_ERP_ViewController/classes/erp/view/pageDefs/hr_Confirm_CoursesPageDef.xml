@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.2.1" id="hr_Confirm_CoursesPageDef"
+                Package="erp.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="HrEmplInfoView1" RangeSize="25" DataControl="HR_AppModuleDataControl"
+              id="HrEmplInfoView1Iterator"/>
+    <iterator Binds="HrEmplTrainingsView2" RangeSize="25" DataControl="HR_AppModuleDataControl"
+              id="HrEmplTrainingsView2Iterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="HrEmplInfoView1Iterator" id="EmployeeNo">
+      <AttrNames>
+        <Item Value="EmployeeNo"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="HrEmplInfoView1Iterator" StaticList="false" Uses="LOV_Prefix" id="Prefix" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="HrEmplInfoView1Iterator" id="FirstName">
+      <AttrNames>
+        <Item Value="FirstName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplInfoView1Iterator" id="MiddleName">
+      <AttrNames>
+        <Item Value="MiddleName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplInfoView1Iterator" id="LastName">
+      <AttrNames>
+        <Item Value="LastName"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="HrEmplInfoView1Iterator" StaticList="false" Uses="LOV_EmplStatus" id="EmplStatus"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="HrEmplTrainingsView2Iterator" StaticList="false" Uses="LOV_TrainingCode" id="TrainingCode"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="HrEmplTrainingsView2Iterator" id="TrainingCategory">
+      <AttrNames>
+        <Item Value="TrainingCategory"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplTrainingsView2Iterator" id="TrainingName">
+      <AttrNames>
+        <Item Value="TrainingName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplTrainingsView2Iterator" id="Description">
+      <AttrNames>
+        <Item Value="Description"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplTrainingsView2Iterator" id="Address">
+      <AttrNames>
+        <Item Value="Address"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplTrainingsView2Iterator" id="City">
+      <AttrNames>
+        <Item Value="City"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplTrainingsView2Iterator" id="State">
+      <AttrNames>
+        <Item Value="State"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplTrainingsView2Iterator" id="Country">
+      <AttrNames>
+        <Item Value="Country"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="HrEmplTrainingsView2Iterator" StaticList="false" Uses="LOV_TrainingStatus" id="TrainingStatus"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="HrEmplTrainingsView2Iterator" id="TrainingCost">
+      <AttrNames>
+        <Item Value="TrainingCost"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplTrainingsView2Iterator" id="AdditionalCost">
+      <AttrNames>
+        <Item Value="AdditionalCost"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="HrEmplTrainingsView2Iterator" StaticList="false" Uses="LOV_Certificate" id="Certificate"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="HrEmplTrainingsView2Iterator" id="Notes">
+      <AttrNames>
+        <Item Value="Notes"/>
+      </AttrNames>
+    </attributeValues>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="HR_AppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction"
+            DataControl="HR_AppModuleDataControl"/>
+  </bindings>
+</pageDefinition>

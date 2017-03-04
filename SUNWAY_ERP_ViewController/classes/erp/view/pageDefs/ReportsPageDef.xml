@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.2.1" id="ReportsPageDef"
+                Package="erp.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="InvSalesView1" RangeSize="25" DataControl="HR_AppModuleDataControl" id="InvSalesView1Iterator"/>
+    <iterator Binds="FinPaymentsView2" RangeSize="25" DataControl="HR_AppModuleDataControl"
+              id="FinPaymentsView2Iterator"/>
+    <iterator Binds="InvOrdersView1" RangeSize="25" DataControl="HR_AppModuleDataControl" id="InvOrdersView1Iterator"/>
+    <iterator Binds="FinPaymentsView1" RangeSize="25" DataControl="HR_AppModuleDataControl"
+              id="FinPaymentsView1Iterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="InvSalesView1Iterator" id="Saledate">
+      <AttrNames>
+        <Item Value="Saledate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="FinPaymentsView2Iterator" id="PaymentDate">
+      <AttrNames>
+        <Item Value="PaymentDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvOrdersView1Iterator" id="Oderdate">
+      <AttrNames>
+        <Item Value="Oderdate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="FinPaymentsView1Iterator" id="PaymentDate1">
+      <AttrNames>
+        <Item Value="PaymentDate"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

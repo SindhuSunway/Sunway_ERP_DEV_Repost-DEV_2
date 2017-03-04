@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.2.1" id="Inventory_reportsPageDef"
+                Package="erp.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="InvInventoryView1" RangeSize="25" DataControl="HR_AppModuleDataControl"
+              id="InvInventoryView1Iterator"/>
+    <iterator Binds="InvSalesView1" RangeSize="25" DataControl="HR_AppModuleDataControl" id="InvSalesView1Iterator"/>
+    <iterator Binds="InvOrdersView1" RangeSize="25" DataControl="HR_AppModuleDataControl" id="InvOrdersView1Iterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="InvInventoryView1Iterator" id="ItemCode">
+      <AttrNames>
+        <Item Value="ItemCode"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvSalesView1Iterator" id="Saledate">
+      <AttrNames>
+        <Item Value="Saledate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvOrdersView1Iterator" id="Oderdate">
+      <AttrNames>
+        <Item Value="Oderdate"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.2.1" id="hr_Emerg_conPageDef"
+                Package="erp.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="HrEmplEmergencyContactsView2" RangeSize="25" DataControl="HR_AppModuleDataControl"
+              id="HrEmplEmergencyContactsView2Iterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="HrEmplEmergencyContactsView2Iterator" id="EmployeeNo">
+      <AttrNames>
+        <Item Value="EmployeeNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplEmergencyContactsView2Iterator" id="FirstName">
+      <AttrNames>
+        <Item Value="FirstName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplEmergencyContactsView2Iterator" id="MiddleName">
+      <AttrNames>
+        <Item Value="MiddleName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplEmergencyContactsView2Iterator" id="LastName">
+      <AttrNames>
+        <Item Value="LastName"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="HrEmplEmergencyContactsView2Iterator" StaticList="false" Uses="LOV_Relationship"
+          id="Relationship" DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="HrEmplEmergencyContactsView2Iterator" StaticList="false" Uses="LOV_Gender" id="Gender"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="HrEmplEmergencyContactsView2Iterator" id="Address">
+      <AttrNames>
+        <Item Value="Address"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplEmergencyContactsView2Iterator" id="PhoneNo">
+      <AttrNames>
+        <Item Value="PhoneNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplEmergencyContactsView2Iterator" id="DependentsId">
+      <AttrNames>
+        <Item Value="DependentsId"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="HrEmplEmergencyContactsView2Iterator" id="Previous" RequiresUpdateModel="true"
+            Action="previous"/>
+    <action IterBinding="HrEmplEmergencyContactsView2Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="HrEmplEmergencyContactsView2Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction"
+            DataControl="HR_AppModuleDataControl"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="HR_AppModuleDataControl"/>
+  </bindings>
+</pageDefinition>

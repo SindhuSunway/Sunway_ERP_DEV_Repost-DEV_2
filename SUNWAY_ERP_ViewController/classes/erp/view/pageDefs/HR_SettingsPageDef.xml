@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.10.8" id="HR_SettingsPageDef"
+                Package="erp.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="HrDepartmentsView2" RangeSize="25" DataControl="HR_AppModuleDataControl"
+              id="HrDepartmentsView2Iterator"/>
+    <iterator Binds="HrDirectoresView1" RangeSize="-1" DataControl="HR_AppModuleDataControl"
+              id="HrDirectoresView1Iterator"/>
+    <iterator Binds="HrDentalPlanView1" RangeSize="25" DataControl="HR_AppModuleDataControl"
+              id="HrDentalPlanView1Iterator"/>
+    <iterator Binds="HrHealthPlanView1" RangeSize="25" DataControl="HR_AppModuleDataControl"
+              id="HrHealthPlanView1Iterator"/>
+  </executables>
+  <bindings>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="HR_AppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction"
+            DataControl="HR_AppModuleDataControl"/>
+    <tree IterBinding="HrDepartmentsView2Iterator" id="HrDepartmentsView2">
+      <nodeDefinition DefName="erp.hr.views.HrDepartmentsView" Name="HrDepartmentsView20">
+        <AttrNames>
+          <Item Value="DepartmentCode"/>
+          <Item Value="DepartmentName"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="HrDirectoresView1Iterator" id="DirectorateDesc">
+      <AttrNames>
+        <Item Value="DirectorateDesc"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrDirectoresView1Iterator" id="Notes">
+      <AttrNames>
+        <Item Value="Notes"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrDepartmentsView2Iterator" id="DepartmentCode">
+      <AttrNames>
+        <Item Value="DepartmentCode"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrDepartmentsView2Iterator" id="DepartmentName">
+      <AttrNames>
+        <Item Value="DepartmentName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrDepartmentsView2Iterator" id="DepartmentDesc">
+      <AttrNames>
+        <Item Value="DepartmentDesc"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrDepartmentsView2Iterator" id="Notes3">
+      <AttrNames>
+        <Item Value="Notes"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="HrDepartmentsView2Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="HrDepartmentsView2Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <attributeValues IterBinding="HrDirectoresView1Iterator" id="DirectorateCode">
+      <AttrNames>
+        <Item Value="DirectorateCode"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrDirectoresView1Iterator" id="DirectorateName">
+      <AttrNames>
+        <Item Value="DirectorateName"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="HrDirectoresView1Iterator" id="CreateInsert1" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <attributeValues IterBinding="HrDepartmentsView2Iterator" id="DirectorateCode1">
+      <AttrNames>
+        <Item Value="DirectorateCode"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="HrDepartmentsView2Iterator" id="CreateInsert2" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <attributeValues IterBinding="HrDentalPlanView1Iterator" id="DentalPlanCode">
+      <AttrNames>
+        <Item Value="DentalPlanCode"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrDentalPlanView1Iterator" id="DentalPlanProvider">
+      <AttrNames>
+        <Item Value="DentalPlanProvider"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrDentalPlanView1Iterator" id="DentalPlanTitle">
+      <AttrNames>
+        <Item Value="DentalPlanTitle"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrDentalPlanView1Iterator" id="StartDate">
+      <AttrNames>
+        <Item Value="StartDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrDentalPlanView1Iterator" id="ExpectedEndDate">
+      <AttrNames>
+        <Item Value="ExpectedEndDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrDentalPlanView1Iterator" id="EffectiveFrom">
+      <AttrNames>
+        <Item Value="EffectiveFrom"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrDentalPlanView1Iterator" id="NotesRemarks">
+      <AttrNames>
+        <Item Value="NotesRemarks"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrHealthPlanView1Iterator" id="HealthPlanCode">
+      <AttrNames>
+        <Item Value="HealthPlanCode"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrHealthPlanView1Iterator" id="HealthPlan">
+      <AttrNames>
+        <Item Value="HealthPlan"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrHealthPlanView1Iterator" id="HealthPlanDesc">
+      <AttrNames>
+        <Item Value="HealthPlanDesc"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrHealthPlanView1Iterator" id="HealthPlanProvider">
+      <AttrNames>
+        <Item Value="HealthPlanProvider"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrHealthPlanView1Iterator" id="StartDate1">
+      <AttrNames>
+        <Item Value="StartDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrHealthPlanView1Iterator" id="EndDate">
+      <AttrNames>
+        <Item Value="EndDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrHealthPlanView1Iterator" id="NotesRemarks1">
+      <AttrNames>
+        <Item Value="NotesRemarks"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="HrHealthPlanView1Iterator" id="CreateInsert3" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="HrDentalPlanView1Iterator" id="CreateInsert4" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <list IterBinding="HrHealthPlanView1Iterator" StaticList="false" Uses="LOV_HealthplanStatus"
+          id="HealthplanStatus1" DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="HrDentalPlanView1Iterator" StaticList="false" Uses="LOV_DentalPlanStatus"
+          id="DentalPlanStatus1" DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <tree IterBinding="HrDirectoresView1Iterator" id="HrDirectoresView11">
+      <nodeDefinition DefName="erp.hr.views.HrDirectoresView" Name="HrDirectoresView110">
+        <AttrNames>
+          <Item Value="DirectorateCode"/>
+          <Item Value="DirectorateName"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

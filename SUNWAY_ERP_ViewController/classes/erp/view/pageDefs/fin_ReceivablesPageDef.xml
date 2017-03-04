@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.2.1" id="fin_ReceivablesPageDef"
+                Package="erp.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="InvSalesView1" RangeSize="25" DataControl="fin_AppModuleDataControl" id="InvSalesView1Iterator"/>
+    <searchRegion Criteria="InvSalesViewCriteria" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="InvSalesView1Iterator" id="InvSalesViewCriteriaQuery"/>
+    <iterator Binds="InvSaleItemsView1" RangeSize="25" DataControl="fin_AppModuleDataControl"
+              id="InvSaleItemsView1Iterator"/>
+    <searchRegion Binds="InvSaleItemsView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="InvSaleItemsView1Query"/>
+    <iterator Binds="FinPaymentsView3" RangeSize="25" DataControl="fin_AppModuleDataControl"
+              id="FinPaymentsView3Iterator"/>
+    <iterator Binds="InvCustomersView1" RangeSize="25" DataControl="fin_AppModuleDataControl"
+              id="InvCustomersView1Iterator"/>
+    <iterator Binds="FinChartOfAccountsView1" RangeSize="25" DataControl="fin_AppModuleDataControl"
+              id="FinChartOfAccountsView1Iterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="InvSalesView1Iterator" id="InvSalesView1">
+      <nodeDefinition DefName="erp.hr.views.InvSalesView" Name="InvSalesView10">
+        <AttrNames>
+          <Item Value="Orderno"/>
+          <Item Value="Saledate"/>
+          <Item Value="Salesperson"/>
+          <Item Value="SaleStatus"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="InvSalesView1Iterator" id="Orderno">
+      <AttrNames>
+        <Item Value="Orderno"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvSalesView1Iterator" id="ItemCode">
+      <AttrNames>
+        <Item Value="ItemCode"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvSalesView1Iterator" id="Saledate">
+      <AttrNames>
+        <Item Value="Saledate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvSalesView1Iterator" id="Salesperson">
+      <AttrNames>
+        <Item Value="Salesperson"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvSalesView1Iterator" id="SaleStatus">
+      <AttrNames>
+        <Item Value="SaleStatus"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="InvSaleItemsView1Iterator" id="InvSaleItemsView1">
+      <nodeDefinition DefName="erp.hr.views.InvSaleItemsView" Name="InvSaleItemsView10">
+        <AttrNames>
+          <Item Value="ItemCode"/>
+          <Item Value="ProductName"/>
+          <Item Value="Qauntity"/>
+          <Item Value="Discount"/>
+          <Item Value="UnitPrice"/>
+          <Item Value="Total"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="InvSaleItemsView1Iterator" id="TotlaDue">
+      <AttrNames>
+        <Item Value="TotlaDue"/>
+      </AttrNames>
+    </attributeValues>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="fin_AppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction"
+            DataControl="fin_AppModuleDataControl"/>
+    <attributeValues IterBinding="FinPaymentsView3Iterator" id="OrderNo">
+      <AttrNames>
+        <Item Value="OrderNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="FinPaymentsView3Iterator" id="PaymentCode">
+      <AttrNames>
+        <Item Value="PaymentCode"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="FinPaymentsView3Iterator" id="PaymentType">
+      <AttrNames>
+        <Item Value="PaymentType"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="FinPaymentsView3Iterator" id="ReceivFromParty">
+      <AttrNames>
+        <Item Value="ReceivFromParty"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="FinPaymentsView3Iterator" id="PaymentStatus">
+      <AttrNames>
+        <Item Value="PaymentStatus"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="FinPaymentsView3Iterator" id="NotesRemarks">
+      <AttrNames>
+        <Item Value="NotesRemarks"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="FinPaymentsView3Iterator" id="Amount">
+      <AttrNames>
+        <Item Value="Amount"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="FinPaymentsView3Iterator" id="Outstanding">
+      <AttrNames>
+        <Item Value="Outstanding"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvCustomersView1Iterator" id="Phoneno">
+      <AttrNames>
+        <Item Value="Phoneno"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvCustomersView1Iterator" id="Name">
+      <AttrNames>
+        <Item Value="Name"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvCustomersView1Iterator" id="Address">
+      <AttrNames>
+        <Item Value="Address"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="FinPaymentsView3Iterator" id="PaymentMethodType">
+      <AttrNames>
+        <Item Value="PaymentMethodType"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="FinPaymentsView3Iterator" id="PaymentDate">
+      <AttrNames>
+        <Item Value="PaymentDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="FinPaymentsView3Iterator" id="EffectiveDate1">
+      <AttrNames>
+        <Item Value="EffectiveDate1"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="FinPaymentsView3Iterator" id="CheckRefnum">
+      <AttrNames>
+        <Item Value="CheckRefnum"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="FinChartOfAccountsView1Iterator" id="AccountName">
+      <AttrNames>
+        <Item Value="AccountName"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="FinChartOfAccountsView1Iterator" StaticList="false" Uses="LOV_AccountCode" id="AccountCode"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <action IterBinding="FinPaymentsView3Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+  </bindings>
+</pageDefinition>

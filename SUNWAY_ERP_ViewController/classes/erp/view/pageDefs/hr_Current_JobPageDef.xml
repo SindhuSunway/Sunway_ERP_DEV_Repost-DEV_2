@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.2.1" id="hr_Current_JobPageDef"
+                Package="erp.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="HrEmplJobView2" RangeSize="25" DataControl="HR_AppModuleDataControl" id="HrEmplJobView2Iterator"/>
+    <iterator Binds="HrEmplExperienceView2" RangeSize="25" DataControl="HR_AppModuleDataControl"
+              id="HrEmplExperienceView2Iterator"/>
+    <iterator Binds="HrEmplEducationView2" RangeSize="25" DataControl="HR_AppModuleDataControl"
+              id="HrEmplEducationView2Iterator"/>
+  </executables>
+  <bindings>
+    <list IterBinding="HrEmplJobView2Iterator" StaticList="false" Uses="LOV_Grade" id="Grade" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject"/>
+    <list IterBinding="HrEmplJobView2Iterator" StaticList="false" Uses="LOV_DepartmentCode" id="DepartmentCode"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="HrEmplJobView2Iterator" StaticList="false" Uses="LOV_DepartmentName" id="DepartmentName"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="HrEmplJobView2Iterator" StaticList="false" Uses="LOV_DirectManager" id="DirectManager"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="HrEmplJobView2Iterator" id="EffectFrom">
+      <AttrNames>
+        <Item Value="EffectFrom"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplJobView2Iterator" id="StartDate">
+      <AttrNames>
+        <Item Value="StartDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplJobView2Iterator" id="ExpectedEndDate">
+      <AttrNames>
+        <Item Value="ExpectedEndDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplJobView2Iterator" id="Notes">
+      <AttrNames>
+        <Item Value="Notes"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplJobView2Iterator" id="EmployeeNo1">
+      <AttrNames>
+        <Item Value="EmployeeNo"/>
+      </AttrNames>
+    </attributeValues>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="HR_AppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction"
+            DataControl="HR_AppModuleDataControl"/>
+    <attributeValues IterBinding="HrEmplJobView2Iterator" id="JobCode1">
+      <AttrNames>
+        <Item Value="JobCode"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplJobView2Iterator" id="JobTitle1">
+      <AttrNames>
+        <Item Value="JobTitle"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="HrEmplJobView2Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <list IterBinding="HrEmplJobView2Iterator" StaticList="false" Uses="LOV_JobLevel" id="JobLevel"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="HrEmplExperienceView2Iterator" id="EmployeeNo">
+      <AttrNames>
+        <Item Value="EmployeeNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplExperienceView2Iterator" id="PreviousComp">
+      <AttrNames>
+        <Item Value="PreviousComp"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplExperienceView2Iterator" id="LastJobTite">
+      <AttrNames>
+        <Item Value="LastJobTite"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplExperienceView2Iterator" id="LastDateWorked">
+      <AttrNames>
+        <Item Value="LastDateWorked"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplExperienceView2Iterator" id="NumberOfYear">
+      <AttrNames>
+        <Item Value="NumberOfYear"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplExperienceView2Iterator" id="Address">
+      <AttrNames>
+        <Item Value="Address"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplExperienceView2Iterator" id="City">
+      <AttrNames>
+        <Item Value="City"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplExperienceView2Iterator" id="State">
+      <AttrNames>
+        <Item Value="State"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplExperienceView2Iterator" id="Country">
+      <AttrNames>
+        <Item Value="Country"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplExperienceView2Iterator" id="Notesremarks">
+      <AttrNames>
+        <Item Value="Notesremarks"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplEducationView2Iterator" id="EmployeeNo2">
+      <AttrNames>
+        <Item Value="EmployeeNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplEducationView2Iterator" id="SchoolName">
+      <AttrNames>
+        <Item Value="SchoolName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplEducationView2Iterator" id="Address1">
+      <AttrNames>
+        <Item Value="Address1"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplEducationView2Iterator" id="City1">
+      <AttrNames>
+        <Item Value="City"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplEducationView2Iterator" id="State1">
+      <AttrNames>
+        <Item Value="State"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplEducationView2Iterator" id="PostalNo">
+      <AttrNames>
+        <Item Value="PostalNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplEducationView2Iterator" id="Country1">
+      <AttrNames>
+        <Item Value="Country"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplEducationView2Iterator" id="YearGraduated">
+      <AttrNames>
+        <Item Value="YearGraduated"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplEducationView2Iterator" id="Major">
+      <AttrNames>
+        <Item Value="Major"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="HrEmplEducationView2Iterator" StaticList="false" Uses="LOV_DegreeEarned" id="DegreeEarned"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="HrEmplEducationView2Iterator" id="Awards">
+      <AttrNames>
+        <Item Value="Awards"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="HrEmplExperienceView2Iterator" id="CreateInsert1" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="HrEmplEducationView2Iterator" id="CreateInsert2" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+  </bindings>
+</pageDefinition>

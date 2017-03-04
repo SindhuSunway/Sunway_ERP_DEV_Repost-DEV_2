@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.1.3.2.1" id="DataBindings"
+             SeparateXMLFiles="false" Package="erp.view" ClientType="Generic">
+  <definitionFactories>
+    <factory nameSpace="http://xmlns.oracle.com/adfm/dvt"
+             className="oracle.adfinternal.view.faces.dvt.model.binding.FacesBindingFactory"/>
+  </definitionFactories>
+  <pageMap>
+    <page path="/Employee_OverView.jspx" usageId="erp_view_Employee_OverViewPageDef"/>
+    <page path="/Recruitment_Selection.jspx" usageId="erp_view_Recruitment_SelectionPageDef"/>
+    <page path="/Template_page.jspx" usageId="erp_view_Template_pagePageDef"/>
+    <page path="/HR_Settings.jspx" usageId="erp_view_HR_SettingsPageDef"/>
+    <page path="/Performance_Appraisal.jspx" usageId="erp_view_Performance_AppraisalPageDef"/>
+    <page path="/Training_Developement.jspx" usageId="erp_view_Training_DevelopementPageDef"/>
+    <page path="/Attendance_Leaves.jspx" usageId="erp_view_Attendance_LeavesPageDef"/>
+    <page path="/Inv_Main_Page.jspx" usageId="erp_view_Inv_Main_PagePageDef"/>
+    <page path="/inv_inventory.jspx" usageId="erp_view_inventoryPageDef"/>
+    <page path="/inv_Purchase.jspx" usageId="erp_view_PurchasePageDef"/>
+    <page path="/Receivables.jspx" usageId="erp_view_ReceivablesPageDef"/>
+    <page path="/Payables.jspx" usageId="erp_view_PayablesPageDef"/>
+    <page path="/Payroll.jspx" usageId="erp_view_PayrollPageDef"/>
+    <page path="/General_Ledger.jspx" usageId="erp_view_General_LedgerPageDef"/>
+    <page path="/Settings.jspx" usageId="erp_view_SettingsPageDef"/>
+    <page path="/inv_Sales.jspx" usageId="erp_view_SalesPageDef"/>
+    <page path="/inv_Inventory_reports.jspx" usageId="erp_view_Inventory_reportsPageDef"/>
+    <page path="/hr_reports.jspx" usageId="erp_view_hr_reportsPageDef"/>
+    <page path="/Reports.jspx" usageId="erp_view_ReportsPageDef"/>
+    <page path="/fin_Receivables.jspx" usageId="erp_view_fin_ReceivablesPageDef"/>
+    <page path="/fin_Payables.jspx" usageId="erp_view_fin_PayablesPageDef"/>
+    <page path="/fin_General_Ledger.jspx" usageId="erp_view_fin_General_LedgerPageDef"/>
+    <page path="/hr_Employee_Profile.jspx" usageId="erp_view_hr_Employee_ProfilePageDef"/>
+    <page path="/hr_Contact_Info.jspx" usageId="erp_view_hr_Contact_InfoPageDef"/>
+    <page path="/hr_Current_Job.jspx" usageId="erp_view_hr_Current_JobPageDef"/>
+    <page path="/hr_Education.jspx" usageId="erp_view_hr_EducationPageDef"/>
+    <page path="/hr_Previous_Exprience.jspx" usageId="erp_view_hr_Previous_ExpriencePageDef"/>
+    <page path="/hr_Relatives.jspx" usageId="erp_view_hr_RelativesPageDef"/>
+    <page path="/hr_Emerg_con.jspx" usageId="erp_view_hr_Emerg_conPageDef"/>
+    <page path="/hr_insurance_ben.jspx" usageId="erp_view_hr_insurance_benPageDef"/>
+    <page path="/hr_Compentsations_Salary.jspx" usageId="erp_view_hr_Compentsations_SalaryPageDef"/>
+    <page path="/hr_Bank_info.jspx" usageId="erp_view_hr_Bank_infoPageDef"/>
+    <page path="/hr_Loans.jspx" usageId="erp_view_hr_LoansPageDef"/>
+    <page path="/hr_company_Properties.jspx" usageId="erp_view_hr_company_PropertiesPageDef"/>
+    <page path="/hr_Training_Developement.jspx" usageId="erp_view_hr_Training_DevelopementPageDef"/>
+    <page path="/inv_Inventory.jspx" usageId="erp_view_test_speed_pagePageDef"/>
+    <page path="/inv_inventory2.jspx" usageId="erp_view_inv_inventory2PageDef"/>
+    <page path="/Purchase2.jspx" usageId="erp_view_Purchase2PageDef"/>
+    <page path="/hr_employee_Profile1.jspx" usageId="erp_view_hr_employee_Profile1PageDef"/>
+    <page path="/hr_Employee-Profile.jspx" usageId="erp_view_employee_profilePageDef"/>
+    <page path="/inv_Add_items.jspx" usageId="erp_view_inv_Add_itemsPageDef"/>
+    <page path="/inv_confirm_sale.jspx" usageId="erp_view_inv_confirm_salePageDef"/>
+    <page path="/inv_add_PurchaseItems.jspx" usageId="erp_view_inv_add_PurchaseItemsPageDef"/>
+    <page path="/inv_Confirm_PO.jspx" usageId="erp_view_Confirm_POPageDef"/>
+    <page path="/hr_Employee_Appraisal.jspx" usageId="erp_view_hr_Employee_AppraisalPageDef"/>
+    <page path="/hr_Attendance_Leaves.jspx" usageId="erp_view_hr_Attendance_LeavesPageDef"/>
+    <page path="/hr_Confirm_Courses.jspx" usageId="erp_view_hr_Confirm_CoursesPageDef"/>
+    <page path="/hr_Add_Course.jspx" usageId="erp_view_hr_Add_CoursePageDef"/>
+    <page path="/ERP_Main_Page.jspx" usageId="erp_view_ERP_Main_PagePageDef"/>
+    <page path="/hr_Entrance.jspx" usageId="erp_view_hr_EntrancePageDef"/>
+    <page path="/hr_Performance_Appraisal.jspx" usageId="erp_view_hr_Performance_AppraisalPageDef"/>
+    <page path="/hr_manage_trainings.jspx" usageId="erp_view_hr_manage_trainingsPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="erp_view_Employee_OverViewPageDef" path="erp.view.pageDefs.Employee_OverViewPageDef"/>
+    <page id="erp_view_Recruitment_SelectionPageDef" path="erp.view.pageDefs.Recruitment_SelectionPageDef"/>
+    <page id="erp_view_Template_pagePageDef" path="erp.view.pageDefs.Template_pagePageDef"/>
+    <page id="erp_view_HR_SettingsPageDef" path="erp.view.pageDefs.HR_SettingsPageDef"/>
+    <page id="erp_view_Performance_AppraisalPageDef" path="erp.view.pageDefs.Performance_AppraisalPageDef"/>
+    <page id="erp_view_Training_DevelopementPageDef" path="erp.view.pageDefs.Training_DevelopementPageDef"/>
+    <page id="erp_view_Attendance_LeavesPageDef" path="erp.view.pageDefs.Attendance_LeavesPageDef"/>
+    <page id="erp_view_Inv_Main_PagePageDef" path="erp.view.pageDefs.Inv_Main_PagePageDef"/>
+    <page id="erp_view_inventoryPageDef" path="erp.view.pageDefs.inventoryPageDef"/>
+    <page id="erp_view_PurchasePageDef" path="erp.view.pageDefs.PurchasePageDef"/>
+    <page id="erp_view_ReceivablesPageDef" path="erp.view.pageDefs.ReceivablesPageDef"/>
+    <page id="erp_view_PayablesPageDef" path="erp.view.pageDefs.PayablesPageDef"/>
+    <page id="erp_view_PayrollPageDef" path="erp.view.pageDefs.PayrollPageDef"/>
+    <page id="erp_view_General_LedgerPageDef" path="erp.view.pageDefs.General_LedgerPageDef"/>
+    <page id="erp_view_SettingsPageDef" path="erp.view.pageDefs.SettingsPageDef"/>
+    <page id="erp_view_SalesPageDef" path="erp.view.pageDefs.SalesPageDef"/>
+    <page id="erp_view_Inventory_reportsPageDef" path="erp.view.pageDefs.Inventory_reportsPageDef"/>
+    <page id="erp_view_hr_reportsPageDef" path="erp.view.pageDefs.hr_reportsPageDef"/>
+    <page id="erp_view_ReportsPageDef" path="erp.view.pageDefs.ReportsPageDef"/>
+    <page id="erp_view_fin_ReceivablesPageDef" path="erp.view.pageDefs.fin_ReceivablesPageDef"/>
+    <page id="erp_view_fin_PayablesPageDef" path="erp.view.pageDefs.fin_PayablesPageDef"/>
+    <page id="erp_view_fin_General_LedgerPageDef" path="erp.view.pageDefs.fin_General_LedgerPageDef"/>
+    <page id="erp_view_hr_Employee_ProfilePageDef" path="erp.view.pageDefs.hr_Employee_ProfilePageDef"/>
+    <page id="erp_view_hr_Contact_InfoPageDef" path="erp.view.pageDefs.hr_Contact_InfoPageDef"/>
+    <page id="erp_view_hr_Current_JobPageDef" path="erp.view.pageDefs.hr_Current_JobPageDef"/>
+    <page id="erp_view_hr_EducationPageDef" path="erp.view.pageDefs.hr_EducationPageDef"/>
+    <page id="erp_view_hr_Previous_ExpriencePageDef" path="erp.view.pageDefs.hr_Previous_ExpriencePageDef"/>
+    <page id="erp_view_hr_RelativesPageDef" path="erp.view.pageDefs.hr_RelativesPageDef"/>
+    <page id="erp_view_hr_Emerg_conPageDef" path="erp.view.pageDefs.hr_Emerg_conPageDef"/>
+    <page id="erp_view_hr_insurance_benPageDef" path="erp.view.pageDefs.hr_insurance_benPageDef"/>
+    <page id="erp_view_hr_Compentsations_SalaryPageDef" path="erp.view.pageDefs.hr_Compentsations_SalaryPageDef"/>
+    <page id="erp_view_hr_Bank_infoPageDef" path="erp.view.pageDefs.hr_Bank_infoPageDef"/>
+    <page id="erp_view_hr_LoansPageDef" path="erp.view.pageDefs.hr_LoansPageDef"/>
+    <page id="erp_view_hr_company_PropertiesPageDef" path="erp.view.pageDefs.hr_company_PropertiesPageDef"/>
+    <page id="erp_view_hr_Training_DevelopementPageDef" path="erp.view.pageDefs.hr_Training_DevelopementPageDef"/>
+    <page id="erp_view_test_speed_pagePageDef" path="erp.view.pageDefs.test_speed_pagePageDef"/>
+    <page id="erp_view_inv_inventory2PageDef" path="erp.view.pageDefs.inv_inventory2PageDef"/>
+    <page id="erp_view_Purchase2PageDef" path="erp.view.pageDefs.Purchase2PageDef"/>
+    <page id="erp_view_hr_employee_Profile1PageDef" path="erp.view.pageDefs.hr_employee_Profile1PageDef"/>
+    <page id="erp_view_employee_profilePageDef" path="erp.view.pageDefs.employee_profilePageDef"/>
+    <page id="erp_view_inv_Add_itemsPageDef" path="erp.view.pageDefs.inv_Add_itemsPageDef"/>
+    <page id="erp_view_inv_confirm_salePageDef" path="erp.view.pageDefs.inv_confirm_salePageDef"/>
+    <page id="erp_view_inv_add_PurchaseItemsPageDef" path="erp.view.pageDefs.inv_add_PurchaseItemsPageDef"/>
+    <page id="erp_view_Confirm_POPageDef" path="erp.view.pageDefs.Confirm_POPageDef"/>
+    <page id="erp_view_hr_Employee_AppraisalPageDef" path="erp.view.pageDefs.hr_Employee_AppraisalPageDef"/>
+    <page id="erp_view_hr_Attendance_LeavesPageDef" path="erp.view.pageDefs.hr_Attendance_LeavesPageDef"/>
+    <page id="erp_view_hr_Confirm_CoursesPageDef" path="erp.view.pageDefs.hr_Confirm_CoursesPageDef"/>
+    <page id="erp_view_hr_Add_CoursePageDef" path="erp.view.pageDefs.hr_Add_CoursePageDef"/>
+    <page id="erp_view_ERP_Main_PagePageDef" path="erp.view.pageDefs.ERP_Main_PagePageDef"/>
+    <page id="erp_view_hr_EntrancePageDef" path="erp.view.pageDefs.hr_EntrancePageDef"/>
+    <page id="erp_view_hr_Performance_AppraisalPageDef" path="erp.view.pageDefs.hr_Performance_AppraisalPageDef"/>
+    <page id="erp_view_hr_manage_trainingsPageDef" path="erp.view.pageDefs.hr_manage_trainingsPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="HR_AppModuleDataControl" Package="erp.hr.modules"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="HR_AppModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+    <BC4JDataControl id="INV_ModuleDataControl" Package="erp.inv.modules"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="INV_ModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+    <BC4JDataControl id="INV_ModuleDataControl1" Package="erp.inv.modules"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="INV_ModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+    <BC4JDataControl id="INV_ModuleDataControl2" Package="erp.inv.modules"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="INV_ModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+    <BC4JDataControl id="INV_ModuleDataControl3" Package="inv.model"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="INV_ModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+    <BC4JDataControl id="INV_ModuleDataControl4" Package="inv.model"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="INV_ModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+    <BC4JDataControl id="INV_ModuleDataControl5" Package="inv.model"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="INV_ModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+    <BC4JDataControl id="INV_ModuleDataControl6" Package="inv.model"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="INV_ModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+    <BC4JDataControl id="INV_ModuleDataControl7" Package="inv.model"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="INV_ModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+    <BC4JDataControl id="INV_ModuleDataControl8" Package="inv.model"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="INV_ModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+    <BC4JDataControl id="INV_ModuleDataControl9" Package="inv.model"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="INV_ModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+    <BC4JDataControl id="INV_ModuleDataControl10" Package="inv.model"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="INV_ModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+    <BC4JDataControl id="INV_ModuleDataControl11" Package="inv.model"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="INV_ModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+    <BC4JDataControl id="INV_ModuleDataControl12" Package="inv.model"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="INV_ModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+    <BC4JDataControl id="INV_ModuleDataControl13" Package="inv.model"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="INV_ModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+    <BC4JDataControl id="INV_ModuleDataControl14" Package="inv.model"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="INV_ModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+    <BC4JDataControl id="inv_AppModuleDataControl" Package="erp.inv.modules"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="inv_AppModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+    <BC4JDataControl id="fin_AppModuleDataControl" Package="erp.fin.modules"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="fin_AppModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.2.1" id="hr_Employee_AppraisalPageDef"
+                Package="erp.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="HrEmplJobView2" RangeSize="25" DataControl="HR_AppModuleDataControl" id="HrEmplJobView2Iterator"/>
+    <iterator Binds="HrEmplAppraisalView5" RangeSize="25" DataControl="HR_AppModuleDataControl"
+              id="HrEmplAppraisalView5Iterator"/>
+    <iterator Binds="HrAppraisalsView2" RangeSize="25" DataControl="HR_AppModuleDataControl"
+              id="HrAppraisalsView2Iterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="HrEmplAppraisalView5Iterator" id="Kpi1">
+      <AttrNames>
+        <Item Value="Kpi1"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplAppraisalView5Iterator" id="Kpi2">
+      <AttrNames>
+        <Item Value="Kpi2"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplAppraisalView5Iterator" id="Kpi3">
+      <AttrNames>
+        <Item Value="Kpi3"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplAppraisalView5Iterator" id="Kpi4">
+      <AttrNames>
+        <Item Value="Kpi4"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplAppraisalView5Iterator" id="Kpi5">
+      <AttrNames>
+        <Item Value="Kpi5"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="HrEmplAppraisalView5Iterator" StaticList="false" Uses="LOV_Review1" id="Review1"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="HrEmplAppraisalView5Iterator" StaticList="false" Uses="LOV_Review2" id="Review2"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="HrEmplAppraisalView5Iterator" StaticList="false" Uses="LOV_Review3" id="Review3"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="HrEmplAppraisalView5Iterator" StaticList="false" Uses="LOV_Review4" id="Review4"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="HrEmplAppraisalView5Iterator" StaticList="false" Uses="LOV_Review5" id="Review5"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="HrEmplAppraisalView5Iterator" id="OverReview">
+      <AttrNames>
+        <Item Value="OverReview"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplJobView2Iterator" id="JobCode1">
+      <AttrNames>
+        <Item Value="JobCode"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplJobView2Iterator" id="JobTitle1">
+      <AttrNames>
+        <Item Value="JobTitle"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplJobView2Iterator" id="JobLevel">
+      <AttrNames>
+        <Item Value="JobLevel"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrAppraisalsView2Iterator" id="AppraisalYear">
+      <AttrNames>
+        <Item Value="AppraisalYear"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrAppraisalsView2Iterator" id="AppraisalType">
+      <AttrNames>
+        <Item Value="AppraisalType"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrAppraisalsView2Iterator" id="Kpi11">
+      <AttrNames>
+        <Item Value="Kpi1"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrAppraisalsView2Iterator" id="Kpi21">
+      <AttrNames>
+        <Item Value="Kpi2"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrAppraisalsView2Iterator" id="Kpi31">
+      <AttrNames>
+        <Item Value="Kpi3"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrAppraisalsView2Iterator" id="Kpi41">
+      <AttrNames>
+        <Item Value="Kpi4"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrAppraisalsView2Iterator" id="Kpi51">
+      <AttrNames>
+        <Item Value="Kpi5"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrAppraisalsView2Iterator" id="Notes">
+      <AttrNames>
+        <Item Value="Notes"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

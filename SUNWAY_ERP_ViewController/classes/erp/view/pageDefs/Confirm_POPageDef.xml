@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.2.1" id="Confirm_POPageDef"
+                Package="erp.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="InvOrderedItemsView2" RangeSize="25" DataControl="inv_AppModuleDataControl"
+              id="InvOrderedItemsView2Iterator"/>
+    <searchRegion Binds="InvOrderedItemsView2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="InvOrderedItemsView2Query"/>
+    <iterator Binds="InvOrdersView1" RangeSize="25" DataControl="inv_AppModuleDataControl" id="InvOrdersView1Iterator"/>
+    <iterator Binds="InvVendorsView3" RangeSize="25" DataControl="inv_AppModuleDataControl"
+              id="InvVendorsView3Iterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="InvOrderedItemsView2Iterator" id="InvOrderedItemsView2">
+      <nodeDefinition DefName="erp.hr.views.InvOrderedItemsView" Name="InvOrderedItemsView20">
+        <AttrNames>
+          <Item Value="ItemCode"/>
+          <Item Value="ProductName"/>
+          <Item Value="Description"/>
+          <Item Value="Quantity"/>
+          <Item Value="Unitprice"/>
+          <Item Value="Total"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="InvOrdersView1Iterator" id="OrderId">
+      <AttrNames>
+        <Item Value="OrderId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvOrdersView1Iterator" id="OderName">
+      <AttrNames>
+        <Item Value="OderName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvOrdersView1Iterator" id="OrderStatus">
+      <AttrNames>
+        <Item Value="OrderStatus"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvOrdersView1Iterator" id="ProductName">
+      <AttrNames>
+        <Item Value="ProductName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvOrdersView1Iterator" id="CreatedBy">
+      <AttrNames>
+        <Item Value="CreatedBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvOrdersView1Iterator" id="Oderdate">
+      <AttrNames>
+        <Item Value="Oderdate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvOrdersView1Iterator" id="EstimatedDeliveryDate">
+      <AttrNames>
+        <Item Value="EstimatedDeliveryDate"/>
+      </AttrNames>
+    </attributeValues>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="inv_AppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction"
+            DataControl="inv_AppModuleDataControl"/>
+    <attributeValues IterBinding="InvOrderedItemsView2Iterator" id="TotoalDue">
+      <AttrNames>
+        <Item Value="TotoalDue"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvVendorsView3Iterator" id="VendorId">
+      <AttrNames>
+        <Item Value="VendorId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvVendorsView3Iterator" id="VendorName">
+      <AttrNames>
+        <Item Value="VendorName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvVendorsView3Iterator" id="Address">
+      <AttrNames>
+        <Item Value="Address"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvVendorsView3Iterator" id="Phoneno">
+      <AttrNames>
+        <Item Value="Phoneno"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="InvOrderedItemsView2Iterator" StaticList="false" Uses="LOV_ItemCode" id="ItemCode"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="InvOrderedItemsView2Iterator" id="ProductName1">
+      <AttrNames>
+        <Item Value="ProductName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvOrderedItemsView2Iterator" id="Quantity">
+      <AttrNames>
+        <Item Value="Quantity"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvOrderedItemsView2Iterator" id="Unitprice">
+      <AttrNames>
+        <Item Value="Unitprice"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvOrderedItemsView2Iterator" id="Discount">
+      <AttrNames>
+        <Item Value="Discount"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvOrderedItemsView2Iterator" id="Total">
+      <AttrNames>
+        <Item Value="Total"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvOrdersView1Iterator" id="Agreement">
+      <AttrNames>
+        <Item Value="Agreement"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvOrdersView1Iterator" id="Currency">
+      <AttrNames>
+        <Item Value="Currency"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvOrdersView1Iterator" id="ShipmentDate">
+      <AttrNames>
+        <Item Value="ShipmentDate"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="InvOrderedItemsView2Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="InvOrderedItemsView2Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+  </bindings>
+</pageDefinition>
