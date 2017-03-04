@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.2.1" id="hr_RelativesPageDef"
+                Package="erp.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="HrEmplDependentsView2" RangeSize="25" DataControl="HR_AppModuleDataControl"
+              id="HrEmplDependentsView2Iterator"/>
+    <iterator Binds="HrEmplEmergencyContactsView2" RangeSize="25" DataControl="HR_AppModuleDataControl"
+              id="HrEmplEmergencyContactsView2Iterator"/>
+    <iterator Binds="HrInsuranceBeneficiariesView2" RangeSize="25" DataControl="HR_AppModuleDataControl"
+              id="HrInsuranceBeneficiariesView2Iterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="HrEmplDependentsView2Iterator" id="EmployeeNo">
+      <AttrNames>
+        <Item Value="EmployeeNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplDependentsView2Iterator" id="FirstName">
+      <AttrNames>
+        <Item Value="FirstName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplDependentsView2Iterator" id="MiddleName">
+      <AttrNames>
+        <Item Value="MiddleName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplDependentsView2Iterator" id="LastName">
+      <AttrNames>
+        <Item Value="LastName"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="HrEmplDependentsView2Iterator" StaticList="false" Uses="LOV_Relationship" id="Relationship"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="HrEmplDependentsView2Iterator" id="DependentId">
+      <AttrNames>
+        <Item Value="DependentId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplDependentsView2Iterator" id="DateOfBirth">
+      <AttrNames>
+        <Item Value="DateOfBirth"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="HrEmplDependentsView2Iterator" StaticList="false" Uses="LOV_Gender" id="Gender"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="HrEmplDependentsView2Iterator" StaticList="false" Uses="LOV_MarStatus" id="MarStatus"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="HrEmplDependentsView2Iterator" id="Nationality">
+      <AttrNames>
+        <Item Value="Nationality"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplDependentsView2Iterator" id="PhoneNo">
+      <AttrNames>
+        <Item Value="PhoneNo"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="HrEmplDependentsView2Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="HrEmplDependentsView2Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="HrEmplDependentsView2Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="HR_AppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction"
+            DataControl="HR_AppModuleDataControl"/>
+    <attributeValues IterBinding="HrEmplEmergencyContactsView2Iterator" id="EmployeeNo1">
+      <AttrNames>
+        <Item Value="EmployeeNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplEmergencyContactsView2Iterator" id="FirstName1">
+      <AttrNames>
+        <Item Value="FirstName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplEmergencyContactsView2Iterator" id="MiddleName1">
+      <AttrNames>
+        <Item Value="MiddleName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplEmergencyContactsView2Iterator" id="LastName1">
+      <AttrNames>
+        <Item Value="LastName"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="HrEmplEmergencyContactsView2Iterator" StaticList="false" Uses="LOV_Relationship"
+          id="Relationship1" DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="HrEmplEmergencyContactsView2Iterator" StaticList="false" Uses="LOV_Gender" id="Gender1"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="HrEmplEmergencyContactsView2Iterator" id="Address">
+      <AttrNames>
+        <Item Value="Address"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplEmergencyContactsView2Iterator" id="PhoneNo1">
+      <AttrNames>
+        <Item Value="PhoneNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplEmergencyContactsView2Iterator" id="DependentsId">
+      <AttrNames>
+        <Item Value="DependentsId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrInsuranceBeneficiariesView2Iterator" id="EmployeeNo2">
+      <AttrNames>
+        <Item Value="EmployeeNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrInsuranceBeneficiariesView2Iterator" id="FirstName2">
+      <AttrNames>
+        <Item Value="FirstName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrInsuranceBeneficiariesView2Iterator" id="MiddleName2">
+      <AttrNames>
+        <Item Value="MiddleName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrInsuranceBeneficiariesView2Iterator" id="LastName2">
+      <AttrNames>
+        <Item Value="LastName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrInsuranceBeneficiariesView2Iterator" id="DependentsId1">
+      <AttrNames>
+        <Item Value="DependentsId"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="HrInsuranceBeneficiariesView2Iterator" StaticList="false" Uses="LOV_Gender" id="Gender2"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="HrInsuranceBeneficiariesView2Iterator" StaticList="false" Uses="LOV_Relationship"
+          id="Relationship2" DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="HrInsuranceBeneficiariesView2Iterator" id="Percentage">
+      <AttrNames>
+        <Item Value="Percentage"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrInsuranceBeneficiariesView2Iterator" id="PhoneNo2">
+      <AttrNames>
+        <Item Value="PhoneNo"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="HrInsuranceBeneficiariesView2Iterator" id="CreateInsert1" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="HrEmplEmergencyContactsView2Iterator" id="CreateInsert2" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+  </bindings>
+</pageDefinition>

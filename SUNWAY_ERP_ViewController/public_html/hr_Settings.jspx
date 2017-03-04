@@ -1,0 +1,660 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich" xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <f:view>
+        <af:document title="HR_Settings.jspx" id="d1">
+            <af:messages id="m1"/>
+            <af:form id="f1">
+                   
+              <af:panelSplitter id="ps1" splitterPosition="75" orientation="vertical">
+                    
+                    <f:facet name="first">
+                        <af:panelGridLayout id="pgl5" inlineStyle="background-color:#065293;">
+                            <af:gridRow marginTop="5px" height="auto" id="gr1">
+                                <af:gridCell marginStart="5px" width="28%" id="gc1">
+                                    <af:image id="i1" inlineStyle="width:190px; height:65px;"
+                                              source="#{resource['images:sunway_new_logo.png']}"/>
+                                    <af:outputText value="Sunway ERP" id="ot2"
+                                                   inlineStyle="color:Orange;font-weight:bold;"/>
+                                </af:gridCell>
+                                <af:gridCell marginStart="5px" width="35%" id="gc2">
+                                    <af:outputLabel value="HR Application" id="ol1"
+                                                    inlineStyle="color:Orange; font-size:medium;"/>
+                                </af:gridCell>
+                                <af:gridCell marginStart="5px" width="10%" marginEnd="5px" id="gc3"
+                                             inlineStyle="text-align:left;">
+                                    <af:panelGridLayout id="pgl7">
+                                        <af:gridRow marginTop="5px" height="auto" id="gr3">
+                                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
+                                                <af:outputText value="#{'Welcome:&#160;'}#{securityContext.userName}"
+                                                               id="ot1" inlineStyle="color:White;"/>
+                                            </af:gridCell>
+                                        </af:gridRow>
+                                        <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr4">
+                                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc5">
+                                                <af:panelGroupLayout id="pgl8" layout="horizontal">
+                                                    <af:commandButton text="Logout" id="cb2"
+                                                                      action="#{loginBean.doLogout}"
+                                                                      icon="#{resource['images:logout-1-16.png']}"/>
+                                                    <af:spacer width="10" height="10" id="s1"/>
+                                                    <af:commandButton text="Help" id="cb1"
+                                                                      icon="#{resource['images:Help-1-16.png']}"/>
+                                                </af:panelGroupLayout>
+                                                <af:separator id="s67"/>
+                                            </af:gridCell>
+                                        </af:gridRow>
+                                    </af:panelGridLayout>
+                                </af:gridCell>
+                            </af:gridRow>
+                            <af:gridRow marginTop="5px" height="auto" id="gr2"/>
+                        </af:panelGridLayout>
+                    </f:facet>
+                    <f:facet name="second">
+                        <af:panelStretchLayout startWidth="250px" id="psl1" topHeight="40px">
+                            <f:facet name="center">
+                                <af:panelSplitter id="ps2" splitterPosition="445">
+                                    <f:facet name="second">
+                                        <af:panelStretchLayout id="psl4" topHeight="64px">
+                                            <f:facet name="center">
+                                                <af:panelGroupLayout id="pgl15" layout="scroll">
+                                                    <af:panelTabbed position="above" id="pt1"
+                                                                    inlineStyle="background-color:transparent;">
+                                                        <af:showDetailItem text="Busines Unit" id="sdi3">
+                                                            <af:popup autoCancel="disabled" id="p2" rendered="true"
+                                                                      animate="true" contentDelivery="lazyUncached"
+                                                                      launcherVar="l2" eventContext="launcher">
+                                                                <af:dialog id="d3" resize="on" contentWidth="650"
+                                                                           contentHeight="500">
+                                                                    <f:facet name="buttonBar"/>
+                                                                    <af:panelGroupLayout id="pgl2">
+                                                                        <af:panelBox text="Edit Directorates" id="pb4">
+                                                                            <f:facet name="toolbar">
+                                                                                <af:button actionListener="#{bindings.CreateInsert1.execute}"
+                                                                                           text="Add New Record"
+                                                                                           id="b12"/>
+                                                                            </f:facet>
+                                                                            <af:separator id="s20"/>
+                                                                            <af:panelFormLayout id="pfl8">
+                                                                                <af:inputText value="#{bindings.DirectorateCode.inputValue}"
+                                                                                              label="#{bindings.DirectorateCode.hints.label}"
+                                                                                              required="#{bindings.DirectorateCode.hints.mandatory}"
+                                                                                              columns="#{bindings.DirectorateCode.hints.displayWidth}"
+                                                                                              maximumLength="#{bindings.DirectorateCode.hints.precision}"
+                                                                                              shortDesc="#{bindings.DirectorateCode.hints.tooltip}"
+                                                                                              id="it27">
+                                                                                    <f:validator binding="#{bindings.DirectorateCode.validator}"/>
+                                                                                </af:inputText>
+                                                                            </af:panelFormLayout>
+                                                                            <af:separator id="s7"/>
+                                                                            <af:spacer width="10" height="10" id="s26"/>
+                                                                            <af:panelFormLayout id="pfl7">
+                                                                                <af:inputText value="#{bindings.DirectorateName.inputValue}"
+                                                                                              label="#{bindings.DirectorateName.hints.label}"
+                                                                                              required="#{bindings.DirectorateName.hints.mandatory}"
+                                                                                              columns="#{bindings.DirectorateName.hints.displayWidth}"
+                                                                                              maximumLength="#{bindings.DirectorateName.hints.precision}"
+                                                                                              shortDesc="#{bindings.DirectorateName.hints.tooltip}"
+                                                                                              id="it24">
+                                                                                    <f:validator binding="#{bindings.DirectorateName.validator}"/>
+                                                                                </af:inputText>
+                                                                                <af:inputText value="#{bindings.DirectorateDesc.inputValue}"
+                                                                                              label="#{bindings.DirectorateDesc.hints.label}"
+                                                                                              required="#{bindings.DirectorateDesc.hints.mandatory}"
+                                                                                              columns="75"
+                                                                                              maximumLength="#{bindings.DirectorateDesc.hints.precision}"
+                                                                                              shortDesc="#{bindings.DirectorateDesc.hints.tooltip}"
+                                                                                              id="it25" rows="2">
+                                                                                    <f:validator binding="#{bindings.DirectorateDesc.validator}"/>
+                                                                                </af:inputText>
+                                                                            </af:panelFormLayout>
+                                                                            <af:separator id="s27"/>
+                                                                            <af:spacer width="10" height="10" id="s29"/>
+                                                                            <af:panelFormLayout id="pfl9">
+                                                                                <af:inputText value="#{bindings.Notes.inputValue}"
+                                                                                              label="#{bindings.Notes.hints.label}"
+                                                                                              required="#{bindings.Notes.hints.mandatory}"
+                                                                                              columns="100"
+                                                                                              maximumLength="#{bindings.Notes.hints.precision}"
+                                                                                              shortDesc="#{bindings.Notes.hints.tooltip}"
+                                                                                              id="it23" rows="3">
+                                                                                    <f:validator binding="#{bindings.Notes.validator}"/>
+                                                                                </af:inputText>
+                                                                            </af:panelFormLayout>
+                                                                        </af:panelBox>
+                                                                    </af:panelGroupLayout>
+                                                                </af:dialog>
+                                                            </af:popup>
+                                                            <af:panelHeader text=" " id="ph1">
+                                                                <f:facet name="toolbar"/>
+                                                                <f:facet name="menuBar">
+                                                                    <af:group id="g1">
+                                                                        <af:button text="Print" id="b10">
+                                                                            <af:showPrintablePageBehavior/>
+                                                                        </af:button>
+                                                                        <af:spacer width="10" height="10" id="s9"/>
+                                                                        <af:spacer width="10" height="10" id="s8"/>
+                                                                    </af:group>
+                                                                </f:facet>
+                                                                <af:separator id="s3"/>
+                                                                <af:separator id="s80"/>
+                                                                <af:panelBox text="Business Units" id="pb1"
+                                                                             showDisclosure="false">
+                                                                    <f:facet name="toolbar">
+                                                                        <af:group id="g2">
+                                                                            <af:button text="Edit/Update" id="b1"
+                                                                                       inlineStyle="color:Blue;">
+                                                                                <af:showPopupBehavior popupId="p2"/>
+                                                                            </af:button>
+                                                                            <af:spacer width="10" height="10" id="s28"/>
+                                                                        </af:group>
+                                                                    </f:facet>
+                                                                    <af:separator id="s14"/>
+                                                                    <af:spacer width="10" height="10" id="s16"/>
+                                                                    <af:separator id="s15"/>
+                                                                    <af:separator id="s11"/>
+                                                                    <af:spacer width="10" height="10" id="s13"/>
+                                                                    <af:separator id="s10"/>
+                                                                </af:panelBox>
+                                                                <af:panelBox text="Departments" id="pb3"
+                                                                             showDisclosure="false"
+                                                                             inlineStyle="background-color:#ececec;">
+                                                                    <f:facet name="toolbar">
+                                                                        <af:group id="g3">
+                                                                            <af:button text="Edit/Update" id="b4"
+                                                                                       inlineStyle="color:Blue;">
+                                                                                <af:showPopupBehavior popupId="p1"/>
+                                                                            </af:button>
+                                                                            <af:spacer width="10" height="10" id="s19"/>
+                                                                        </af:group>
+                                                                    </f:facet>
+                                                                    <af:popup childCreation="deferred"
+                                                                              autoCancel="disabled" id="p1"
+                                                                              rendered="true"
+                                                                              contentDelivery="lazyUncached"
+                                                                              eventContext="launcher" launcherVar="l1">
+                                                                        <af:dialog id="d2" resize="on"
+                                                                                   contentWidth="650"
+                                                                                   contentHeight="500">
+                                                                            <f:facet name="buttonBar"/>
+                                                                            <af:panelGroupLayout id="pgl6">
+                                                                                <af:panelBox text="Edit Departments"
+                                                                                             id="pb2">
+                                                                                    <f:facet name="toolbar">
+                                                                                        <af:button actionListener="#{bindings.CreateInsert2.execute}"
+                                                                                                   text="Add a New Record"
+                                                                                                   id="b13"/>
+                                                                                    </f:facet>
+                                                                                    <af:panelFormLayout id="pfl10">
+                                                                                        <af:inputText value="#{bindings.DirectorateCode1.inputValue}"
+                                                                                                      label="#{bindings.DirectorateCode1.hints.label}"
+                                                                                                      required="#{bindings.DirectorateCode1.hints.mandatory}"
+                                                                                                      columns="#{bindings.DirectorateCode1.hints.displayWidth}"
+                                                                                                      maximumLength="#{bindings.DirectorateCode1.hints.precision}"
+                                                                                                      shortDesc="#{bindings.DirectorateCode1.hints.tooltip}"
+                                                                                                      id="it26">
+                                                                                            <f:validator binding="#{bindings.DirectorateCode1.validator}"/>
+                                                                                        </af:inputText>
+                                                                                    </af:panelFormLayout>
+                                                                                    <af:separator id="s30"/>
+                                                                                    <af:spacer width="10" height="10"
+                                                                                               id="s31"/>
+                                                                                    <af:panelFormLayout id="pfl11">
+                                                                                        <af:inputText value="#{bindings.DepartmentCode.inputValue}"
+                                                                                                      label="#{bindings.DepartmentCode.hints.label}"
+                                                                                                      required="#{bindings.DepartmentCode.hints.mandatory}"
+                                                                                                      columns="#{bindings.DepartmentCode.hints.displayWidth}"
+                                                                                                      maximumLength="#{bindings.DepartmentCode.hints.precision}"
+                                                                                                      shortDesc="#{bindings.DepartmentCode.hints.tooltip}"
+                                                                                                      id="it28">
+                                                                                            <f:validator binding="#{bindings.DepartmentCode.validator}"/>
+                                                                                        </af:inputText>
+                                                                                        <af:inputText value="#{bindings.DepartmentName.inputValue}"
+                                                                                                      label="#{bindings.DepartmentName.hints.label}"
+                                                                                                      required="#{bindings.DepartmentName.hints.mandatory}"
+                                                                                                      columns="#{bindings.DepartmentName.hints.displayWidth}"
+                                                                                                      maximumLength="#{bindings.DepartmentName.hints.precision}"
+                                                                                                      shortDesc="#{bindings.DepartmentName.hints.tooltip}"
+                                                                                                      id="it29">
+                                                                                            <f:validator binding="#{bindings.DepartmentName.validator}"/>
+                                                                                        </af:inputText>
+                                                                                        <af:inputText value="#{bindings.DepartmentDesc.inputValue}"
+                                                                                                      label="#{bindings.DepartmentDesc.hints.label}"
+                                                                                                      required="#{bindings.DepartmentDesc.hints.mandatory}"
+                                                                                                      columns="75"
+                                                                                                      maximumLength="#{bindings.DepartmentDesc.hints.precision}"
+                                                                                                      shortDesc="#{bindings.DepartmentDesc.hints.tooltip}"
+                                                                                                      id="it30"
+                                                                                                      rows="2">
+                                                                                            <f:validator binding="#{bindings.DepartmentDesc.validator}"/>
+                                                                                        </af:inputText>
+                                                                                    </af:panelFormLayout>
+                                                                                    <af:separator id="s32"/>
+                                                                                    <af:spacer width="10" height="10"
+                                                                                               id="s33"/>
+                                                                                    <af:panelFormLayout id="pfl12">
+                                                                                        <af:inputText value="#{bindings.Notes3.inputValue}"
+                                                                                                      label="#{bindings.Notes3.hints.label}"
+                                                                                                      required="#{bindings.Notes3.hints.mandatory}"
+                                                                                                      columns="75"
+                                                                                                      maximumLength="#{bindings.Notes3.hints.precision}"
+                                                                                                      shortDesc="#{bindings.Notes3.hints.tooltip}"
+                                                                                                      id="it31"
+                                                                                                      rows="3">
+                                                                                            <f:validator binding="#{bindings.Notes3.validator}"/>
+                                                                                        </af:inputText>
+                                                                                    </af:panelFormLayout>
+                                                                                </af:panelBox>
+                                                                            </af:panelGroupLayout>
+                                                                        </af:dialog>
+                                                                    </af:popup>
+                                                                    <af:separator id="s5"/>
+                                                                    <af:spacer width="10" height="10" id="s18"/>
+                                                                    <af:separator id="s6"/>
+                                                                </af:panelBox>
+                                                            </af:panelHeader>
+                                                        </af:showDetailItem>
+                                                        <af:showDetailItem text="Job Grades" id="sdi2">
+                                                            <af:popup childCreation="immediate" autoCancel="disabled"
+                                                                      id="p3" animate="false"
+                                                                      contentDelivery="lazyUncached" launcherVar="l3"
+                                                                      eventContext="launcher">
+                                                                <af:dialog id="d4" resize="on" contentWidth="750"
+                                                                           contentHeight="500">
+                                                                    <f:facet name="buttonBar"/>
+                                                                    <af:panelGroupLayout id="pgl10">
+                                                                        <af:panelBox text="Edit Grade Attributes"
+                                                                                     id="pb7">
+                                                                            <f:facet name="toolbar"/>
+                                                                            <af:separator id="s40"/>
+                                                                            <af:spacer width="10" height="10" id="s41"/>
+                                                                            <af:separator id="s34"/>
+                                                                            <af:spacer width="10" height="10" id="s35"/>
+                                                                        </af:panelBox>
+                                                                    </af:panelGroupLayout>
+                                                                </af:dialog>
+                                                            </af:popup>
+                                                            <af:popup childCreation="immediate" autoCancel="disabled"
+                                                                      id="p4" contentDelivery="lazyUncached"
+                                                                      launcherVar="l4" eventContext="launcher">
+                                                                <af:dialog id="d5" resize="on" contentWidth="650"
+                                                                           contentHeight="500">
+                                                                    <f:facet name="buttonBar"/>
+                                                                    <af:panelGroupLayout id="pgl11">
+                                                                        <af:panelBox text="Edit Grades Information"
+                                                                                     id="pb8">
+                                                                            <f:facet name="toolbar"/>
+                                                                            <af:separator id="s36"/>
+                                                                            <af:spacer width="10" height="10" id="s37"/>
+                                                                        </af:panelBox>
+                                                                    </af:panelGroupLayout>
+                                                                </af:dialog>
+                                                            </af:popup>
+                                                            <af:panelHeader text=" " id="ph2">
+                                                                <f:facet name="toolbar"/>
+                                                                <f:facet name="menuBar">
+                                                                    <af:group id="g6">
+                                                                        <af:spacer width="10" height="10" id="s39"/>
+                                                                    </af:group>
+                                                                </f:facet>
+                                                                <af:separator id="s79"/>
+                                                                <af:spacer width="10" height="10" id="s38"/>
+                                                                <af:panelBox text="Grade Information" id="pb5"
+                                                                             showDisclosure="false">
+                                                                    <f:facet name="toolbar">
+                                                                        <af:group id="g4">
+                                                                            <af:button text="Edit/Update" id="b11"
+                                                                                       inlineStyle="color:Blue;"/>
+                                                                        </af:group>
+                                                                    </f:facet>
+                                                                    <af:separator id="s22"/>
+                                                                    <af:spacer width="10" height="10" id="s24"/>
+                                                                    <af:separator id="s23"/>
+                                                                </af:panelBox>
+                                                                <af:panelBox text="Grade Attributes" id="pb6"
+                                                                             showDisclosure="false">
+                                                                    <f:facet name="toolbar">
+                                                                        <af:group id="g5">
+                                                                            <af:button text="Edit/Update" id="b16"
+                                                                                       inlineStyle="color:Blue;"/>
+                                                                        </af:group>
+                                                                    </f:facet>
+                                                                    <af:separator id="s25"/>
+                                                                    <af:spacer width="10" height="10" id="s42"/>
+                                                                    <af:separator id="s56"/>
+                                                                </af:panelBox>
+                                                            </af:panelHeader>
+                                                        </af:showDetailItem>
+                                                        <af:showDetailItem text="Health Care" id="sdi1">
+                                                            <af:panelHeader text=" " id="ph3">
+                                                                <f:facet name="toolbar"/>
+                                                                <f:facet name="menuBar">
+                                                                    <af:group id="g7">
+                                                                        <af:button actionListener="#{bindings.Commit.execute}"
+                                                                                   text="Save"
+                                                                                   id="b5" inlineStyle="color:Green;"/>
+                                                                        <af:spacer width="10" height="10" id="s46"/>
+                                                                        <af:button actionListener="#{bindings.Rollback.execute}"
+                                                                                   text="Cancel"
+                                                                                   immediate="true" id="b6"
+                                                                                   inlineStyle="color:Red;">
+                                                                            <af:resetActionListener/>
+                                                                        </af:button>
+                                                                    </af:group>
+                                                                </f:facet>
+                                                                <af:popup childCreation="deferred" autoCancel="disabled"
+                                                                          id="p5" contentDelivery="lazyUncached"
+                                                                          launcherVar="l5" eventContext="launcher">
+                                                                    <af:dialog id="d6" resize="on" contentWidth="650"
+                                                                               contentHeight="500">
+                                                                        <f:facet name="buttonBar"/>
+                                                                        <af:panelGroupLayout id="pgl1">
+                                                                            <af:panelBox text="Edit Health Plan"
+                                                                                         id="pb15">
+                                                                                <f:facet name="toolbar">
+                                                                                    <af:button actionListener="#{bindings.CreateInsert3.execute}"
+                                                                                               text="Add a New Record"
+                                                                                               id="b17"/>
+                                                                                </f:facet>
+                                                                                <af:panelFormLayout id="pfl21">
+                                                                                    <af:inputText value="#{bindings.HealthPlanCode.inputValue}"
+                                                                                                  label="#{bindings.HealthPlanCode.hints.label}"
+                                                                                                  required="#{bindings.HealthPlanCode.hints.mandatory}"
+                                                                                                  columns="#{bindings.HealthPlanCode.hints.displayWidth}"
+                                                                                                  maximumLength="#{bindings.HealthPlanCode.hints.precision}"
+                                                                                                  shortDesc="#{bindings.HealthPlanCode.hints.tooltip}"
+                                                                                                  id="it46">
+                                                                                        <f:validator binding="#{bindings.HealthPlanCode.validator}"/>
+                                                                                    </af:inputText>
+                                                                                </af:panelFormLayout>
+                                                                                <af:separator id="s48"/>
+                                                                                <af:spacer width="10" height="10"
+                                                                                           id="s49"/>
+                                                                                <af:panelFormLayout id="pfl22"
+                                                                                                    maxColumns="2"
+                                                                                                    rows="2">
+                                                                                    <af:inputText value="#{bindings.HealthPlan.inputValue}"
+                                                                                                  label="#{bindings.HealthPlan.hints.label}"
+                                                                                                  required="#{bindings.HealthPlan.hints.mandatory}"
+                                                                                                  columns="30"
+                                                                                                  maximumLength="#{bindings.HealthPlan.hints.precision}"
+                                                                                                  shortDesc="#{bindings.HealthPlan.hints.tooltip}"
+                                                                                                  id="it47">
+                                                                                        <f:validator binding="#{bindings.HealthPlan.validator}"/>
+                                                                                    </af:inputText>
+                                                                                    <af:inputText value="#{bindings.HealthPlanProvider.inputValue}"
+                                                                                                  label="#{bindings.HealthPlanProvider.hints.label}"
+                                                                                                  required="#{bindings.HealthPlanProvider.hints.mandatory}"
+                                                                                                  columns="30"
+                                                                                                  maximumLength="#{bindings.HealthPlanProvider.hints.precision}"
+                                                                                                  shortDesc="#{bindings.HealthPlanProvider.hints.tooltip}"
+                                                                                                  id="it49">
+                                                                                        <f:validator binding="#{bindings.HealthPlanProvider.validator}"/>
+                                                                                    </af:inputText>
+                                                                                    <af:inputDate value="#{bindings.StartDate1.inputValue}"
+                                                                                                  label="#{bindings.StartDate1.hints.label}"
+                                                                                                  required="#{bindings.StartDate1.hints.mandatory}"
+                                                                                                  columns="#{bindings.StartDate1.hints.displayWidth}"
+                                                                                                  shortDesc="#{bindings.StartDate1.hints.tooltip}"
+                                                                                                  id="id6">
+                                                                                        <f:validator binding="#{bindings.StartDate1.validator}"/>
+                                                                                        <af:convertDateTime pattern="#{bindings.StartDate1.format}"/>
+                                                                                    </af:inputDate>
+                                                                                    <af:inputDate value="#{bindings.EndDate.inputValue}"
+                                                                                                  label="#{bindings.EndDate.hints.label}"
+                                                                                                  required="#{bindings.EndDate.hints.mandatory}"
+                                                                                                  columns="#{bindings.EndDate.hints.displayWidth}"
+                                                                                                  shortDesc="#{bindings.EndDate.hints.tooltip}"
+                                                                                                  id="id7">
+                                                                                        <f:validator binding="#{bindings.EndDate.validator}"/>
+                                                                                        <af:convertDateTime pattern="#{bindings.EndDate.format}"/>
+                                                                                    </af:inputDate>
+                                                                                </af:panelFormLayout>
+                                                                                <af:separator id="s50"/>
+                                                                                <af:spacer width="10" height="10"
+                                                                                           id="s51"/>
+                                                                                <af:separator id="s59"/>
+                                                                                <af:panelFormLayout id="pfl32">
+                                                                                    <af:selectOneChoice value="#{bindings.HealthplanStatus1.inputValue}"
+                                                                                                        label="#{bindings.HealthplanStatus1.label}"
+                                                                                                        required="#{bindings.HealthplanStatus1.hints.mandatory}"
+                                                                                                        shortDesc="#{bindings.HealthplanStatus1.hints.tooltip}"
+                                                                                                        id="soc9">
+                                                                                        <f:selectItems value="#{bindings.HealthplanStatus1.items}"
+                                                                                                       id="si9"/>
+                                                                                        <f:validator binding="#{bindings.HealthplanStatus1.validator}"/>
+                                                                                    </af:selectOneChoice>
+                                                                                </af:panelFormLayout>
+                                                                                <af:separator id="s78"/>
+                                                                                <af:spacer width="10" height="10"
+                                                                                           id="s60"/>
+                                                                                <af:panelFormLayout id="pfl28"
+                                                                                                    maxColumns="75"
+                                                                                                    rows="3">
+                                                                                    <af:inputText value="#{bindings.HealthPlanDesc.inputValue}"
+                                                                                                  label="#{bindings.HealthPlanDesc.hints.label}"
+                                                                                                  required="#{bindings.HealthPlanDesc.hints.mandatory}"
+                                                                                                  columns="75"
+                                                                                                  maximumLength="#{bindings.HealthPlanDesc.hints.precision}"
+                                                                                                  shortDesc="#{bindings.HealthPlanDesc.hints.tooltip}"
+                                                                                                  id="it58" rows="2">
+                                                                                        <f:validator binding="#{bindings.HealthPlanDesc.validator}"/>
+                                                                                    </af:inputText>
+                                                                                </af:panelFormLayout>
+                                                                                <af:separator id="s57"/>
+                                                                                <af:spacer width="10" height="10"
+                                                                                           id="s58"/>
+                                                                                <af:panelFormLayout id="pfl23">
+                                                                                    <af:inputText value="#{bindings.NotesRemarks1.inputValue}"
+                                                                                                  label="#{bindings.NotesRemarks1.hints.label}"
+                                                                                                  required="#{bindings.NotesRemarks1.hints.mandatory}"
+                                                                                                  columns="75"
+                                                                                                  maximumLength="#{bindings.NotesRemarks1.hints.precision}"
+                                                                                                  shortDesc="#{bindings.NotesRemarks1.hints.tooltip}"
+                                                                                                  id="it51" rows="3">
+                                                                                        <f:validator binding="#{bindings.NotesRemarks1.validator}"/>
+                                                                                    </af:inputText>
+                                                                                </af:panelFormLayout>
+                                                                            </af:panelBox>
+                                                                        </af:panelGroupLayout>
+                                                                    </af:dialog>
+                                                                </af:popup>
+                                                                <af:popup childCreation="deferred" autoCancel="disabled"
+                                                                          id="p6" contentDelivery="lazyUncached"
+                                                                          launcherVar="l6" eventContext="launcher">
+                                                                    <af:dialog id="d7" resize="on" contentWidth="650"
+                                                                               contentHeight="500">
+                                                                        <f:facet name="buttonBar"/>
+                                                                        <af:panelGroupLayout id="pgl4">
+                                                                            <af:panelBox text="Edit Dental Plan"
+                                                                                         id="pb16">
+                                                                                <f:facet name="toolbar">
+                                                                                    <af:button actionListener="#{bindings.CreateInsert4.execute}"
+                                                                                               text="Add a New Record"
+                                                                                               disabled="#{!bindings.CreateInsert4.enabled}"
+                                                                                               id="b21"/>
+                                                                                </f:facet>
+                                                                                <af:panelFormLayout id="pfl24">
+                                                                                    <af:inputText value="#{bindings.DentalPlanCode.inputValue}"
+                                                                                                  label="#{bindings.DentalPlanCode.hints.label}"
+                                                                                                  required="#{bindings.DentalPlanCode.hints.mandatory}"
+                                                                                                  columns="#{bindings.DentalPlanCode.hints.displayWidth}"
+                                                                                                  maximumLength="#{bindings.DentalPlanCode.hints.precision}"
+                                                                                                  shortDesc="#{bindings.DentalPlanCode.hints.tooltip}"
+                                                                                                  id="it52">
+                                                                                        <f:validator binding="#{bindings.DentalPlanCode.validator}"/>
+                                                                                    </af:inputText>
+                                                                                </af:panelFormLayout>
+                                                                                <af:separator id="s52"/>
+                                                                                <af:spacer width="10" height="10"
+                                                                                           id="s53"/>
+                                                                                <af:panelFormLayout id="pfl25"
+                                                                                                    maxColumns="3"
+                                                                                                    rows="3">
+                                                                                    <af:inputText value="#{bindings.DentalPlanProvider.inputValue}"
+                                                                                                  label="#{bindings.DentalPlanProvider.hints.label}"
+                                                                                                  required="#{bindings.DentalPlanProvider.hints.mandatory}"
+                                                                                                  columns="30"
+                                                                                                  maximumLength="#{bindings.DentalPlanProvider.hints.precision}"
+                                                                                                  shortDesc="#{bindings.DentalPlanProvider.hints.tooltip}"
+                                                                                                  id="it53">
+                                                                                        <f:validator binding="#{bindings.DentalPlanProvider.validator}"/>
+                                                                                    </af:inputText>
+                                                                                    <af:inputText value="#{bindings.DentalPlanTitle.inputValue}"
+                                                                                                  label="#{bindings.DentalPlanTitle.hints.label}"
+                                                                                                  required="#{bindings.DentalPlanTitle.hints.mandatory}"
+                                                                                                  columns="30"
+                                                                                                  maximumLength="#{bindings.DentalPlanTitle.hints.precision}"
+                                                                                                  shortDesc="#{bindings.DentalPlanTitle.hints.tooltip}"
+                                                                                                  id="it54">
+                                                                                        <f:validator binding="#{bindings.DentalPlanTitle.validator}"/>
+                                                                                    </af:inputText>
+                                                                                    <af:inputDate value="#{bindings.StartDate.inputValue}"
+                                                                                                  label="#{bindings.StartDate.hints.label}"
+                                                                                                  required="#{bindings.StartDate.hints.mandatory}"
+                                                                                                  columns="#{bindings.StartDate.hints.displayWidth}"
+                                                                                                  shortDesc="#{bindings.StartDate.hints.tooltip}"
+                                                                                                  id="id8">
+                                                                                        <f:validator binding="#{bindings.StartDate.validator}"/>
+                                                                                        <af:convertDateTime pattern="#{bindings.StartDate.format}"/>
+                                                                                    </af:inputDate>
+                                                                                    <af:inputDate value="#{bindings.ExpectedEndDate.inputValue}"
+                                                                                                  label="#{bindings.ExpectedEndDate.hints.label}"
+                                                                                                  required="#{bindings.ExpectedEndDate.hints.mandatory}"
+                                                                                                  columns="#{bindings.ExpectedEndDate.hints.displayWidth}"
+                                                                                                  shortDesc="#{bindings.ExpectedEndDate.hints.tooltip}"
+                                                                                                  id="id9">
+                                                                                        <f:validator binding="#{bindings.ExpectedEndDate.validator}"/>
+                                                                                        <af:convertDateTime pattern="#{bindings.ExpectedEndDate.format}"/>
+                                                                                    </af:inputDate>
+                                                                                    <af:inputDate value="#{bindings.EffectiveFrom.inputValue}"
+                                                                                                  label="#{bindings.EffectiveFrom.hints.label}"
+                                                                                                  required="#{bindings.EffectiveFrom.hints.mandatory}"
+                                                                                                  columns="#{bindings.EffectiveFrom.hints.displayWidth}"
+                                                                                                  shortDesc="#{bindings.EffectiveFrom.hints.tooltip}"
+                                                                                                  id="id10">
+                                                                                        <f:validator binding="#{bindings.EffectiveFrom.validator}"/>
+                                                                                        <af:convertDateTime pattern="#{bindings.EffectiveFrom.format}"/>
+                                                                                    </af:inputDate>
+                                                                                </af:panelFormLayout>
+                                                                                <af:separator id="s65"/>
+                                                                                <af:separator id="s63"/>
+                                                                                <af:spacer width="10" height="10"
+                                                                                           id="s64"/>
+                                                                                <af:panelFormLayout id="pfl27">
+                                                                                    <af:selectOneChoice value="#{bindings.DentalPlanStatus1.inputValue}"
+                                                                                                        label="#{bindings.DentalPlanStatus1.label}"
+                                                                                                        required="#{bindings.DentalPlanStatus1.hints.mandatory}"
+                                                                                                        shortDesc="#{bindings.DentalPlanStatus1.hints.tooltip}"
+                                                                                                        id="soc10">
+                                                                                        <f:selectItems value="#{bindings.DentalPlanStatus1.items}"
+                                                                                                       id="si10"/>
+                                                                                        <f:validator binding="#{bindings.DentalPlanStatus1.validator}"/>
+                                                                                    </af:selectOneChoice>
+                                                                                </af:panelFormLayout>
+                                                                                <af:separator id="s54"/>
+                                                                                <af:spacer width="10" height="10"
+                                                                                           id="s55"/>
+                                                                                <af:panelFormLayout id="pfl26">
+                                                                                    <af:inputText value="#{bindings.NotesRemarks.inputValue}"
+                                                                                                  label="#{bindings.NotesRemarks.hints.label}"
+                                                                                                  required="#{bindings.NotesRemarks.hints.mandatory}"
+                                                                                                  columns="75"
+                                                                                                  maximumLength="#{bindings.NotesRemarks.hints.precision}"
+                                                                                                  shortDesc="#{bindings.NotesRemarks.hints.tooltip}"
+                                                                                                  id="it56" rows="2">
+                                                                                        <f:validator binding="#{bindings.NotesRemarks.validator}"/>
+                                                                                    </af:inputText>
+                                                                                </af:panelFormLayout>
+                                                                                <af:separator id="s61"/>
+                                                                                <af:spacer width="10" height="10"
+                                                                                           id="s62"/>
+                                                                            </af:panelBox>
+                                                                        </af:panelGroupLayout>
+                                                                    </af:dialog>
+                                                                </af:popup>
+                                                                <af:separator id="s66"/>
+                                                                <af:spacer width="10" height="10" id="s45"/>
+                                                                <af:panelBox text="Health Plan" id="pb10"
+                                                                             showDisclosure="false">
+                                                                    <f:facet name="toolbar">
+                                                                        <af:button text="Edit/Update" id="b14"
+                                                                                   inlineStyle="color:Blue;">
+                                                                            <af:showPopupBehavior popupId="p5"/>
+                                                                        </af:button>
+                                                                    </f:facet>
+                                                                    <af:separator id="s68"/>
+                                                                    <af:spacer width="10" height="10" id="s43"/>
+                                                                    <af:separator id="s69"/>
+                                                                    <af:spacer width="10" height="10" id="s44"/>
+                                                                    <af:separator id="s74"/>
+                                                                    <af:spacer width="10" height="10" id="s75"/>
+                                                                    <af:separator id="s70"/>
+                                                                    <af:spacer width="10" height="10" id="s47"/>
+                                                                </af:panelBox>
+                                                                <af:panelBox text="Dental Plan" id="pb14"
+                                                                             showDisclosure="false">
+                                                                    <f:facet name="toolbar">
+                                                                        <af:button text="Edit/Update" id="b15"
+                                                                                   inlineStyle="color:Blue;">
+                                                                            <af:showPopupBehavior popupId="p6"/>
+                                                                        </af:button>
+                                                                    </f:facet>
+                                                                    <af:separator id="s71"/>
+                                                                    <af:spacer width="10" height="10" id="s21"/>
+                                                                    <af:separator id="s72"/>
+                                                                    <af:spacer width="10" height="10" id="s2"/>
+                                                                    <af:separator id="s76"/>
+                                                                    <af:spacer width="10" height="10" id="s77"/>
+                                                                    <af:separator id="s73"/>
+                                                                    <af:spacer width="10" height="10" id="s17"/>
+                                                                </af:panelBox>
+                                                            </af:panelHeader>
+                                                        </af:showDetailItem>
+                                                        <af:showDetailItem text="Others " id="sdi5">
+                                                            <af:panelHeader text=" " id="ph4">
+                                                                <f:facet name="context"/>
+                                                                <f:facet name="toolbar"/>
+                                                                <f:facet name="menuBar"/>
+                                                                <f:facet name="info"/>
+                                                                <af:panelBox text=" part " id="pb18">
+                                                                    <f:facet name="toolbar"/>
+                                                                </af:panelBox>
+                                                            </af:panelHeader>
+                                                        </af:showDetailItem>
+                                                    </af:panelTabbed>
+                                                </af:panelGroupLayout>
+                                            </f:facet>
+                                            <f:facet name="top">
+                                                <af:navigationPane hint="bar" id="np1"
+                                                                   inlineStyle="color:#065293; background-color:#065293;">
+                                                    <af:commandNavigationItem id="ni1"
+                                                                              text="HR Settings and Business Rules"
+                                                                              inlineStyle="color:Orange; font-size:small;"/>
+                                                </af:navigationPane>
+                                            </f:facet>
+                                        </af:panelStretchLayout>
+                                    </f:facet>
+                                </af:panelSplitter>
+                            </f:facet>
+                            <f:facet name="bottom">
+                                <af:panelGroupLayout layout="scroll" id="pgl3" inlineStyle="background-color:#065293;">
+                                    <af:spacer width="10" height="10" id="s12"/>
+                                    <af:outputText value="Copyright@ 2012. Sunway Software Solutions W. L. L Alrights Reserved"
+                                                   id="ot28"
+                                                   inlineStyle="font-size:smaller; font-family:Arial, Helvetica, sans-serif; font-weight:bolder; color:white;"/>
+                                </af:panelGroupLayout>
+                            </f:facet>
+                            <f:facet name="top">
+                                <af:menuBar id="mb1">
+                                    <af:commandMenuItem text="HR Main Menu" id="cmi1"
+                                                        icon="#{resource['images:back-16.png']}" action="back"/>
+                                </af:menuBar>
+                            </f:facet>
+                        </af:panelStretchLayout>
+                    </f:facet>
+                </af:panelSplitter>   
+            </af:form>
+        </af:document>
+    </f:view>
+</jsp:root>

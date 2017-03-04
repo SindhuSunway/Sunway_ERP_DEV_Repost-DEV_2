@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.2.1" id="hr_Performance_AppraisalPageDef"
+                Package="erp.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="HrAppraisalsView1" RangeSize="25" DataControl="HR_AppModuleDataControl"
+              id="HrAppraisalsView1Iterator"/>
+    <searchRegion Criteria="HrAppraisalsViewCriteria" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="HrAppraisalsView1Iterator" id="HrAppraisalsViewCriteriaQuery"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="HrAppraisalsView1Iterator" id="HrAppraisalsView1">
+      <nodeDefinition DefName="erp.hr.views.HrAppraisalsView" Name="HrAppraisalsView10">
+        <AttrNames>
+          <Item Value="JobCode"/>
+          <Item Value="AppraisalYear"/>
+          <Item Value="AppraisalType"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="HrAppraisalsView1Iterator" id="JobCode">
+      <AttrNames>
+        <Item Value="JobCode"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrAppraisalsView1Iterator" id="AppraisalYear">
+      <AttrNames>
+        <Item Value="AppraisalYear"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrAppraisalsView1Iterator" id="AppraisalType">
+      <AttrNames>
+        <Item Value="AppraisalType"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrAppraisalsView1Iterator" id="Kpi1">
+      <AttrNames>
+        <Item Value="Kpi1"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrAppraisalsView1Iterator" id="Kpi2">
+      <AttrNames>
+        <Item Value="Kpi2"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrAppraisalsView1Iterator" id="Kpi3">
+      <AttrNames>
+        <Item Value="Kpi3"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrAppraisalsView1Iterator" id="Kpi4">
+      <AttrNames>
+        <Item Value="Kpi4"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrAppraisalsView1Iterator" id="Kpi5">
+      <AttrNames>
+        <Item Value="Kpi5"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrAppraisalsView1Iterator" id="Notes">
+      <AttrNames>
+        <Item Value="Notes"/>
+      </AttrNames>
+    </attributeValues>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="HR_AppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction"
+            DataControl="HR_AppModuleDataControl"/>
+    <action IterBinding="HrAppraisalsView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+  </bindings>
+</pageDefinition>

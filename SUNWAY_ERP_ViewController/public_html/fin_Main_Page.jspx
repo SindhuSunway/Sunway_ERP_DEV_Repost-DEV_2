@@ -1,0 +1,213 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <f:view>
+        <af:document title="Finance Main Page" id="d1">
+            <af:form id="f1">
+        <af:panelSplitter id="ps1" splitterPosition="75" orientation="vertical">
+                    <f:facet name="first">
+                        <af:panelGroupLayout id="pgl14">
+                            <af:panelGridLayout id="pgl5" inlineStyle="background-color:#065293;">
+                                <af:gridRow marginTop="5px" height="auto" id="gr1">
+                                    <af:gridCell marginStart="5px" width="28%" id="gc1">
+                                        <af:image source="#{resource['images:sunway_new_logo.png']}" id="i1"
+                                                  inlineStyle="width:190px; height:65px;"/>
+                                        <af:outputText value="Sunway ERP" id="ot1"
+                                                       inlineStyle="color:#00f600; font-weight:bold"/>
+                                    </af:gridCell>
+                                    <af:gridCell marginStart="5px" width="35%" id="gc2">
+                                        <af:outputLabel value="Finance Management Application" id="ol1"
+                                                        inlineStyle="color:#00f600; font-size:medium;"/>
+                                    </af:gridCell>
+                                    <af:gridCell marginStart="5px" width="10%" marginEnd="5px" id="gc3"
+                                                 inlineStyle="text-align:left;">
+                                        <af:panelGridLayout id="pgl15">
+                                            <af:gridRow marginTop="5px" height="auto" id="gr2">
+                                                <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc19">
+                                                    <af:outputText value="#{'Welcome:&#160;'}#{securityContext.userName}"
+                                                                   id="ot2" inlineStyle="color:White;"/>
+                                                </af:gridCell>
+                                            </af:gridRow>
+                                            <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr8">
+                                                <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc20">
+                                                    <af:panelGroupLayout id="pgl16" layout="horizontal">
+                                                        <af:commandButton text="Logout" id="cb2"
+                                                                          action="#{loginBean.doLogout}"
+                                                                          icon="#{resource['images:logout-1-16.png']}"/>
+                                                        <af:spacer width="10" height="10" id="s1"/>
+                                                        <af:commandButton text="Help" id="cb1" action="help"
+                                                                          icon="#{resource['images:Help-1-16.png']}"/>
+                                                    </af:panelGroupLayout>
+                                                    <af:separator id="s6"/>
+                                                </af:gridCell>
+                                            </af:gridRow>
+                                        </af:panelGridLayout>
+                                    </af:gridCell>
+                                </af:gridRow>
+                                <af:gridRow marginTop="5px" height="auto" id="gr9"/>
+                            </af:panelGridLayout>
+                        </af:panelGroupLayout>
+                    </f:facet>
+                    <f:facet name="second">
+                        <af:panelStretchLayout startWidth="250px" id="psl1" topHeight="25px">
+                            <f:facet name="center">
+                                <af:panelGroupLayout id="pgl1" layout="scroll">
+                                    <af:separator id="s3"/>
+                                    <af:panelHeader text="Finance Application Menu" id="ph1">
+                                        <f:facet name="context"/>
+                                        <f:facet name="menuBar"/>
+                                        <f:facet name="toolbar">
+                                            <af:button text="ERP" id="b1" icon="#{resource['images:previous-16.png']}"
+                                                       action="erp"
+                                                       inlineStyle="color:Blue;"/>
+                                        </f:facet>
+                                        <f:facet name="legend"/>
+                                        <f:facet name="info"/>
+                                        <af:separator id="s2"/>
+                                        <af:panelGridLayout id="pgl10">
+                                            <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr6">
+                                                <af:gridCell marginStart="5px" width="34%" id="gc13"/>
+                                                <af:gridCell marginStart="5px" width="33%" id="gc14"/>
+                                                <af:gridCell marginStart="5px" width="33%" marginEnd="5px" id="gc15"/>
+                                            </af:gridRow>
+                                            <af:gridRow marginTop="5px" height="auto" id="gr3">
+                                                <af:gridCell marginStart="5px" width="34%" id="gc4">
+                                                    <af:panelGroupLayout id="pgl4" layout="horizontal">
+                                                        <af:panelFormLayout id="pfl1">
+                                                            <f:facet name="footer"/>
+                                                            <af:image shortDesc="Accounts Receivable" id="i2"
+                                                                      source="#{resource['images:receivable-128.png']}"/>
+                                                        </af:panelFormLayout>
+                                                        <af:panelFormLayout id="pfl2">
+                                                            <f:facet name="footer"/>
+                                                            <af:link text="Accounts Receivable" id="l1"
+                                                                     inlineStyle="color:#003194;" action="rec"/>
+                                                        </af:panelFormLayout>
+                                                    </af:panelGroupLayout>
+                                                </af:gridCell>
+                                                <af:gridCell marginStart="5px" width="33%" id="gc5">
+                                                    <af:panelGroupLayout id="pgl6" layout="horizontal">
+                                                        <af:panelFormLayout id="pfl3">
+                                                            <f:facet name="footer"/>
+                                                            <af:image
+                                                                      shortDesc="Accounts Payable" id="i3"
+                                                                      source="#{resource['images:payable2-128.png']}"/>
+                                                        </af:panelFormLayout>
+                                                        <af:panelFormLayout id="pfl4">
+                                                            <f:facet name="footer"/>
+                                                            <af:link text="Accounts Payable" id="l2" action="pay"
+                                                                     inlineStyle="color:#003194;"/>
+                                                        </af:panelFormLayout>
+                                                    </af:panelGroupLayout>
+                                                </af:gridCell>
+                                                <af:gridCell marginStart="5px" width="33%" marginEnd="5px" id="gc6">
+                                                    <af:panelGroupLayout id="pgl7" layout="horizontal">
+                                                        <af:panelFormLayout id="pfl5">
+                                                            <f:facet name="footer"/>
+                                                            <af:image
+                                                                      shortDesc="Employee Payroll" id="i4"
+                                                                      source="#{resource['images:payroll2-128.png']}"/>
+                                                        </af:panelFormLayout>
+                                                        <af:panelFormLayout id="pfl6">
+                                                            <f:facet name="footer"/>
+                                                            <af:link text="Employee Payrol" id="l3"
+                                                                     inlineStyle="color:#003194;" action="payroll"/>
+                                                        </af:panelFormLayout>
+                                                    </af:panelGroupLayout>
+                                                </af:gridCell>
+                                            </af:gridRow>
+                                        </af:panelGridLayout>
+                                        <af:separator id="s4"/>
+                                        <af:panelGridLayout id="pgl2">
+                                            <af:gridRow marginTop="5px" height="auto" id="gr4">
+                                                <af:gridCell marginStart="5px" width="34%" id="gc7">
+                                                    <af:panelGroupLayout id="pgl12" layout="horizontal">
+                                                        <af:panelFormLayout id="pfl11">
+                                                            <f:facet name="footer"/>
+                                                            <af:image source="#{resource['images:partnership-128.png']}"
+                                                                      shortDesc="Partner" id="i7"/>
+                                                        </af:panelFormLayout>
+                                                        <af:panelFormLayout id="pfl12">
+                                                            <f:facet name="footer"/>
+                                                            <af:link text="Partner" id="l4" inlineStyle="color:#003194;"
+                                                                     action="partners"/>
+                                                        </af:panelFormLayout>
+                                                    </af:panelGroupLayout>
+                                                </af:gridCell>
+                                                <af:gridCell marginStart="5px" width="33%" id="gc8">
+                                                    <af:panelGroupLayout id="pgl13" layout="horizontal">
+                                                        <af:panelFormLayout id="pfl13">
+                                                            <f:facet name="footer"/>
+                                                            <af:image source="#{resource['images:ledger-128.png']}"
+                                                                      shortDesc="General Ledger" id="i8"/>
+                                                        </af:panelFormLayout>
+                                                        <af:panelFormLayout id="pfl14">
+                                                            <f:facet name="footer"/>
+                                                            <af:link text="General Ledger" id="l5"
+                                                                     inlineStyle="color:#003194;" action="GL"/>
+                                                        </af:panelFormLayout>
+                                                    </af:panelGroupLayout>
+                                                </af:gridCell>
+                                                <af:gridCell marginStart="5px" width="33%" marginEnd="5px" id="gc9"
+                                                             inlineStyle="font-size:small;">
+                                                    <af:panelGroupLayout id="pgl8" layout="horizontal">
+                                                        <af:panelFormLayout id="pfl7">
+                                                            <f:facet name="footer"/>
+                                                            <af:image shortDesc="Finance Settings"
+                                                                      source="#{resource['images:setting-128.png']}"
+                                                                      id="i5"/>
+                                                        </af:panelFormLayout>
+                                                        <af:panelFormLayout id="pfl8">
+                                                            <f:facet name="footer"/>
+                                                            <af:link text="Finance Setting " id="l6"
+                                                                     inlineStyle="color:#003194;"/>
+                                                        </af:panelFormLayout>
+                                                    </af:panelGroupLayout>
+                                                </af:gridCell>
+                                            </af:gridRow>
+                                            <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr5">
+                                                <af:gridCell marginStart="5px" width="34%" id="gc10"/>
+                                                <af:gridCell marginStart="5px" width="33%" id="gc11"/>
+                                                <af:gridCell marginStart="5px" width="33%" marginEnd="5px" id="gc12"/>
+                                            </af:gridRow>
+                                        </af:panelGridLayout>
+                                        <af:separator id="s5"/>
+                                        <af:panelGridLayout id="pgl11">
+                                            <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr7">
+                                                <af:gridCell marginStart="5px" width="34%" id="gc16">
+                                                    <af:panelGroupLayout id="pgl9" layout="horizontal">
+                                                        <af:panelFormLayout id="pfl9">
+                                                            <f:facet name="footer"/>
+                                                            <af:image source="#{resource['images:reports-01-128.png']}"
+                                                                      shortDesc="Finance Reports" id="i6"/>
+                                                        </af:panelFormLayout>
+                                                        <af:panelFormLayout id="pfl10">
+                                                            <f:facet name="footer"/>
+                                                            <af:link text="Finance Reports" id="l7"
+                                                                     inlineStyle="color:#003194;"/>
+                                                        </af:panelFormLayout>
+                                                    </af:panelGroupLayout>
+                                                </af:gridCell>
+                                                <af:gridCell marginStart="5px" width="33%" id="gc17"/>
+                                                <af:gridCell marginStart="5px" width="33%" marginEnd="5px" id="gc18"/>
+                                            </af:gridRow>
+                                        </af:panelGridLayout>
+                                    </af:panelHeader>
+                                </af:panelGroupLayout>
+                            </f:facet>
+                            <f:facet name="bottom">
+                                <af:panelGroupLayout layout="scroll" id="pgl3" inlineStyle="background-color:#065293;">
+                                    <af:spacer width="10" height="10" id="s12"/>
+                                    <af:outputText value="Copyright@ 2012. Sunway Software Solutions W. L. L Alrights Reserved"
+                                                   id="ot28"
+                                                   inlineStyle="font-size:smaller; font-family:Arial, Helvetica, sans-serif; font-weight:bolder; color:white;"/>
+                                </af:panelGroupLayout>
+                            </f:facet>
+                        </af:panelStretchLayout>
+                    </f:facet>
+                </af:panelSplitter>
+            </af:form>
+        </af:document>
+    </f:view>
+</jsp:root>

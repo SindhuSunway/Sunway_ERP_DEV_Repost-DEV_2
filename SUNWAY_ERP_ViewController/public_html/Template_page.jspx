@@ -1,0 +1,188 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <af:document title="Template_page" id="d1">
+      <af:messages id="m1"/>
+      <af:form id="f1">
+        <af:pageTemplate viewId="/oracle/templates/tabletFirstTemplate.jspx" id="pt1">
+          <f:facet name="header"> <af:outputLabel value="HR Management Application" id="ol1"
+                                                            inlineStyle="color:Orange; font-size:medium;"/></f:facet>
+          <f:facet name="status"></f:facet>
+          <f:facet name="appNav"/>
+          <f:facet name="globalLinks"/>
+          <f:facet name="footer"/>
+          <f:facet name="center">
+            <af:panelFormLayout id="pfl1" maxColumns="5" rows="4">
+              <af:inputText value="#{bindings.EmployeeNo.inputValue}" label="#{bindings.EmployeeNo.hints.label}"
+                            required="#{bindings.EmployeeNo.hints.mandatory}" readOnly="true"
+                            columns="#{bindings.EmployeeNo.hints.displayWidth}"
+                            maximumLength="#{bindings.EmployeeNo.hints.precision}"
+                            shortDesc="#{bindings.EmployeeNo.hints.tooltip}" id="it1">
+                <f:validator binding="#{bindings.EmployeeNo.validator}"/>
+                <af:convertNumber groupingUsed="false" pattern="#{bindings.EmployeeNo.format}"/>
+              </af:inputText>
+              <af:selectOneChoice value="#{bindings.Prefix.inputValue}" label="#{bindings.Prefix.label}"
+                                  required="#{bindings.Prefix.hints.mandatory}"
+                                  shortDesc="#{bindings.Prefix.hints.tooltip}" readOnly="true" id="soc1">
+                <f:selectItems value="#{bindings.Prefix.items}" id="si1"/>
+                <f:validator binding="#{bindings.Prefix.validator}"/>
+              </af:selectOneChoice>
+              <af:inputText value="#{bindings.FirstName.inputValue}" label="#{bindings.FirstName.hints.label}"
+                            required="#{bindings.FirstName.hints.mandatory}" readOnly="true"
+                            columns="#{bindings.FirstName.hints.displayWidth}"
+                            maximumLength="#{bindings.FirstName.hints.precision}"
+                            shortDesc="#{bindings.FirstName.hints.tooltip}" id="it2">
+                <f:validator binding="#{bindings.FirstName.validator}"/>
+              </af:inputText>
+              <af:inputText value="#{bindings.MiddleName.inputValue}" label="#{bindings.MiddleName.hints.label}"
+                            required="#{bindings.MiddleName.hints.mandatory}" readOnly="true"
+                            columns="#{bindings.MiddleName.hints.displayWidth}"
+                            maximumLength="#{bindings.MiddleName.hints.precision}"
+                            shortDesc="#{bindings.MiddleName.hints.tooltip}" id="it3">
+                <f:validator binding="#{bindings.MiddleName.validator}"/>
+              </af:inputText>
+              <af:inputText value="#{bindings.LastName.inputValue}" label="#{bindings.LastName.hints.label}"
+                            required="#{bindings.LastName.hints.mandatory}" readOnly="true"
+                            columns="#{bindings.LastName.hints.displayWidth}"
+                            maximumLength="#{bindings.LastName.hints.precision}"
+                            shortDesc="#{bindings.LastName.hints.tooltip}" id="it4">
+                <f:validator binding="#{bindings.LastName.validator}"/>
+              </af:inputText>
+              <af:inputDate value="#{bindings.DateOfBirth.inputValue}" readOnly="true"
+                            label="#{bindings.DateOfBirth.hints.label}"
+                            required="#{bindings.DateOfBirth.hints.mandatory}"
+                            columns="#{bindings.DateOfBirth.hints.displayWidth}"
+                            shortDesc="#{bindings.DateOfBirth.hints.tooltip}" id="id1">
+                <f:validator binding="#{bindings.DateOfBirth.validator}"/>
+                <af:convertDateTime pattern="#{bindings.DateOfBirth.format}"/>
+              </af:inputDate>
+              <af:selectOneChoice value="#{bindings.Gender.inputValue}" label="#{bindings.Gender.label}"
+                                  required="#{bindings.Gender.hints.mandatory}"
+                                  shortDesc="#{bindings.Gender.hints.tooltip}" readOnly="true" id="soc2">
+                <f:selectItems value="#{bindings.Gender.items}" id="si2"/>
+                <f:validator binding="#{bindings.Gender.validator}"/>
+              </af:selectOneChoice>
+              <af:selectOneChoice value="#{bindings.MarStatus.inputValue}" label="#{bindings.MarStatus.label}"
+                                  required="#{bindings.MarStatus.hints.mandatory}"
+                                  shortDesc="#{bindings.MarStatus.hints.tooltip}" readOnly="true" id="soc3">
+                <f:selectItems value="#{bindings.MarStatus.items}" id="si3"/>
+                <f:validator binding="#{bindings.MarStatus.validator}"/>
+              </af:selectOneChoice>
+              <af:inputText value="#{bindings.Nationality.inputValue}" label="#{bindings.Nationality.hints.label}"
+                            required="#{bindings.Nationality.hints.mandatory}" readOnly="true"
+                            columns="#{bindings.Nationality.hints.displayWidth}"
+                            maximumLength="#{bindings.Nationality.hints.precision}"
+                            shortDesc="#{bindings.Nationality.hints.tooltip}" id="it5">
+                <f:validator binding="#{bindings.Nationality.validator}"/>
+              </af:inputText>
+              <af:selectOneChoice value="#{bindings.EmplStatus.inputValue}" label="#{bindings.EmplStatus.label}"
+                                  required="#{bindings.EmplStatus.hints.mandatory}"
+                                  shortDesc="#{bindings.EmplStatus.hints.tooltip}" readOnly="true" id="soc4">
+                <f:selectItems value="#{bindings.EmplStatus.items}" id="si4"/>
+                <f:validator binding="#{bindings.EmplStatus.validator}"/>
+              </af:selectOneChoice>
+              <af:inputText value="#{bindings.Department.inputValue}" label="#{bindings.Department.hints.label}"
+                            required="#{bindings.Department.hints.mandatory}" readOnly="true"
+                            columns="#{bindings.Department.hints.displayWidth}"
+                            maximumLength="#{bindings.Department.hints.precision}"
+                            shortDesc="#{bindings.Department.hints.tooltip}" id="it6">
+                <f:validator binding="#{bindings.Department.validator}"/>
+              </af:inputText>
+              <af:inputText value="#{bindings.Grade.inputValue}" label="#{bindings.Grade.hints.label}"
+                            required="#{bindings.Grade.hints.mandatory}" readOnly="true"
+                            columns="#{bindings.Grade.hints.displayWidth}"
+                            maximumLength="#{bindings.Grade.hints.precision}"
+                            shortDesc="#{bindings.Grade.hints.tooltip}" id="it7">
+                <f:validator binding="#{bindings.Grade.validator}"/>
+              </af:inputText>
+              <af:inputText value="#{bindings.EmplId.inputValue}" label="#{bindings.EmplId.hints.label}"
+                            required="#{bindings.EmplId.hints.mandatory}" readOnly="true"
+                            columns="#{bindings.EmplId.hints.displayWidth}"
+                            maximumLength="#{bindings.EmplId.hints.precision}"
+                            shortDesc="#{bindings.EmplId.hints.tooltip}" id="it8">
+                <f:validator binding="#{bindings.EmplId.validator}"/>
+              </af:inputText>
+              <af:inputText value="#{bindings.EmplPic.inputValue}" label="#{bindings.EmplPic.hints.label}"
+                            required="#{bindings.EmplPic.hints.mandatory}" readOnly="true"
+                            columns="#{bindings.EmplPic.hints.displayWidth}"
+                            maximumLength="#{bindings.EmplPic.hints.precision}"
+                            shortDesc="#{bindings.EmplPic.hints.tooltip}" id="it9">
+                <f:validator binding="#{bindings.EmplPic.validator}"/>
+              </af:inputText>
+              <af:inputText value="#{bindings.Notesremarks.inputValue}" label="#{bindings.Notesremarks.hints.label}"
+                            required="#{bindings.Notesremarks.hints.mandatory}" readOnly="true"
+                            columns="#{bindings.Notesremarks.hints.displayWidth}"
+                            maximumLength="#{bindings.Notesremarks.hints.precision}"
+                            shortDesc="#{bindings.Notesremarks.hints.tooltip}" id="it10">
+                <f:validator binding="#{bindings.Notesremarks.validator}"/>
+              </af:inputText>
+              <f:facet name="footer">
+                <af:panelGroupLayout layout="vertical" id="pgl2">
+                  <af:panelGroupLayout layout="horizontal" id="pgl3">
+                    <af:button actionListener="#{bindings.First.execute}" text="First"
+                               disabled="#{!bindings.First.enabled}" partialSubmit="true" id="b1"/>
+                    <af:button actionListener="#{bindings.Previous.execute}" text="Previous"
+                               disabled="#{!bindings.Previous.enabled}" partialSubmit="true" id="b2"/>
+                    <af:button actionListener="#{bindings.Next.execute}" text="Next"
+                               disabled="#{!bindings.Next.enabled}" partialSubmit="true" id="b3"/>
+                    <af:button actionListener="#{bindings.Last.execute}" text="Last"
+                               disabled="#{!bindings.Last.enabled}" partialSubmit="true" id="b4"/>
+                  </af:panelGroupLayout>
+                  <af:button text="Submit" id="b5"/>
+                </af:panelGroupLayout>
+              </f:facet>
+            </af:panelFormLayout>
+          </f:facet>
+          <f:facet name="start">
+            <af:panelGroupLayout layout="vertical" id="pgl1">
+              <af:panelHeader text="HrEmplInfo" id="ph1">
+                <af:query id="qryId1" headerText="Search" disclosed="true"
+                          value="#{bindings.SearchEmployeeQuery.queryDescriptor}"
+                          model="#{bindings.SearchEmployeeQuery.queryModel}"
+                          queryListener="#{bindings.SearchEmployeeQuery.processQuery}"
+                          queryOperationListener="#{bindings.SearchEmployeeQuery.processQueryOperation}"
+                          resultComponentId="::resId1"/>
+              </af:panelHeader>
+              <af:table value="#{bindings.HrEmplInfoView1.collectionModel}" var="row"
+                        rows="#{bindings.HrEmplInfoView1.rangeSize}"
+                        emptyText="#{bindings.HrEmplInfoView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                        rowBandingInterval="0" selectedRowKeys="#{bindings.HrEmplInfoView1.collectionModel.selectedRow}"
+                        selectionListener="#{bindings.HrEmplInfoView1.collectionModel.makeCurrent}"
+                        rowSelection="single" fetchSize="#{bindings.HrEmplInfoView1.rangeSize}"
+                        filterModel="#{bindings.SearchEmployeeQuery.queryDescriptor}"
+                        queryListener="#{bindings.SearchEmployeeQuery.processQuery}" filterVisible="true" varStatus="vs"
+                        id="resId1" partialTriggers="::b1 ::b2 ::b3 ::b4">
+                <af:column sortProperty="#{bindings.HrEmplInfoView1.hints.EmployeeNo.name}" filterable="true"
+                           sortable="true" headerText="#{bindings.HrEmplInfoView1.hints.EmployeeNo.label}"
+                           id="resId1c1">
+                  <af:outputText value="#{row.EmployeeNo}"
+                                 shortDesc="#{bindings.HrEmplInfoView1.hints.EmployeeNo.tooltip}" id="ot1">
+                    <af:convertNumber groupingUsed="false"
+                                      pattern="#{bindings.HrEmplInfoView1.hints.EmployeeNo.format}"/>
+                  </af:outputText>
+                </af:column>
+                <af:column sortProperty="#{bindings.HrEmplInfoView1.hints.FirstName.name}" filterable="true"
+                           sortable="true" headerText="#{bindings.HrEmplInfoView1.hints.FirstName.label}" id="resId1c2">
+                  <af:outputText value="#{row.FirstName}"
+                                 shortDesc="#{bindings.HrEmplInfoView1.hints.FirstName.tooltip}" id="ot2"/>
+                </af:column>
+                <af:column sortProperty="#{bindings.HrEmplInfoView1.hints.LastName.name}" filterable="true"
+                           sortable="true" headerText="#{bindings.HrEmplInfoView1.hints.LastName.label}" id="resId1c3">
+                  <af:outputText value="#{row.LastName}" shortDesc="#{bindings.HrEmplInfoView1.hints.LastName.tooltip}"
+                                 id="ot3"/>
+                </af:column>
+              </af:table>
+            </af:panelGroupLayout>
+          </f:facet>
+          <f:attribute name="endWidth" value="0px"/>
+          <f:attribute name="startWidth" value="445px"/>
+          <f:attribute name="brandingMaxWidth" value="2048px"/>
+          <f:attribute name="logoImagePath" value="#{resource['images:sunway_new_logo.png']}"/>
+          <f:attribute name="logoSmallImagePath" value="#{resource['images:sunway_new_logo.png']}"/>
+        </af:pageTemplate>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

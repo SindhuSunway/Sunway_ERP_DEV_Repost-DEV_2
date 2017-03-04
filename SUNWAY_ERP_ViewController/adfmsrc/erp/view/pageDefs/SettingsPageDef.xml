@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.2.1" id="SettingsPageDef"
+                Package="erp.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="FinChartOfAccountsView1" RangeSize="25" DataControl="HR_AppModuleDataControl"
+              id="FinChartOfAccountsView1Iterator"/>
+    <searchRegion Criteria="FinChartOfAccountsViewCriteria"
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="FinChartOfAccountsView1Iterator" id="FinChartOfAccountsViewCriteriaQuery"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="FinChartOfAccountsView1Iterator" id="FinChartOfAccountsView1">
+      <nodeDefinition DefName="erp.hr.views.FinChartOfAccountsView" Name="FinChartOfAccountsView10">
+        <AttrNames>
+          <Item Value="AccountCode"/>
+          <Item Value="AccountName"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="FinChartOfAccountsView1Iterator" id="FinChartOfAccountsView11">
+      <nodeDefinition DefName="erp.hr.views.FinChartOfAccountsView" Name="FinChartOfAccountsView110">
+        <AttrNames>
+          <Item Value="GlAccountClassTypeKey"/>
+          <Item Value="ParentGlAccount"/>
+          <Item Value="AccountCode"/>
+          <Item Value="AccountName"/>
+          <Item Value="Description"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="FinChartOfAccountsView1Iterator" id="GlAccountClassTypeKey">
+      <AttrNames>
+        <Item Value="GlAccountClassTypeKey"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="FinChartOfAccountsView1Iterator" id="ParentGlAccount">
+      <AttrNames>
+        <Item Value="ParentGlAccount"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="FinChartOfAccountsView1Iterator" id="AccountCode">
+      <AttrNames>
+        <Item Value="AccountCode"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="FinChartOfAccountsView1Iterator" id="AccountName">
+      <AttrNames>
+        <Item Value="AccountName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="FinChartOfAccountsView1Iterator" id="Description">
+      <AttrNames>
+        <Item Value="Description"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="FinChartOfAccountsView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="HR_AppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction"
+            DataControl="HR_AppModuleDataControl"/>
+  </bindings>
+</pageDefinition>

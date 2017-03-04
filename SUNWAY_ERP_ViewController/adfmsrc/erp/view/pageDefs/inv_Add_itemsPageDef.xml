@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.2.1" id="inv_Add_itemsPageDef"
+                Package="erp.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="InvSalesView1" RangeSize="25" DataControl="inv_AppModuleDataControl" id="InvSalesView1Iterator"/>
+    <iterator Binds="InvInventoryView1" RangeSize="25" DataControl="inv_AppModuleDataControl"
+              id="InvInventoryView1Iterator"/>
+    <searchRegion Criteria="FindInventory" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="InvInventoryView1Iterator" id="FindInventoryQuery"/>
+    <iterator Binds="InvSaleItemsView2" RangeSize="25" DataControl="inv_AppModuleDataControl"
+              id="InvSaleItemsView2Iterator"/>
+    <iterator Binds="InvSaleItemsView3" RangeSize="25" DataControl="inv_AppModuleDataControl"
+              id="InvSaleItemsView3Iterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="InvSalesView1Iterator" id="Orderno">
+      <AttrNames>
+        <Item Value="Orderno"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvInventoryView1Iterator" id="ItemCode1">
+      <AttrNames>
+        <Item Value="ItemCode"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvInventoryView1Iterator" id="SerialNumber1">
+      <AttrNames>
+        <Item Value="SerialNumber"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvInventoryView1Iterator" id="ProductName1">
+      <AttrNames>
+        <Item Value="ProductName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvInventoryView1Iterator" id="ItemDescription1">
+      <AttrNames>
+        <Item Value="ItemDescription"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvInventoryView1Iterator" id="ItemPic1">
+      <AttrNames>
+        <Item Value="ItemPic"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvInventoryView1Iterator" id="Location1">
+      <AttrNames>
+        <Item Value="Location"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvInventoryView1Iterator" id="DateReceived1">
+      <AttrNames>
+        <Item Value="DateReceived"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvInventoryView1Iterator" id="SaleByDate1">
+      <AttrNames>
+        <Item Value="SaleByDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvInventoryView1Iterator" id="QuantityOnHande1">
+      <AttrNames>
+        <Item Value="QuantityOnHande"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvInventoryView1Iterator" id="UnitSalePrice1">
+      <AttrNames>
+        <Item Value="UnitSalePrice"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="InvInventoryView1Iterator" id="InvInventoryView1">
+      <nodeDefinition DefName="erp.hr.views.InvInventoryView" Name="InvInventoryView10">
+        <AttrNames>
+          <Item Value="ItemCode"/>
+          <Item Value="SerialNumber"/>
+          <Item Value="ProductName"/>
+          <Item Value="Location"/>
+          <Item Value="QuantityOnHande"/>
+          <Item Value="UnitSalePrice"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="InvSaleItemsView2Iterator" id="Qauntity">
+      <AttrNames>
+        <Item Value="Qauntity"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvSaleItemsView2Iterator" id="Discount">
+      <AttrNames>
+        <Item Value="Discount"/>
+      </AttrNames>
+    </attributeValues>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="inv_AppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction"
+            DataControl="inv_AppModuleDataControl"/>
+    <tree IterBinding="InvSaleItemsView3Iterator" id="InvSaleItemsView3">
+      <nodeDefinition DefName="erp.hr.views.InvSaleItemsView" Name="InvSaleItemsView30">
+        <AttrNames>
+          <Item Value="ItemCode"/>
+          <Item Value="ProductName"/>
+          <Item Value="Qauntity"/>
+          <Item Value="UnitPrice"/>
+          <Item Value="Discount"/>
+          <Item Value="Total"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="InvSaleItemsView3Iterator" id="OrderNo">
+      <AttrNames>
+        <Item Value="OrderNo"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="InvSaleItemsView3Iterator" StaticList="false" Uses="LOV_ItemCode" id="ItemCode"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="InvSaleItemsView3Iterator" id="ProductName">
+      <AttrNames>
+        <Item Value="ProductName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvSaleItemsView3Iterator" id="Qauntity1">
+      <AttrNames>
+        <Item Value="Qauntity"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvSaleItemsView3Iterator" id="Discount1">
+      <AttrNames>
+        <Item Value="Discount"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="InvSaleItemsView3Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+  </bindings>
+</pageDefinition>

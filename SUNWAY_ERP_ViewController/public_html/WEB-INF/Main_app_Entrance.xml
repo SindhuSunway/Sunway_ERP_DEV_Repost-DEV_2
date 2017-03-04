@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <view id="App_Entrance_Task_Flow">
+    <page>/App_Main_Page.jspx</page>
+  </view>
+  <view id="main_ERP">
+    <page>/ERP_Main_Page.jspx</page>
+  </view>
+  <task-flow-call id="fin_task_flow">
+    <task-flow-reference>
+      <document>/WEB-INF/Fin_Task_Flow.xml</document>
+      <id>Fin_Task_Flow</id>
+    </task-flow-reference>
+  </task-flow-call>
+  <task-flow-call id="hr_task_flow">
+    <task-flow-reference>
+      <document>/WEB-INF/HR_Main_Task_Flow.xml</document>
+      <id>HR_Task_Flow</id>
+    </task-flow-reference>
+  </task-flow-call>
+  <task-flow-call id="Inv_task_flow">
+    <task-flow-reference>
+      <document>/WEB-INF/Inv_Main_Task_Flow.xml</document>
+      <id>Inv_Task_Flow</id>
+    </task-flow-reference>
+  </task-flow-call>
+  <view id="help">
+    <page>/help.jspx</page>
+  </view>
+  <control-flow-rule id="__1">
+    <from-activity-id>App_Entrance_Task_Flow</from-activity-id>
+    <control-flow-case id="__2">
+      <from-outcome>erp</from-outcome>
+      <to-activity-id>main_ERP</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__3">
+    <from-activity-id>main_ERP</from-activity-id>
+    <control-flow-case id="__4">
+      <from-outcome>logout</from-outcome>
+      <to-activity-id>App_Entrance_Task_Flow</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__5">
+      <from-outcome>inv</from-outcome>
+      <to-activity-id>Inv_task_flow</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__6">
+      <from-outcome>fin</from-outcome>
+      <to-activity-id>fin_task_flow</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__7">
+      <from-outcome>hr</from-outcome>
+      <to-activity-id>hr_task_flow</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__14">
+      <from-outcome>help</from-outcome>
+      <to-activity-id>help</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__8">
+    <from-activity-id>Inv_task_flow</from-activity-id>
+    <control-flow-case id="__9">
+      <from-outcome>erp</from-outcome>
+      <to-activity-id>main_ERP</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__10">
+    <from-activity-id>fin_task_flow</from-activity-id>
+    <control-flow-case id="__11">
+      <from-outcome>erp</from-outcome>
+      <to-activity-id>main_ERP</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__15">
+    <from-activity-id>help</from-activity-id>
+    <control-flow-case id="__16">
+      <from-outcome>back</from-outcome>
+      <to-activity-id>main_ERP</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+</adfc-config>

@@ -1,0 +1,39 @@
+<xsd:schema xmlns:sdoJava="commonj.sdo/java" xmlns:ns0="http://xmlns.oracle.com/adf/svc/types/" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+     targetNamespace="/erp/hr/views/common/" xmlns="/erp/hr/views/common/" elementFormDefault="qualified"
+     sdoJava:package="erp.hr.views.common">
+    <xsd:import schemaLocation="classpath:/META-INF/wsdl/BC4JService.xsd" namespace="http://xmlns.oracle.com/adf/svc/types/"/>
+    <xsd:import schemaLocation="classpath:/xml/sdoJava.xsd" namespace="commonj.sdo/java"/>
+    <xsd:complexType name="InvInventoryViewSDO">
+        <xsd:annotation>
+            <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                    <attribute>ItemCode</attribute>
+                    <attribute>SerialNumber</attribute>
+                    <attribute>Location</attribute>
+                </key>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="ItemCode" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="SerialNumber" type="xsd:decimal" minOccurs="0"/>
+            <xsd:element name="Location" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="Category" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="Brand" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="ProductName" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="ItemType" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="ItemDescription" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="QuantityReceived" type="xsd:decimal" minOccurs="0" nillable="true"/>
+            <xsd:element name="QuantityOnHande" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="RetailPrice" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="UnitSalePrice" type="xsd:decimal" minOccurs="0" nillable="true"/>
+            <xsd:element name="DateReceived" type="ns0:dateTime-Timestamp" minOccurs="0" nillable="true"/>
+            <xsd:element name="SaleByDate" type="ns0:dateTime-Timestamp" minOccurs="0" nillable="true"/>
+            <xsd:element name="Minimum" type="xsd:decimal" minOccurs="0" nillable="true"/>
+            <xsd:element name="Maximum" type="xsd:decimal" minOccurs="0" nillable="true"/>
+            <xsd:element name="Notesremarks" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="Variance" type="xsd:decimal" minOccurs="0" nillable="true"/>
+            <xsd:element name="VarianceReason" type="xsd:string" minOccurs="0" nillable="true"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="invInventoryViewSDO" type="InvInventoryViewSDO"/>
+</xsd:schema>

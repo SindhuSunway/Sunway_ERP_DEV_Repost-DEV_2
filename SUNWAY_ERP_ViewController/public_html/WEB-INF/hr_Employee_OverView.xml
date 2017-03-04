@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="Employee_OverView">
+    <default-activity>hr_Entrance</default-activity>
+    <data-control-scope>
+      <shared/>
+    </data-control-scope>
+    <view id="hr_Employee_OverView">
+      <page>/hr_Employee_Data.jspx</page>
+    </view>
+    <task-flow-call id="hr_Job_Info">
+      <task-flow-reference>
+        <document>/WEB-INF/hr_Job_Info.xml</document>
+        <id>Job_Info</id>
+      </task-flow-reference>
+    </task-flow-call>
+    <task-flow-call id="hr_Salary_Compensations">
+      <task-flow-reference>
+        <document>/WEB-INF/Salary_Compensations.xml</document>
+        <id>Salary_Compensations</id>
+      </task-flow-reference>
+    </task-flow-call>
+    <task-flow-call id="hr_Relatives">
+      <task-flow-reference>
+        <document>/WEB-INF/hr_Relatives.xml</document>
+        <id>hr_Relatives</id>
+      </task-flow-reference>
+    </task-flow-call>
+    <task-flow-call id="hr_Loans">
+      <task-flow-reference>
+        <document>/WEB-INF/hr_Loans.xml</document>
+        <id>hr_Loans</id>
+      </task-flow-reference>
+    </task-flow-call>
+    <task-flow-return id="Hr_Main_page">
+      <outcome>
+        <name>Hr_Main_page</name>
+      </outcome>
+    </task-flow-return>
+    <task-flow-call id="hr_Employee_profile">
+      <task-flow-reference>
+        <document>/WEB-INF/hr_Employee_Profile.xml</document>
+        <id>taskFlowCall1</id>
+      </task-flow-reference>
+    </task-flow-call>
+    <view id="hr_Appraisal">
+      <page>/hr_Employee_Appraisal.jspx</page>
+    </view>
+    <view id="hr_Leaves">
+      <page>/hr_Attendance_Leaves.jspx</page>
+    </view>
+    <task-flow-call id="hr_Trainings">
+      <task-flow-reference>
+        <document>/WEB-INF/hr_Trainings.xml</document>
+        <id>hr_Trainings</id>
+      </task-flow-reference>
+    </task-flow-call>
+    <view id="hr_Entrance">
+      <page>/hr_Entrance.jspx</page>
+    </view>
+    <view id="hr_profile">
+      <page>/hr_Employee-Profile.jspx</page>
+    </view>
+    <view id="hr_current_job">
+      <page>/hr_Current_Job.jspx</page>
+    </view>
+    <view id="hr_compensations">
+      <page>/hr_Compentsations_Salary.jspx</page>
+    </view>
+    <view id="hr_loans">
+      <page>/hr_Loans.jspx</page>
+    </view>
+    <view id="hr_relatives">
+      <page>/hr_Relatives.jspx</page>
+    </view>
+    <view id="hr_traings">
+      <page>/hr_Training_Developement.jspx</page>
+    </view>
+    <control-flow-rule id="__1">
+      <from-activity-id>hr_Employee_OverView</from-activity-id>
+      <control-flow-case id="__3">
+        <from-outcome>job_info</from-outcome>
+        <to-activity-id>hr_current_job</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__4">
+        <from-outcome>salary</from-outcome>
+        <to-activity-id>hr_compensations</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__9">
+        <from-outcome>relatives</from-outcome>
+        <to-activity-id>hr_relatives</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__10">
+        <from-outcome>loans</from-outcome>
+        <to-activity-id>hr_loans</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__12">
+        <from-outcome>profile</from-outcome>
+        <to-activity-id>hr_profile</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__2">
+        <from-outcome>appraisal</from-outcome>
+        <to-activity-id>hr_Appraisal</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__7">
+        <from-outcome>leaves</from-outcome>
+        <to-activity-id>hr_Leaves</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__14">
+        <from-outcome>trainings</from-outcome>
+        <to-activity-id>hr_traings</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__30">
+        <from-outcome>back</from-outcome>
+        <to-activity-id>hr_Entrance</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__33">
+        <from-outcome>erp</from-outcome>
+        <to-activity-id>Hr_Main_page</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__39">
+        <from-outcome>refresh</from-outcome>
+        <to-activity-id>hr_Employee_OverView</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__5">
+      <from-activity-id>hr_Appraisal</from-activity-id>
+      <control-flow-case id="__6">
+        <from-outcome>back</from-outcome>
+        <to-activity-id>hr_Employee_OverView</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__37">
+        <from-outcome>refresh</from-outcome>
+        <to-activity-id>hr_Appraisal</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__8">
+      <from-activity-id>hr_Leaves</from-activity-id>
+      <control-flow-case id="__13">
+        <from-outcome>back</from-outcome>
+        <to-activity-id>hr_Employee_OverView</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__38">
+        <from-outcome>refresh</from-outcome>
+        <to-activity-id>hr_Leaves</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__15">
+      <from-activity-id>hr_Entrance</from-activity-id>
+      <control-flow-case id="__16">
+        <from-outcome>next</from-outcome>
+        <to-activity-id>hr_Employee_OverView</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__34">
+        <from-outcome>erp</from-outcome>
+        <to-activity-id>Hr_Main_page</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__40">
+        <from-outcome>refresh</from-outcome>
+        <to-activity-id>hr_Entrance</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__17">
+      <from-activity-id>hr_profile</from-activity-id>
+      <control-flow-case id="__18">
+        <from-outcome>back</from-outcome>
+        <to-activity-id>hr_Employee_OverView</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__35">
+        <from-outcome>refresh</from-outcome>
+        <to-activity-id>hr_profile</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__19">
+      <from-activity-id>hr_relatives</from-activity-id>
+      <control-flow-case id="__20">
+        <from-outcome>back</from-outcome>
+        <to-activity-id>hr_Employee_OverView</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__11">
+        <from-outcome>*refresh</from-outcome>
+        <to-activity-id>hr_relatives</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__21">
+      <from-activity-id>hr_loans</from-activity-id>
+      <control-flow-case id="__22">
+        <from-outcome>back</from-outcome>
+        <to-activity-id>hr_Employee_OverView</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__29">
+        <from-outcome>refresh</from-outcome>
+        <to-activity-id>hr_loans</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__23">
+      <from-activity-id>hr_compensations</from-activity-id>
+      <control-flow-case id="__24">
+        <from-outcome>back</from-outcome>
+        <to-activity-id>hr_Employee_OverView</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__31">
+        <from-outcome>refresh</from-outcome>
+        <to-activity-id>hr_compensations</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__25">
+      <from-activity-id>hr_current_job</from-activity-id>
+      <control-flow-case id="__26">
+        <from-outcome>back</from-outcome>
+        <to-activity-id>hr_Employee_OverView</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__32">
+        <from-outcome>refresh</from-outcome>
+        <to-activity-id>hr_current_job</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__27">
+      <from-activity-id>hr_traings</from-activity-id>
+      <control-flow-case id="__28">
+        <from-outcome>back</from-outcome>
+        <to-activity-id>hr_Employee_OverView</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__36">
+        <from-outcome>refresh</from-outcome>
+        <to-activity-id>hr_traings</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+  </task-flow-definition>
+</adfc-config>

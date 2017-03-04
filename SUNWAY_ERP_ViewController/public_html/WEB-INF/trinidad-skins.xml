@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<skins xmlns="http://myfaces.apache.org/trinidad/skin">
+  <skin>
+    <id>myskin.desktop</id>
+    <family>myskin</family>
+    <extends>alta-v1.desktop</extends>
+    <render-kit-id>org.apache.myfaces.trinidad.desktop</render-kit-id>
+    <style-sheet-name>skins/myskin/myskin.css</style-sheet-name>
+    <bundle-name>erp.view.skinBundle</bundle-name>
+  </skin>
+</skins>

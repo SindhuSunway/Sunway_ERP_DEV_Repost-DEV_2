@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="Employee_profile">
+    <default-activity>hr_Employee-Profile</default-activity>
+    <data-control-scope>
+      <shared/>
+    </data-control-scope>
+    <view id="hr_Employee-Profile">
+      <page>/hr_Employee-Profile.jspx</page>
+      <train-stop>
+        <display-name>Employee Profile</display-name>
+      </train-stop>
+    </view>
+    <view id="hr_contact-info">
+      <page>/hr_Contact_Info.jspx</page>
+      <train-stop>
+        <display-name>Contact Information</display-name>
+      </train-stop>
+    </view>
+    <task-flow-return id="employee_overview">
+      <outcome>
+        <name>employee_overview</name>
+      </outcome>
+    </task-flow-return>
+    <train/>
+    <control-flow-rule id="__1">
+      <from-activity-id>hr_contact-info</from-activity-id>
+      <control-flow-case id="__2">
+        <from-outcome>back</from-outcome>
+        <to-activity-id>employee_overview</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__3">
+      <from-activity-id>hr_Employee-Profile</from-activity-id>
+      <control-flow-case id="__4">
+        <from-outcome>back</from-outcome>
+        <to-activity-id>employee_overview</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+  </task-flow-definition>
+</adfc-config>

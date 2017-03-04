@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.2.1" id="Purchase2PageDef"
+                Package="erp.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="InvOrdersView1" RangeSize="25" DataControl="inv_AppModuleDataControl" id="InvOrdersView1Iterator"/>
+    <searchRegion Criteria="InvOrdersViewCriteria" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="InvOrdersView1Iterator" id="InvOrdersViewCriteriaQuery"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="InvOrdersView1Iterator" id="InvOrdersView1">
+      <nodeDefinition DefName="erp.hr.views.InvOrdersView" Name="InvOrdersView10">
+        <AttrNames>
+          <Item Value="OrderId"/>
+          <Item Value="OderName"/>
+          <Item Value="ProductName"/>
+          <Item Value="Oderdate"/>
+          <Item Value="OrderStatus"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="InvOrdersView1Iterator" id="ShipmentDate">
+      <AttrNames>
+        <Item Value="ShipmentDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvOrdersView1Iterator" id="CreatedBy">
+      <AttrNames>
+        <Item Value="CreatedBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvOrdersView1Iterator" id="EstimatedDeliveryDate">
+      <AttrNames>
+        <Item Value="EstimatedDeliveryDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvOrdersView1Iterator" id="Oderdate">
+      <AttrNames>
+        <Item Value="Oderdate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvOrdersView1Iterator" id="OrderId">
+      <AttrNames>
+        <Item Value="OrderId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvOrdersView1Iterator" id="OderName">
+      <AttrNames>
+        <Item Value="OderName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvOrdersView1Iterator" id="OrderStatus">
+      <AttrNames>
+        <Item Value="OrderStatus"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

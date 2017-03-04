@@ -1,0 +1,176 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <f:view>
+        <af:document title="hr_Entrance.jspx" id="d1">
+            <af:messages id="m1"/>
+            <af:form id="f1">
+                <af:panelSplitter id="ps1" splitterPosition="76" orientation="vertical" collapsed="false">
+                    <f:facet name="first">
+                        <af:panelGridLayout id="pgl5" inlineStyle="background-color:#065293;">
+                            <af:gridRow marginTop="5px" height="auto" id="gr1">
+                                <af:gridCell marginStart="5px" width="28%" id="gc1" halign="stretch">
+                                    <af:image id="i1" inlineStyle="width:190px; height:65px;"
+                                              source="#{resource['images:sunway_new_logo.png']}"/>
+                                    <af:outputText value="Sunway ERP" id="ot3"
+                                                   inlineStyle="color:Orange;font-weight:bold;"/>
+                                </af:gridCell>
+                                <af:gridCell marginStart="5px" width="35%" id="gc2">
+                                    <af:outputLabel value="HR Application" id="ol1"
+                                                    inlineStyle="color:Orange; font-size:medium;"/>
+                                </af:gridCell>
+                                <af:gridCell marginStart="5px" width="10%" marginEnd="5px" id="gc3"
+                                             inlineStyle="text-align:left;">
+                                    <af:panelGridLayout id="pgl19">
+                                        <af:gridRow marginTop="5px" height="auto" id="gr7">
+                                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc16">
+                                                <af:outputText value="#{'Welcome:&#160;'}#{securityContext.userName}"
+                                                               id="ot1" inlineStyle="color:White;"/>
+                                            </af:gridCell>
+                                        </af:gridRow>
+                                        <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr8">
+                                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc17">
+                                                <af:panelGroupLayout id="pgl20" layout="horizontal">
+                                                    <af:commandButton text="Logout" id="cb2"
+                                                                      action="#{loginBean.doLogout}"
+                                                                      icon="#{resource['images:logout-1-16.png']}"/>
+                                                    <af:spacer width="10" height="10" id="s1"/>
+                                                    <af:commandButton text="Help" id="cb1" action="help"
+                                                                      icon="#{resource['images:Help-1-16.png']}"/>
+                                                </af:panelGroupLayout>
+                                                <af:separator id="s7"/>
+                                            </af:gridCell>
+                                        </af:gridRow>
+                                    </af:panelGridLayout>
+                                </af:gridCell>
+                            </af:gridRow>
+                            <af:gridRow marginTop="5px" height="auto" id="gr2"/>
+                        </af:panelGridLayout>
+                    </f:facet>
+                    <f:facet name="second">
+                        <af:panelStretchLayout id="psl1" startWidth="450px" topHeight="35px">
+                            <f:facet name="bottom">
+                            <af:panelGroupLayout layout="scroll" id="pgl3" inlineStyle="background-color:#065293;">
+                                    <af:spacer width="10" height="10" id="s12"/>
+                                    <af:outputText value="Copyright@ 2012. Sunway Software Solutions W. L. L Alrights Reserved"
+                                                   id="ot28"
+                                                   inlineStyle="font-size:smaller; font-family:Arial, Helvetica, sans-serif; font-weight:bolder; color:white;"/>
+                                </af:panelGroupLayout>
+                                </f:facet>
+                            <f:facet name="center">
+                                <af:panelStretchLayout id="psl2" startWidth="400px" topHeight="35px">
+                                    <f:facet name="center">
+                                        <af:panelGroupLayout id="pgl2" layout="scroll"
+                                                             inlineStyle="background-color:#e7e7e7;">
+                                            <af:panelHeader text=" " id="ph1">
+                                                <f:facet name="context"/>
+                                                <f:facet name="menuBar"/>
+                                                <f:facet name="toolbar">
+                                                    <af:group id="g1">
+                                                        <af:button text="Next" id="b1"
+                                                                   icon="#{resource['images:next-16.png']}"
+                                                                   action="next" inlineStyle="color:Blue;"/>
+                                                    </af:group>
+                                                </f:facet>
+                                                <af:separator id="s2"/>
+                                                <af:panelGroupLayout layout="scroll" id="pgl1">
+                                                    <af:table value="#{bindings.HrEmplInfoView1.collectionModel}"
+                                                              var="row" rows="#{bindings.HrEmplInfoView1.rangeSize}"
+                                                              emptyText="#{bindings.HrEmplInfoView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                                              rowBandingInterval="0"
+                                                              selectedRowKeys="#{bindings.HrEmplInfoView1.collectionModel.selectedRow}"
+                                                              selectionListener="#{bindings.HrEmplInfoView1.collectionModel.makeCurrent}"
+                                                              rowSelection="single"
+                                                              fetchSize="#{bindings.HrEmplInfoView1.rangeSize}"
+                                                              filterModel="#{bindings.SearchEmployeeQuery.queryDescriptor}"
+                                                              queryListener="#{bindings.SearchEmployeeQuery.processQuery}"
+                                                              filterVisible="true" varStatus="vs" id="resId1"
+                                                              columnStretching="column:resId1c3">
+                                                        <af:column sortProperty="#{bindings.HrEmplInfoView1.hints.EmployeeNo.name}"
+                                                                   filterable="true" sortable="true"
+                                                                   headerText="#{bindings.HrEmplInfoView1.hints.EmployeeNo.label}"
+                                                                   id="resId1c1">
+                                                            <af:outputText value="#{row.EmployeeNo}"
+                                                                           shortDesc="#{bindings.HrEmplInfoView1.hints.EmployeeNo.tooltip}"
+                                                                           id="ot2">
+                                                                <af:convertNumber groupingUsed="false"
+                                                                                  pattern="#{bindings.HrEmplInfoView1.hints.EmployeeNo.format}"/>
+                                                            </af:outputText>
+                                                        </af:column>
+                                                        <af:column sortProperty="#{bindings.HrEmplInfoView1.hints.FirstName.name}"
+                                                                   filterable="true" sortable="true"
+                                                                   headerText="#{bindings.HrEmplInfoView1.hints.FirstName.label}"
+                                                                   id="resId1c2">
+                                                            <af:outputText value="#{row.FirstName}"
+                                                                           shortDesc="#{bindings.HrEmplInfoView1.hints.FirstName.tooltip}"
+                                                                           id="ot4"/>
+                                                        </af:column>
+                                                        <af:column sortProperty="#{bindings.HrEmplInfoView1.hints.LastName.name}"
+                                                                   filterable="true" sortable="true"
+                                                                   headerText="#{bindings.HrEmplInfoView1.hints.LastName.label}"
+                                                                   id="resId1c3">
+                                                            <af:outputText value="#{row.LastName}"
+                                                                           shortDesc="#{bindings.HrEmplInfoView1.hints.LastName.tooltip}"
+                                                                           id="ot5"/>
+                                                        </af:column>
+                                                        <af:column sortProperty="#{bindings.HrEmplInfoView1.hints.Nationality.name}"
+                                                                   filterable="true" sortable="true"
+                                                                   headerText="#{bindings.HrEmplInfoView1.hints.Nationality.label}"
+                                                                   id="resId1c4">
+                                                            <af:outputText value="#{row.Nationality}"
+                                                                           shortDesc="#{bindings.HrEmplInfoView1.hints.Nationality.tooltip}"
+                                                                           id="ot6"/>
+                                                        </af:column>
+                                                        <af:column sortProperty="#{bindings.HrEmplInfoView1.hints.EmplStatus.name}"
+                                                                   filterable="true" sortable="true"
+                                                                   headerText="#{bindings.HrEmplInfoView1.hints.EmplStatus.label}"
+                                                                   id="resId1c5">
+                                                            <af:selectOneChoice value="#{row.bindings.EmplStatus.inputValue}"
+                                                                                label="#{row.bindings.EmplStatus.label}"
+                                                                                required="#{bindings.HrEmplInfoView1.hints.EmplStatus.mandatory}"
+                                                                                shortDesc="#{bindings.HrEmplInfoView1.hints.EmplStatus.tooltip}"
+                                                                                readOnly="true" id="soc1">
+                                                                <f:selectItems value="#{row.bindings.EmplStatus.items}"
+                                                                               id="si1"/>
+                                                                <f:validator binding="#{row.bindings.EmplStatus.validator}"/>
+                                                            </af:selectOneChoice>
+                                                        </af:column>
+                                                        <af:column sortProperty="#{bindings.HrEmplInfoView1.hints.Department.name}"
+                                                                   filterable="true" sortable="true"
+                                                                   headerText="#{bindings.HrEmplInfoView1.hints.Department.label}"
+                                                                   id="resId1c6">
+                                                            <af:outputText value="#{row.Department}"
+                                                                           shortDesc="#{bindings.HrEmplInfoView1.hints.Department.tooltip}"
+                                                                           id="ot7"/>
+                                                        </af:column>
+                                                    </af:table>
+                                                </af:panelGroupLayout>
+                                            </af:panelHeader>
+                                        </af:panelGroupLayout>
+                                    </f:facet>
+                                    <f:facet name="start">
+                                        <af:panelHeader text="Search the Employee" id="ph2">
+                                            <af:query id="qryId1" headerText="Search" disclosed="true"
+                                                      value="#{bindings.SearchEmployeeQuery.queryDescriptor}"
+                                                      model="#{bindings.SearchEmployeeQuery.queryModel}"
+                                                      queryListener="#{bindings.SearchEmployeeQuery.processQuery}"
+                                                      queryOperationListener="#{bindings.SearchEmployeeQuery.processQueryOperation}"
+                                                      resultComponentId="::resId1" saveQueryMode="hidden"/>
+                                        </af:panelHeader>
+                                    </f:facet>
+                                    <f:facet name="top">
+                                        <af:menuBar id="mb1">
+                                            <af:commandMenuItem text="HR Main Menu" id="cmi1" action="erp"
+                                                                icon="#{resource['images:previous-16.png']}"/>
+                                        </af:menuBar>
+                                    </f:facet>
+                                </af:panelStretchLayout>
+                            </f:facet>
+                        </af:panelStretchLayout>
+                    </f:facet>
+                </af:panelSplitter>
+            </af:form>
+        </af:document>
+    </f:view>
+</jsp:root>

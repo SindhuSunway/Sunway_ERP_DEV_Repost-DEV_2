@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.10.8" id="Training_DevelopementPageDef"
+                Package="erp.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="HrTrainingsView1" RangeSize="25" DataControl="HR_AppModuleDataControl"
+              id="HrTrainingsView1Iterator"/>
+    <searchRegion Criteria="HrTrainingsViewCriteria" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="HrTrainingsView1Iterator" id="HrTrainingsViewCriteriaQuery"/>
+  </executables>
+  <bindings>
+    <list IterBinding="HrTrainingsView1Iterator" StaticList="false" Uses="LOV_TrainingType" id="TrainingType"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="HrTrainingsView1Iterator" id="TrainingCode">
+      <AttrNames>
+        <Item Value="TrainingCode"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrTrainingsView1Iterator" id="StartDate">
+      <AttrNames>
+        <Item Value="StartDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrTrainingsView1Iterator" id="ExpectedEndDate">
+      <AttrNames>
+        <Item Value="ExpectedEndDate"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="HrTrainingsView1Iterator" StaticList="false" Uses="LOV_TrainingStatus" id="TrainingStatus"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="HR_AppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction"
+            DataControl="HR_AppModuleDataControl"/>
+    <tree IterBinding="HrTrainingsView1Iterator" id="HrTrainingsView1">
+      <nodeDefinition DefName="erp.hr.views.HrTrainingsView" Name="HrTrainingsView10">
+        <AttrNames>
+          <Item Value="TrainingType"/>
+          <Item Value="TrainingCode"/>
+          <Item Value="TrainingStatus"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="HrTrainingsView1Iterator" id="TrainingCategory">
+      <AttrNames>
+        <Item Value="TrainingCategory"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrTrainingsView1Iterator" id="Description">
+      <AttrNames>
+        <Item Value="Description"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrTrainingsView1Iterator" id="TrainingCost">
+      <AttrNames>
+        <Item Value="TrainingCost"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrTrainingsView1Iterator" id="OtherCost">
+      <AttrNames>
+        <Item Value="OtherCost"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrTrainingsView1Iterator" id="Notes">
+      <AttrNames>
+        <Item Value="Notes"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="HrTrainingsView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+  </bindings>
+</pageDefinition>

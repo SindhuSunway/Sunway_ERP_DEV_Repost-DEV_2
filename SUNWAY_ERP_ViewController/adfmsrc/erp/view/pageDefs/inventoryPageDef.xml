@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.10.8" id="inventoryPageDef"
+                Package="erp.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="InvInventoryView1" RangeSize="25" DataControl="HR_AppModuleDataControl"
+              id="InvInventoryView1Iterator"/>
+    <iterator Binds="InvSalesView1" RangeSize="25" DataControl="HR_AppModuleDataControl" id="InvSalesView1Iterator"/>
+    <iterator Binds="InvSaleItemsView4" RangeSize="25" DataControl="HR_AppModuleDataControl"
+              id="InvSaleItemsView4Iterator"/>
+    <iterator Binds="InvCustomersView3" RangeSize="25" DataControl="HR_AppModuleDataControl"
+              id="InvCustomersView3Iterator"/>
+    <searchRegion Criteria="FindInventory" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="InvInventoryView1Iterator" id="FindInventoryQuery"/>
+    <searchRegion Criteria="FindInventory" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="InvInventoryView1Iterator" id="FindInventoryQuery1"/>
+    <iterator Binds="InvInventoryView1" RangeSize="25" DataControl="inv_AppModuleDataControl"
+              id="InvInventoryView1Iterator1"/>
+    <searchRegion Criteria="FindInventory" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="InvInventoryView1Iterator1" id="FindInventoryQuery3"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="InvInventoryView1Iterator" id="ProductName">
+      <AttrNames>
+        <Item Value="ProductName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvInventoryView1Iterator" id="ItemType">
+      <AttrNames>
+        <Item Value="ItemType"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvInventoryView1Iterator" id="ItemDescription">
+      <AttrNames>
+        <Item Value="ItemDescription"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvInventoryView1Iterator" id="QuantityReceived">
+      <AttrNames>
+        <Item Value="QuantityReceived"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvInventoryView1Iterator" id="RetailPrice">
+      <AttrNames>
+        <Item Value="RetailPrice"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvInventoryView1Iterator" id="UnitSalePrice">
+      <AttrNames>
+        <Item Value="UnitSalePrice"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvInventoryView1Iterator" id="DateReceived">
+      <AttrNames>
+        <Item Value="DateReceived"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvInventoryView1Iterator" id="SaleByDate">
+      <AttrNames>
+        <Item Value="SaleByDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvInventoryView1Iterator" id="ItemCode1">
+      <AttrNames>
+        <Item Value="ItemCode"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvInventoryView1Iterator" id="Notesremarks">
+      <AttrNames>
+        <Item Value="Notesremarks"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvSalesView1Iterator" id="Orderno1">
+      <AttrNames>
+        <Item Value="Orderno"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvSalesView1Iterator" id="ItemCode2">
+      <AttrNames>
+        <Item Value="ItemCode"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvSalesView1Iterator" id="Saledate1">
+      <AttrNames>
+        <Item Value="Saledate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvSalesView1Iterator" id="Salesperson1">
+      <AttrNames>
+        <Item Value="Salesperson"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvSalesView1Iterator" id="SaleStatus">
+      <AttrNames>
+        <Item Value="SaleStatus"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="InvSalesView1Iterator" id="CreateInsert1" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <list IterBinding="InvSaleItemsView4Iterator" StaticList="false" Uses="LOV_ItemCode" id="ItemCode3"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="InvSaleItemsView4Iterator" id="ProductName1">
+      <AttrNames>
+        <Item Value="ProductName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvSaleItemsView4Iterator" id="Qauntity">
+      <AttrNames>
+        <Item Value="Qauntity"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvSaleItemsView4Iterator" id="Discount">
+      <AttrNames>
+        <Item Value="Discount"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvSaleItemsView4Iterator" id="UnitPrice">
+      <AttrNames>
+        <Item Value="UnitPrice"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvSaleItemsView4Iterator" id="Total">
+      <AttrNames>
+        <Item Value="Total"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="InvSaleItemsView4Iterator" id="CreateInsert3" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <attributeValues IterBinding="InvCustomersView3Iterator" id="Phoneno1">
+      <AttrNames>
+        <Item Value="Phoneno"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvCustomersView3Iterator" id="Name1">
+      <AttrNames>
+        <Item Value="Name"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvCustomersView3Iterator" id="Address1">
+      <AttrNames>
+        <Item Value="Address"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="InvCustomersView3Iterator" id="CreateInsert4" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <tree IterBinding="InvInventoryView1Iterator" id="InvInventoryView11">
+      <nodeDefinition DefName="erp.hr.views.InvInventoryView" Name="InvInventoryView110">
+        <AttrNames>
+          <Item Value="ItemCode"/>
+          <Item Value="SerialNumber"/>
+          <Item Value="ProductName"/>
+          <Item Value="Location"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="InvInventoryView1Iterator1" id="InvInventoryView12">
+      <nodeDefinition DefName="erp.hr.views.InvInventoryView" Name="InvInventoryView120">
+        <AttrNames>
+          <Item Value="ItemCode"/>
+          <Item Value="SerialNumber"/>
+          <Item Value="ProductName"/>
+          <Item Value="Location"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="InvInventoryView1Iterator1" id="ItemCode">
+      <AttrNames>
+        <Item Value="ItemCode"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvInventoryView1Iterator1" id="SerialNumber1">
+      <AttrNames>
+        <Item Value="SerialNumber"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvInventoryView1Iterator1" id="Location">
+      <AttrNames>
+        <Item Value="Location"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="InvInventoryView1Iterator1" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="InvInventoryView1Iterator1" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <attributeValues IterBinding="InvInventoryView1Iterator1" id="ProductCategory">
+      <AttrNames>
+        <Item Value="ProductCategory"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvInventoryView1Iterator1" id="ProductName2">
+      <AttrNames>
+        <Item Value="ProductName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvInventoryView1Iterator1" id="Brand1">
+      <AttrNames>
+        <Item Value="Brand"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvInventoryView1Iterator1" id="ItemType1">
+      <AttrNames>
+        <Item Value="ItemType"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvInventoryView1Iterator1" id="Transferdate1">
+      <AttrNames>
+        <Item Value="Transferdate"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="InvInventoryView1Iterator1" StaticList="false" Uses="LOV_Transferreason" id="Transferreason1"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="InvInventoryView1Iterator1" StaticList="false" Uses="LOV_Transferstatus" id="Transferstatus1"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="InvInventoryView1Iterator1" id="ItemDescription1">
+      <AttrNames>
+        <Item Value="ItemDescription"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvInventoryView1Iterator1" id="QuantityOnHande1">
+      <AttrNames>
+        <Item Value="QuantityOnHande"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvInventoryView1Iterator1" id="Quantitytotransfer1">
+      <AttrNames>
+        <Item Value="Quantitytotransfer"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="InvInventoryView1Iterator1" StaticList="false" Uses="LOV_Tolocation" id="Tolocation"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="InvInventoryView1Iterator1" id="Transfernote1">
+      <AttrNames>
+        <Item Value="Transfernote"/>
+      </AttrNames>
+    </attributeValues>
+    <action id="Commit1" RequiresUpdateModel="true" Action="commitTransaction" DataControl="inv_AppModuleDataControl"/>
+    <action id="Rollback1" RequiresUpdateModel="false" Action="rollbackTransaction"
+            DataControl="inv_AppModuleDataControl"/>
+    <attributeValues IterBinding="InvInventoryView1Iterator1" id="DateReceived1">
+      <AttrNames>
+        <Item Value="DateReceived"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvInventoryView1Iterator1" id="SaleByDate1">
+      <AttrNames>
+        <Item Value="SaleByDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvInventoryView1Iterator1" id="Minimum1">
+      <AttrNames>
+        <Item Value="Minimum"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvInventoryView1Iterator1" id="Maximum1">
+      <AttrNames>
+        <Item Value="Maximum"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvInventoryView1Iterator1" id="UnitSalePrice1">
+      <AttrNames>
+        <Item Value="UnitSalePrice"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvInventoryView1Iterator1" id="Notesremarks1">
+      <AttrNames>
+        <Item Value="Notesremarks"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvInventoryView1Iterator1" id="QuantityReceived1">
+      <AttrNames>
+        <Item Value="QuantityReceived"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvInventoryView1Iterator1" id="Variance1">
+      <AttrNames>
+        <Item Value="Variance"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="InvInventoryView1Iterator1" StaticList="false" Uses="LOV_VarianceReason" id="VarianceReason"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="InvInventoryView1Iterator1" id="RetailPrice1">
+      <AttrNames>
+        <Item Value="RetailPrice"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InvInventoryView1Iterator1" id="ItemPic">
+      <AttrNames>
+        <Item Value="ItemPic"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="InvInventoryView1Iterator1" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="InvInventoryView1Iterator1" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+  </bindings>
+</pageDefinition>

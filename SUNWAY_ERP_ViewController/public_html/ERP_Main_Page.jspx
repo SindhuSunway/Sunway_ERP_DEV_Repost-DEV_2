@@ -1,0 +1,137 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <f:view>
+        <af:document title="ERP Main Page" id="d1" smallIconSource="#{resource['images:sunway_new_logo_nav.png']}">
+            <af:form id="f1">
+                   <af:panelSplitter id="ps1" splitterPosition="75" orientation="vertical">
+          <f:facet name="first">
+            <af:panelGridLayout id="pgl4" inlineStyle="background-color:#065293;">
+              <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr2">
+                <af:gridCell marginStart="5px" width="28%" id="gc4">
+                  <af:image source="#{resource['images:sunway_new_logo.png']}" shortDesc="sunway logo" id="i1"
+                            inlineStyle="width:190px; height:65px;"/>
+                  <af:outputFormatted value="Sunway ERP" id="of20" inlineStyle="color:White; font-weight:bold;"/>
+                </af:gridCell>
+                <af:gridCell marginStart="5px" width="35%" id="gc5">
+                  <af:outputFormatted value="Welcome to Sunway ERP and E-COM System" id="of12"
+                                      inlineStyle="color:White; font-size:medium; font-weight:bold;"/>
+                </af:gridCell>
+                <af:gridCell marginStart="5px" width="10%" marginEnd="5px" id="gc6" inlineStyle="text-align:left;">
+                  <af:panelGridLayout id="pgl3">
+                    <af:gridRow marginTop="5px" height="auto" id="gr1">
+                      <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1">
+                        <af:outputText value="#{'Welcome:&#160;'}#{securityContext.userName}" id="ot1"
+                                       inlineStyle="color:White;"/>
+                      </af:gridCell>
+                    </af:gridRow>
+                    <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr3">
+                      <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
+                        <af:panelGroupLayout id="pgl5" layout="horizontal">
+                          <af:button text="Logout" id="cb2" action="#{loginBean.doLogout}"
+                                     icon="#{resource['images:logout-1-16.png']}"/>
+                          <af:spacer width="10" height="10" id="s1"/>
+                          <af:button text="Help" id="cb1" action="help"/>
+                        </af:panelGroupLayout>
+                        <af:separator id="s2"/>
+                      </af:gridCell>
+                    </af:gridRow>
+                  </af:panelGridLayout>
+                </af:gridCell>
+              </af:gridRow>
+            </af:panelGridLayout>
+          </f:facet>
+          <f:facet name="second">
+            <af:panelStretchLayout id="psl1">
+                 <f:facet name="bottom">
+                                <af:panelGroupLayout layout="scroll" id="pgl6" inlineStyle="background-color:#065293;">
+                                    <af:spacer width="10" height="10" id="s12"/>
+                                    <af:outputText value="Copyright@ 2012. Sunway Software Solutions W. L. L Alrights Reserved"
+                                                   id="ot28"
+                                                   inlineStyle="font-size:smaller; font-family:Arial, Helvetica, sans-serif; font-weight:bolder; color:white;"/>
+                                </af:panelGroupLayout>
+                            </f:facet>
+              <f:facet name="center">
+                <af:panelGroupLayout id="pgl1" inlineStyle="border-top-style:solid; border-top-width:thin;"
+                                     layout="scroll">
+                  <af:panelGridLayout id="pgl8">
+                    <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr10">
+                      <af:gridCell marginStart="5px" width="34%" id="gc16">
+                        <af:panelFormLayout id="pfl6">
+                          <af:navigationPane hint="bar" id="np2">
+                            <af:commandNavigationItem id="ni1" text="Human Resource Application" action="hr"
+                                                      inlineStyle="color:Blue; font-size:medium; font-family:sans-serif;"
+                                                      shortDesc="Human Resource Application"/>
+                          </af:navigationPane>
+                          <af:panelGroupLayout id="pgl2">
+                            <af:separator id="s6"/>
+                            <af:image shortDesc="Sunway HR Management Application" id="i5"
+                                      source="#{resource['images:hr-128.png']}"/>
+                            <af:separator id="s4"/>
+                            <af:panelList id="pl1"
+                                          inlineStyle="color:#003194; font-size:small; font-family:sans-serif;">
+                              <af:outputFormatted value="Employee OverView" id="of1"/>
+                              <af:outputFormatted value="Leave and Attandance" id="of2"/>
+                              <af:outputFormatted value="Training and Development" id="of3"/>
+                              <af:outputFormatted value="Performance Appraisal" id="of4"/>
+                              <af:outputFormatted value="Recruitement and Selection" id="of5"/>
+                              <af:outputFormatted value="HR Settings" id="of15"/>
+                              <af:outputFormatted value="HR Reports " id="of17"/>
+                            </af:panelList>
+                          </af:panelGroupLayout>
+                        </af:panelFormLayout>
+                      </af:gridCell>
+                      <af:gridCell marginStart="5px" width="33%" id="gc17">
+                        <af:panelFormLayout id="pfl10" rendered="true">
+                          <af:navigationPane hint="bar" id="np5">
+                            <af:commandNavigationItem text="Sunway Inventory System" id="cni8" action="inv"
+                                                      inlineStyle="color:Blue; font-size:medium; font-family:sans-serif;"
+                                                      shortDesc="Inventory Application"/>
+                          </af:navigationPane>
+                          <af:separator id="s7"/>
+                          <af:image shortDesc="Sunway HR Management Application" id="i8"
+                                    source="#{resource['images:inventoryTracking-128.png']}"/>
+                          <af:separator id="s3"/>
+                          <af:panelList id="pl2" inlineStyle="color:#003194; font-size:small; font-family: sans-serif;">
+                            <af:outputFormatted value="Inventory" id="of6"/>
+                            <af:outputFormatted value="Purchase" id="of7"/>
+                            <af:outputFormatted value="Sales" id="of13"/>
+                            <af:outputFormatted value="Inventory Settings " id="of16"/>
+                            <af:outputFormatted value="Inventory Reports" id="of14"/>
+                          </af:panelList>
+                        </af:panelFormLayout>
+                      </af:gridCell>
+                      <af:gridCell id="gc7" width="33%">
+                        <af:panelFormLayout id="pfl2" rendered="true">
+                          <af:navigationPane hint="bar" id="np11">
+                            <af:commandNavigationItem text="Sunway Finance System" id="cni21" action="fin"
+                                                      inlineStyle="color:Blue; font-size:medium; font-family:sans-serif;"
+                                                      shortDesc="Finance Application"/>
+                          </af:navigationPane>
+                          <af:separator id="s8"/>
+                          <af:image shortDesc="Sunway HR Management Application" id="i4"
+                                    source="#{resource['images:finance-128.png']}"/>
+                          <af:separator id="s5"/>
+                          <af:panelList id="pl3" inlineStyle="color:#003194; font-size:small; font-family:sans-serif;">
+                            <af:outputFormatted value="Accounts Receivable" id="of8"/>
+                            <af:outputFormatted value="Accounts Payable" id="of9"/>
+                            <af:outputFormatted value="General Ledger" id="of10"/>
+                            <af:outputFormatted value="Employee Payrol" id="of11"/>
+                            <af:outputFormatted value="Partners" id="of18"/>
+                            <af:outputFormatted value="Finance Reports " id="of19"/>
+                          </af:panelList>
+                        </af:panelFormLayout>
+                      </af:gridCell>
+                    </af:gridRow>
+                  </af:panelGridLayout>
+                  <af:separator id="s9"/>
+                </af:panelGroupLayout>
+              </f:facet>
+            </af:panelStretchLayout>
+          </f:facet>
+        </af:panelSplitter>
+            </af:form>
+        </af:document>
+    </f:view>
+</jsp:root>

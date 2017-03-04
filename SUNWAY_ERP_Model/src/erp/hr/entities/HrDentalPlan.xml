@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="HrDentalPlan"
+  Version="12.1.3.10.8"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="HR_DENTAL_PLAN"
+  AliasName="HrDentalPlan"
+  BindingStyle="OracleName">
+  <ViewAccessor
+    Name="HrLookupTblView1"
+    ViewObjectName="erp.hr.views.HrLookupTblView"
+    RowLevelBinds="true">
+    <ParameterMap>
+      <PIMap Variable="BindLookupType">
+        <TransientExpression
+          trustMode="untrusted"><![CDATA['DENTALPLAN_STATUS']]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
+  <Attribute
+    Name="DentalPlanCode"
+    Precision="32"
+    ColumnName="DENTAL_PLAN_CODE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="HR_DENTAL_PLAN"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="32"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="DentalPlanProvider"
+    Precision="100"
+    ColumnName="DENTAL_PLAN_PROVIDER"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="HR_DENTAL_PLAN"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="DentalPlanTitle"
+    Precision="100"
+    ColumnName="DENTAL_PLAN_TITLE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="HR_DENTAL_PLAN"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="StartDate"
+    ColumnName="START_DATE"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="HR_DENTAL_PLAN"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="ExpectedEndDate"
+    ColumnName="EXPECTED_END_DATE"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="HR_DENTAL_PLAN"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="EffectiveFrom"
+    ColumnName="EFFECTIVE_FROM"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="HR_DENTAL_PLAN"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="DentalPlanStatus"
+    Precision="32"
+    ColumnName="DENTAL_PLAN_STATUS"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="HR_DENTAL_PLAN"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="32"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="NotesRemarks"
+    Precision="1000"
+    ColumnName="NOTES_REMARKS"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="HR_DENTAL_PLAN"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1000"/>
+    </DesignTime>
+  </Attribute>
+  <Key
+    Name="HrdentalplanPrimaryKey"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="HRDENTALPLAN_PRIMARY_KEY"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="erp.hr.entities.HrDentalPlan.DentalPlanCode"/>
+      <Item Value="erp.hr.entities.HrDentalPlan.DentalPlanProvider"/>
+      <Item Value="erp.hr.entities.HrDentalPlan.DentalPlanTitle"/>
+      <Item Value="erp.hr.entities.HrDentalPlan.StartDate"/>
+      <Item Value="erp.hr.entities.HrDentalPlan.ExpectedEndDate"/>
+      <Item Value="erp.hr.entities.HrDentalPlan.EffectiveFrom"/>
+      <Item Value="erp.hr.entities.HrDentalPlan.DentalPlanStatus"/>
+      <Item Value="erp.hr.entities.HrDentalPlan.NotesRemarks"/>
+    </AttrArray>
+  </Key>
+</Entity>

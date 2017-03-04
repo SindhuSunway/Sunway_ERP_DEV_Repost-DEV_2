@@ -1,0 +1,72 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View2">
+      <property
+         name="activityId">hr_leaves</property>
+      <property
+         name="page">/hr_leaves.jspx</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>hr_leaves&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="trainStop">true</property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">211.94824</property>
+      <property
+         name="x">390.0</property>
+   </View>
+   <View
+      id="View3">
+      <property
+         name="activityId">view1</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>view1&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="trainStop">true</property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">211.29883</property>
+      <property
+         name="x">582.0</property>
+   </View>
+   <TrainFlow
+      islink="true"
+      id="TrainFlow4"
+      from="View2"
+      to="View3">
+      <property
+         name="sdm:polyPoints">R50,431.0,211.59766,541.0,210.94824,L50</property>
+   </TrainFlow>
+   <TaskFlowReturn
+      id="TaskFlowReturn5">
+      <property
+         name="activityId">hr_employee_OverView</property>
+      <property
+         name="finish">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>hr_employee_OverView&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Return&lt;/p>&lt;p>Outcome:  hr_employee_OverView&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">420.24707</property>
+      <property
+         name="x">585.0</property>
+   </TaskFlowReturn>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase6"
+      from="View2"
+      to="TaskFlowReturn5">
+      <property
+         name="fromOutcome">Employee_OverView</property>
+      <property
+         name="sdm:polyPoints">B50,390.0,265.59766,544.0,419.89648,L50</property>
+   </ControlFlowCase>
+</SDM>

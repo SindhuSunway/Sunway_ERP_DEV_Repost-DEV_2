@@ -1,0 +1,119 @@
+@charset "UTF-8";
+/**ADFFaces_Skin_File / DO NOT REMOVE**/
+@namespace af "http://xmlns.oracle.com/adf/faces/rich";
+@namespace dvt "http://xmlns.oracle.com/dss/adf/faces";
+
+@agent (touchScreen:none) {
+
+    af|inputText:click-to-edit:disabled:hover-target::content {
+        color: Blue; 
+    }
+
+}
+
+af|inputDate::content {
+    color: Blue; 
+}
+
+af|selectOneChoice::content {
+    color: Blue; 
+}
+
+af|selectOneChoice:click-to-edit:disabled::content {
+    color: Blue; 
+}
+
+@agent (touchScreen:none) {
+
+    af|inputDate:click-to-edit:disabled:hover-target::content {
+        color: Blue; 
+    }
+
+    af|inputText:click-to-edit:hover-target::content {
+        color: Blue; 
+    }
+}
+
+af|inputText::content {
+    color: Blue; 
+}
+
+af|column::context {
+    color: Blue; 
+}
+
+af|column::banded-data-cell {
+    color: Blue; 
+    background-color: White; 
+}
+
+af|column::data-cell {
+    color: Blue; 
+}
+
+af|listItem {
+    color: Blue; 
+    background-color: #dddddd; 
+}
+
+af|panelBox::header-element {
+    font-size: medium; 
+    color: Blue; 
+
+}
+
+af|panelBox::header-text {
+    color: Blue; 
+    color: Blue; 
+}
+
+af|query::title-text0 {
+    color: Blue; 
+}
+
+af|panelHeader::title-text1 {
+    color: Orange; 
+}
+
+af|column::column-header-cell-content {
+}
+
+af|panelBox {
+    background-color: #065293; 
+    color: Blue; 
+}
+
+af|panelHeader::title0 {
+    color: Blue; 
+}
+
+af|panelHeader::title-text0 {
+    color: Blue; 
+}
+
+af|column::column-header-table {
+}
+
+af|column::column-header-cell {
+    background-color: White; 
+}
+
+af|inputText:click-to-edit:disabled::content {
+    color: Blue; 
+}
+
+af|inputText:disabled.AFFieldNumberMarker::content {
+    color: Blue; 
+}
+
+af|inputText:disabled.AFPhoneFieldTextMarker::content {
+    color: Blue; 
+}
+
+af|inputText:disabled.AFPostalCodeFieldTextMarker::content {
+    color: Blue; 
+}
+
+af|popup {
+    color: DarkGray; 
+}

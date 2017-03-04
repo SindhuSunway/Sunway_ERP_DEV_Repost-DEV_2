@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="hr_Relatives">
+    <default-activity>hr_relatives</default-activity>
+    <data-control-scope>
+      <shared/>
+    </data-control-scope>
+    <view id="hr_relatives">
+      <page>/hr_Relatives.jspx</page>
+      <train-stop>
+        <display-name>Dependents</display-name>
+      </train-stop>
+    </view>
+    <view id="Emegency_contacts">
+      <page>/hr_Emerg_con.jspx</page>
+      <train-stop>
+        <display-name>Emergency Contacts </display-name>
+      </train-stop>
+    </view>
+    <view id="Insurance_ben">
+      <page>/hr_insurance_ben.jspx</page>
+      <train-stop>
+        <display-name>Insurance Beneficieres</display-name>
+      </train-stop>
+    </view>
+    <task-flow-return id="hr_employee_overview">
+      <outcome>
+        <name>hr_employee_overview</name>
+      </outcome>
+    </task-flow-return>
+    <train/>
+    <control-flow-rule id="__3">
+      <from-activity-id>hr_relatives</from-activity-id>
+      <control-flow-case id="__4">
+        <from-outcome>back</from-outcome>
+        <to-activity-id>hr_employee_overview</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__1">
+      <from-activity-id>Emegency_contacts</from-activity-id>
+      <control-flow-case id="__2">
+        <from-outcome>back</from-outcome>
+        <to-activity-id>hr_employee_overview</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__5">
+      <from-activity-id>Insurance_ben</from-activity-id>
+      <control-flow-case id="__6">
+        <from-outcome>back</from-outcome>
+        <to-activity-id>hr_employee_overview</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+  </task-flow-definition>
+</adfc-config>

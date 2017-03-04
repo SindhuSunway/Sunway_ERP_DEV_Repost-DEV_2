@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <f:view>
+        <af:document title="help" id="d1">
+             <af:form id="f1">
+        <af:panelSplitter id="ps1" splitterPosition="75" orientation="vertical">
+                    <f:facet name="first">
+                        <af:panelStretchLayout id="psl2" topHeight="126px" bottomHeight="0px"
+                                               inlineStyle="text-align:start;">
+                            <f:facet name="bottom"/>
+                            <f:facet name="center">
+                                <af:panelGridLayout id="pgl5" inlineStyle="background-color:#065293;">
+                                    <af:gridRow marginTop="5px" height="auto" id="gr1">
+                                        <af:gridCell marginStart="5px" width="90%" id="gc1">
+                                            <af:image source="#{resource['images:sunway_new_logo.png']}" id="i1"
+                                                      inlineStyle="width:190px; height:65px;"/>
+                                            <af:outputText value="Sunway ERP" id="ot1"
+                                                           inlineStyle="color:White; font-size:medium; font-weight:bold;"/>
+                                        </af:gridCell>
+                                        <af:gridCell marginStart="5px" width="10%" marginEnd="5px" id="gc3"
+                                                     inlineStyle="text-align:right;">
+                                            <af:commandButton text="Back" id="cb2" action="back"/>
+                                        </af:gridCell>
+                                    </af:gridRow>
+                                    <af:gridRow marginTop="5px" height="auto" id="gr2"/>
+                                </af:panelGridLayout>
+                            </f:facet>
+                        </af:panelStretchLayout>
+                    </f:facet>
+                    <f:facet name="second">
+                        <af:panelStretchLayout startWidth="250px" id="psl1" topHeight="26px">
+                            <f:facet name="center">
+                                <af:panelSplitter id="ps2" splitterPosition="445">
+                                    <f:facet name="second">
+                             <af:panelStretchLayout id="psl4" topHeight="63px">
+                                            <f:facet name="center">
+                                                <af:panelHeader text="User Manual " id="ph1">
+                                                    <f:facet name="context"/>
+                                                    <f:facet name="menuBar"/>
+                                                    <f:facet name="toolbar"/>
+                                                    <f:facet name="legend"/>
+                                                    <f:facet name="info"/>
+                                                    <af:separator id="s2"/>
+                                                    <af:panelFormLayout id="pfl2"/>
+                                                </af:panelHeader>
+                                            </f:facet>
+                                        </af:panelStretchLayout>
+                                    </f:facet>
+                                </af:panelSplitter>
+                            </f:facet>
+                            <f:facet name="bottom">
+                                <af:panelGroupLayout layout="scroll" id="pgl3" inlineStyle="background-color:#065293;">
+                                    <af:spacer width="10" height="10" id="s12"/>
+                                    <af:outputText value="Copyright@ 2012. Sunway Software Solutions W. L. L Alrights Reserved"
+                                                   id="ot28"
+                                                   inlineStyle="font-size:smaller; font-family:Arial, Helvetica, sans-serif; font-weight:bolder; color:white;"/>
+                                </af:panelGroupLayout>
+                            </f:facet>
+                        </af:panelStretchLayout>
+                    </f:facet>
+                </af:panelSplitter>
+            </af:form>
+        </af:document>
+    </f:view>
+</jsp:root>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="taskFlowCall1">
+    <default-activity>hr_employee_Profile</default-activity>
+    <data-control-scope>
+      <shared/>
+    </data-control-scope>
+    <managed-bean id="__1">
+      <managed-bean-name>UploadImageClass</managed-bean-name>
+      <managed-bean-class>erp.view.UploadEmageClass</managed-bean-class>
+      <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean id="__5">
+      <managed-bean-name>UploadImageClas</managed-bean-name>
+      <managed-bean-class>erp.view.UploadImageClass</managed-bean-class>
+      <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <task-flow-return id="Employee_OverView">
+      <outcome>
+        <name>Employee_OverView</name>
+      </outcome>
+    </task-flow-return>
+    <view id="hr_employee_Profile">
+      <page>/hr_Employee-Profile.jspx</page>
+      <train-stop>
+        <display-name>Employee Profile</display-name>
+      </train-stop>
+    </view>
+    <view id="hr_contact">
+      <page>/hr_Contact_Info.jspx</page>
+      <train-stop>
+        <display-name>Contact Information</display-name>
+      </train-stop>
+    </view>
+    <train/>
+    <control-flow-rule id="__2">
+      <from-activity-id>hr_contact</from-activity-id>
+      <control-flow-case id="__3">
+        <from-outcome>back</from-outcome>
+        <to-activity-id>Employee_OverView</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__4">
+      <from-activity-id>hr_employee_Profile</from-activity-id>
+      <control-flow-case id="__6">
+        <from-outcome>back</from-outcome>
+        <to-activity-id>Employee_OverView</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+  </task-flow-definition>
+</adfc-config>

@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig version="11.1" xmlns="http://xmlns.oracle.com/bc4j/configuration">
+   <AppModuleConfigBag ApplicationName="erp.inv.modules.inv_AppModule">
+      <AppModuleConfig name="inv_AppModuleLocal" jbo.project="erp.hr.modules.SUNWAY_ERP_Model" ApplicationName="erp.inv.modules.inv_AppModule" DeployPlatform="LOCAL">
+         <Database jbo.TypeMapEntries="OracleApps"/>
+         <Security AppModuleJndiName="erp.inv.modules.inv_AppModule"/>
+         <Custom ns0:JDBCDataSource="java:comp/env/jdbc/sunway_erp_oracle_conDS" xmlns:ns0="http://xmlns.oracle.com/bc4j/configuration"/>
+      </AppModuleConfig>
+      <AppModuleConfig name="inv_AppModuleShared" jbo.project="erp.hr.modules.SUNWAY_ERP_Model" ApplicationName="erp.inv.modules.inv_AppModule" DeployPlatform="LOCAL">
+         <AM-Pooling jbo.ampool.maxpoolsize="1" jbo.ampool.isuseexclusive="false"/>
+         <Database jbo.TypeMapEntries="OracleApps"/>
+         <Security AppModuleJndiName="erp.inv.modules.inv_AppModule"/>
+         <Custom ns0:JDBCDataSource="java:comp/env/jdbc/sunway_erp_oracle_conDS" xmlns:ns0="http://xmlns.oracle.com/bc4j/configuration"/>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+</BC4JConfig>

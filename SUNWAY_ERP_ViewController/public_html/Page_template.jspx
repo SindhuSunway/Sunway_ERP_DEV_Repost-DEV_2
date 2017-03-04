@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <f:view>
+        <af:document title="Page_template.jspx" id="d1">
+            <af:form id="f1">
+                <af:panelSplitter id="ps1" splitterPosition="75" orientation="vertical">
+                    <f:facet name="first">
+                    <af:panelGroupLayout id="pgl5">
+                            <af:panelGridLayout id="pgl28" inlineStyle="background-color:#065293;">
+                                <af:gridRow marginTop="5px" height="auto" id="gr1">
+                                    <af:gridCell marginStart="5px" width="28%" id="gc1">
+                                        <af:image id="i1" inlineStyle="width:190px; height:65px;"
+                                                  source="#{resource['images:sunway_new_logo.png']}"/>
+                                        <af:outputFormatted value="Sunway ERP" id="of1"
+                                                            inlineStyle="color:White; font-weight:bold;"/>
+                                    </af:gridCell>
+                                    <af:gridCell marginStart="5px" width="35%" id="gc2">
+                                        <af:outputLabel value="Inventory Management Application" id="ol1"
+                                                        inlineStyle="color:White; font-size:medium; font-weight:bold;"/>
+                                    </af:gridCell>
+                                    <af:gridCell marginStart="5px" width="10%" marginEnd="5px" id="gc3"
+                                                 inlineStyle="text-align:right;">
+                                        <af:commandButton text="Logout" id="cb2" action="back"
+                                                          icon="#{resource['images:logout-1-16.png']}"/>
+                                        <af:spacer width="10" height="10" id="s1"/>
+                                        <af:button text="Help" id="cb1" action="help"
+                                                   icon="#{resource['images:Help-1-16.png']}"/>
+                                    </af:gridCell>
+                                </af:gridRow>
+                                <af:gridRow marginTop="5px" height="auto" id="gr2"/>
+                            </af:panelGridLayout>
+                        </af:panelGroupLayout>
+                              </f:facet>
+                    <f:facet name="second">
+                        <af:panelStretchLayout id="psl1" startWidth="250px">
+                            <f:facet name="bottom">
+                                  <af:panelGroupLayout layout="scroll" id="pgl3" inlineStyle="background-color:#065293;">
+                                    <af:spacer width="10" height="10" id="s12"/>
+                                    <af:outputText value="Copyright@ 2012. Sunway Software Solutions W. L. L Alrights Reserved"
+                                                   id="ot28"
+                                                   inlineStyle="font-size:smaller; font-family:Arial, Helvetica, sans-serif; font-weight:bolder; color:white;"/>
+                                </af:panelGroupLayout>
+                            </f:facet>
+                                                 
+                            <f:facet name="center">
+                                <af:panelStretchLayout id="psl2" startWidth="450px">
+                                    <f:facet name="bottom"/>
+                                    <f:facet name="center"/>
+                                    <f:facet name="start"/>
+                                    <f:facet name="top">
+                                        <af:navigationPane hint="bar" id="np1"
+                                                           inlineStyle="color:#065293; background-color:#065293;">
+                                            <af:commandNavigationItem id="ni1" text="Item Label 1"
+                                                                      inlineStyle="color:White; font-size:large; font-family:Arial; font-weight:bold;"/>
+                                        </af:navigationPane>
+                                    </f:facet>
+                                </af:panelStretchLayout>
+                            </f:facet>
+                            <f:facet name="top">
+                          
+                                <af:group id="g13">
+                                    <af:button text="Main Menu" id="b11" icon="#{resource['images:back-16.png']}"
+                                               inlineStyle="color:Blue;"/>
+                                    <af:spacer width="10" height="10" id="s27"/>
+                                </af:group>
+                            </f:facet>
+                        </af:panelStretchLayout>
+                    </f:facet>
+                </af:panelSplitter>
+            </af:form>
+        </af:document>
+    </f:view>
+</jsp:root>

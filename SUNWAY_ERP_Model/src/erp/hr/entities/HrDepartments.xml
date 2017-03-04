@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="HrDepartments"
+  Version="12.1.3.10.8"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="HR_DEPARTMENTS"
+  AliasName="HrDepartments"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="DepartmentCode"
+    IsNotNull="true"
+    Precision="16"
+    ColumnName="DEPARTMENT_CODE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="HR_DEPARTMENTS"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="16"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="DepartmentName"
+    Precision="64"
+    ColumnName="DEPARTMENT_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="HR_DEPARTMENTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="64"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="DirectorateCode"
+    IsNotNull="true"
+    Precision="64"
+    ColumnName="DIRECTORATE_CODE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="HR_DEPARTMENTS"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="64"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="DepartmentDesc"
+    Precision="100"
+    ColumnName="DEPARTMENT_DESC"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="HR_DEPARTMENTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Notes"
+    Precision="1000"
+    ColumnName="NOTES"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="HR_DEPARTMENTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1000"/>
+    </DesignTime>
+  </Attribute>
+  <Key
+    Name="SysC007117"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007117"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="erp.hr.entities.HrDepartments.DepartmentCode"/>
+      <Item Value="erp.hr.entities.HrDepartments.DirectorateCode"/>
+    </AttrArray>
+  </Key>
+</Entity>

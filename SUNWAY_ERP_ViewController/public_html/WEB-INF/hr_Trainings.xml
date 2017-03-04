@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="hr_Trainings">
+    <default-activity>hr_empl_Trainings</default-activity>
+    <data-control-scope>
+      <shared/>
+    </data-control-scope>
+    <view id="hr_empl_Trainings">
+      <page>/hr_Training_Developement.jspx</page>
+      <train-stop>
+        <display-name>Employee Training</display-name>
+      </train-stop>
+    </view>
+    <view id="hr_Add_Course">
+      <page>/hr_Add_Course.jspx</page>
+      <train-stop>
+        <display-name>Select a Course</display-name>
+      </train-stop>
+    </view>
+    <view id="hr_Confirm_Courses">
+      <page>/hr_Confirm_Courses.jspx</page>
+      <train-stop>
+        <display-name>Confirm Course</display-name>
+      </train-stop>
+    </view>
+    <task-flow-return id="hr_Main_Menu">
+      <outcome>
+        <name>hr_Main_Menu</name>
+      </outcome>
+    </task-flow-return>
+    <train/>
+    <control-flow-rule id="__1">
+      <from-activity-id>hr_empl_Trainings</from-activity-id>
+      <control-flow-case id="__2">
+        <from-outcome>back</from-outcome>
+        <to-activity-id>hr_Main_Menu</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__3">
+      <from-activity-id>hr_Add_Course</from-activity-id>
+      <control-flow-case id="__4">
+        <from-outcome>back</from-outcome>
+        <to-activity-id>hr_Main_Menu</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__5">
+      <from-activity-id>hr_Confirm_Courses</from-activity-id>
+      <control-flow-case id="__6">
+        <from-outcome>back</from-outcome>
+        <to-activity-id>hr_Main_Menu</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+  </task-flow-definition>
+</adfc-config>

@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="HrEmplJobView"
+  Version="12.1.3.2.1"
+  InheritPersonalization="merge"
+  SelectListFlags="1"
+  FromListFlags="1"
+  WhereFlags="1"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  SelectAllAttributes="false"
+  PageIterMode="Full">
+  <ViewAccessor
+    Name="HrNewjobsInfoView1"
+    ViewObjectName="erp.hr.views.HrNewjobsInfoView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="HrNewjobsInfoView2"
+    ViewObjectName="erp.hr.views.HrNewjobsInfoView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="HrNewjobsInfoView3"
+    ViewObjectName="erp.hr.views.HrNewjobsInfoView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="HrNewjobsInfoView4"
+    ViewObjectName="erp.hr.views.HrNewjobsInfoView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="HrDepartmentsView1"
+    ViewObjectName="erp.hr.views.HrDepartmentsView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="HrDepartmentsView2"
+    ViewObjectName="erp.hr.views.HrDepartmentsView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="HrNewjobsInfoView5"
+    ViewObjectName="erp.hr.views.HrNewjobsInfoView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="HrNewjobsInfoView6"
+    ViewObjectName="erp.hr.views.HrNewjobsInfoView"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_DirectManager"
+    ListVOName="HrEmplJob.HrEmplInfoView1"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="DirectManager"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="EmployeeNo"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="FirstName"/>
+      <Item Value="LastName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Grade"
+    ListVOName="HrNewjobsInfoView4"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Grade"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Grade"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Grade"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_DepartmentCode"
+    ListVOName="HrNewjobsInfoView5"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="DepartmentCode"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DepartmentCode"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="DepartmentCode"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_DepartmentName"
+    ListVOName="HrNewjobsInfoView6"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="DepartmentName"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Department"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Department"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_JobLevel"
+    ListVOName="HrEmplJob.HrLookupTblView1"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="JobLevel"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="LookupCode"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Meaning"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="HrEmplJob"
+    Entity="erp.hr.entities.HrEmplJob"/>
+  <ViewAttribute
+    Name="EmployeeNo"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="EmployeeNo"
+    EntityUsage="HrEmplJob"
+    AliasName="EMPLOYEE_NO">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erp.hr.views.HrEmplJobView.EmployeeNo_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="JobCode"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="JobCode"
+    EntityUsage="HrEmplJob"
+    AliasName="JOB_CODE">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erp.hr.views.HrEmplJobView.JobCode_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="JobTitle"
+    PrecisionRule="true"
+    EntityAttrName="JobTitle"
+    EntityUsage="HrEmplJob"
+    AliasName="JOB_TITLE">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erp.hr.views.HrEmplJobView.JobTitle_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="JobLevel"
+    PrecisionRule="true"
+    EntityAttrName="JobLevel"
+    EntityUsage="HrEmplJob"
+    AliasName="JOB_LEVEL"
+    LOVName="LOV_JobLevel">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erp.hr.views.HrEmplJobView.JobLevel_LABEL"/>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Grade"
+    PrecisionRule="true"
+    EntityAttrName="Grade"
+    EntityUsage="HrEmplJob"
+    AliasName="GRADE"
+    LOVName="LOV_Grade">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erp.hr.views.HrEmplJobView.Grade_LABEL"/>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="DepartmentCode"
+    PrecisionRule="true"
+    EntityAttrName="DepartmentCode"
+    EntityUsage="HrEmplJob"
+    AliasName="DEPARTMENT_CODE"
+    LOVName="LOV_DepartmentCode">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erp.hr.views.HrEmplJobView.DepartmentCode_LABEL"/>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="DepartmentName"
+    PrecisionRule="true"
+    EntityAttrName="DepartmentName"
+    EntityUsage="HrEmplJob"
+    AliasName="DEPARTMENT_NAME"
+    LOVName="LOV_DepartmentName">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erp.hr.views.HrEmplJobView.DepartmentName_LABEL"/>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="DirectManager"
+    PrecisionRule="true"
+    EntityAttrName="DirectManager"
+    EntityUsage="HrEmplJob"
+    AliasName="DIRECT_MANAGER"
+    LOVName="LOV_DirectManager"
+    IsUpdateable="while_insert">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erp.hr.views.HrEmplJobView.DirectManager_LABEL"/>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="EffectFrom"
+    PrecisionRule="true"
+    EntityAttrName="EffectFrom"
+    EntityUsage="HrEmplJob"
+    AliasName="EFFECT_FROM">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erp.hr.views.HrEmplJobView.EffectFrom_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="StartDate"
+    PrecisionRule="true"
+    EntityAttrName="StartDate"
+    EntityUsage="HrEmplJob"
+    AliasName="START_DATE">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erp.hr.views.HrEmplJobView.StartDate_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ExpectedEndDate"
+    PrecisionRule="true"
+    EntityAttrName="ExpectedEndDate"
+    EntityUsage="HrEmplJob"
+    AliasName="EXPECTED_END_DATE">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erp.hr.views.HrEmplJobView.ExpectedEndDate_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Notes"
+    PrecisionRule="true"
+    EntityAttrName="Notes"
+    EntityUsage="HrEmplJob"
+    AliasName="NOTES">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erp.hr.views.HrEmplJobView.Notes_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewLinkAccessor
+    Name="HrAppraisalYearView"
+    ViewLink="erp.hr.links.EmployeJob_AppraisalYearViewLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="HrEmplAppraisalView"
+    ViewLink="erp.hr.links.emplJob_EmplAppraisalViewLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="HrAppraisalsView"
+    ViewLink="erp.hr.links.empJob_AppraisalViewLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="erp.model.SUNWAY_ERP_ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

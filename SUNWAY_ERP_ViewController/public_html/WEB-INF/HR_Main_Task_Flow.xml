@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="HR_Task_Flow">
+    <default-activity>HR_Main_Task_Flow</default-activity>
+    <data-control-scope>
+      <shared/>
+    </data-control-scope>
+    <managed-bean id="__1">
+      <managed-bean-name>uploadBean</managed-bean-name>
+      <managed-bean-class>hr_package.UploadImageClass</managed-bean-class>
+      <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean id="__3">
+      <managed-bean-name>UploadBean</managed-bean-name>
+      <managed-bean-class>hr_package.UploadImageClass</managed-bean-class>
+      <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean id="__5">
+      <managed-bean-name>UploadBEan</managed-bean-name>
+      <managed-bean-class>hr_package.UploadImageClass</managed-bean-class>
+      <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean id="__7">
+      <managed-bean-name>uploadImageBean</managed-bean-name>
+      <managed-bean-class>hr_package.UploadImageClass</managed-bean-class>
+      <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean id="__8">
+      <managed-bean-name>UploadImageBean</managed-bean-name>
+      <managed-bean-class>hr_package.UploadImageClass</managed-bean-class>
+      <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean id="__9">
+      <managed-bean-name>UploadPicBEan</managed-bean-name>
+      <managed-bean-class>erp.view.UploadImageClass</managed-bean-class>
+      <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean id="__15">
+      <managed-bean-name>EmpSpecificBean</managed-bean-name>
+      <managed-bean-class>erp.view.EmpSpecificReport</managed-bean-class>
+      <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean id="__17">
+      <managed-bean-name>EmpMasterBean</managed-bean-name>
+      <managed-bean-class>erp.view.EmpMasterReport</managed-bean-class>
+      <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean id="__18">
+      <managed-bean-name>EmpAdminDeptBean</managed-bean-name>
+      <managed-bean-class>erp.view.EmpAdminDeptReport</managed-bean-class>
+      <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean id="__19">
+      <managed-bean-name>sample</managed-bean-name>
+      <managed-bean-class>erp.view.sampleclass</managed-bean-class>
+      <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean id="__20">
+      <managed-bean-name>EmpAdminDeptFinBean</managed-bean-name>
+      <managed-bean-class>erp.view.EmpAdminDeptReportFin</managed-bean-class>
+      <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean id="__21">
+      <managed-bean-name>EmpAdminDeptHRBean</managed-bean-name>
+      <managed-bean-class>erp.view.EmpAdminDeptHRReport</managed-bean-class>
+      <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean id="__22">
+      <managed-bean-name>EmpDeptReportSalesBean</managed-bean-name>
+      <managed-bean-class>erp.view.EmpDeptReportSales</managed-bean-class>
+      <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <view id="HR_Main_Task_Flow">
+      <page>/hr_Main_Page.jspx</page>
+    </view>
+    <task-flow-return id="erp">
+      <outcome>
+        <name>erp</name>
+      </outcome>
+    </task-flow-return>
+    <view id="help">
+      <page>/help.jspx</page>
+    </view>
+    <task-flow-call id="hr_Employee_OverView">
+      <task-flow-reference>
+        <document>/WEB-INF/hr_Employee_OverView.xml</document>
+        <id>Employee_OverView</id>
+      </task-flow-reference>
+    </task-flow-call>
+    <view id="hr_performance_appraisal">
+      <page>/hr_Performance_Appraisal.jspx</page>
+    </view>
+    <view id="hr_manage_attendance_leaves"></view>
+    <view id="hr_manage_trainings">
+      <page>/hr_manage_trainings.jspx</page>
+    </view>
+    <view id="hr_reports">
+      <page>/hr_reports.jspx</page>
+    </view>
+    <view id="hr_settings">
+      <page>/hr_Settings.jspx</page>
+    </view>
+    <control-flow-rule id="__24">
+      <from-activity-id>help</from-activity-id>
+      <control-flow-case id="__25">
+        <from-outcome>back</from-outcome>
+        <to-activity-id>HR_Main_Task_Flow</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__13">
+      <from-activity-id>HR_Main_Task_Flow</from-activity-id>
+      <control-flow-case id="__26">
+        <from-outcome>employee_data</from-outcome>
+        <to-activity-id>hr_Employee_OverView</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__27">
+        <from-outcome>erp</from-outcome>
+        <to-activity-id>erp</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__2">
+        <from-outcome>pa</from-outcome>
+        <to-activity-id>hr_performance_appraisal</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__10">
+        <from-outcome>al</from-outcome>
+        <to-activity-id>hr_manage_attendance_leaves</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__23">
+        <from-outcome>td</from-outcome>
+        <to-activity-id>hr_manage_trainings</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__28">
+        <from-outcome>help</from-outcome>
+        <to-activity-id>help</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__29">
+        <from-outcome>reports</from-outcome>
+        <to-activity-id>hr_reports</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__32">
+        <from-outcome>settings</from-outcome>
+        <to-activity-id>hr_settings</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__4">
+      <from-activity-id>hr_performance_appraisal</from-activity-id>
+      <control-flow-case id="__6">
+        <from-outcome>back</from-outcome>
+        <to-activity-id>HR_Main_Task_Flow</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__11">
+      <from-activity-id>hr_manage_attendance_leaves</from-activity-id>
+      <control-flow-case id="__12">
+        <from-outcome>back</from-outcome>
+        <to-activity-id>HR_Main_Task_Flow</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__14">
+      <from-activity-id>hr_manage_trainings</from-activity-id>
+      <control-flow-case id="__16">
+        <from-outcome>back</from-outcome>
+        <to-activity-id>HR_Main_Task_Flow</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__30">
+      <from-activity-id>hr_reports</from-activity-id>
+      <control-flow-case id="__31">
+        <from-outcome>back</from-outcome>
+        <to-activity-id>HR_Main_Task_Flow</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__33">
+      <from-activity-id>hr_settings</from-activity-id>
+      <control-flow-case id="__34">
+        <from-outcome>back</from-outcome>
+        <to-activity-id>HR_Main_Task_Flow</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+  </task-flow-definition>
+</adfc-config>

@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <f:view>
+        <af:document title="Index" id="d1" smallIconSource="#{resource['images:sunway_new_logo_nav.png']}">
+                     <af:form id="f1" defaultCommand="b1">
+                      <af:panelSplitter id="ps1" splitterPosition="75" orientation="vertical">
+          <f:facet name="first">
+            <af:panelStretchLayout id="psl3">
+              <f:facet name="center">
+                <af:panelGridLayout id="pgl4" inlineStyle="background-color:#065293;">
+                  <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr4">
+                    <af:gridCell marginStart="5px" width="28%" id="gc10">
+                      <af:image id="i1"
+                                inlineStyle="width:190px; height:65px;"
+                                source="#{resource['images:sunway_new_logo.png']}" shortDesc="Sunway ERP nad E-COM"/>
+                      <af:outputFormatted value="Sunway ERP" id="of2"
+                                          inlineStyle="color:White;font-weight:bold;"/>
+                    </af:gridCell>
+                    <af:gridCell marginStart="5px" width="35%" id="gc11">
+                      <af:outputFormatted value="Sunway ERP and E-COM System" id="of1"
+                                          inlineStyle="font-size:large; text-align:center; color:White;"/>
+                    </af:gridCell>
+                    <af:gridCell marginStart="5px" width="10%" marginEnd="5px" id="gc12">
+                      <af:group id="g1">
+                        <af:commandButton text="About Us" id="cb2"/>
+                      </af:group>
+                    </af:gridCell>
+                  </af:gridRow>
+                </af:panelGridLayout>
+              </f:facet>
+            </af:panelStretchLayout>
+          </f:facet>
+          <f:facet name="second">
+            <af:panelStretchLayout startWidth="350px" id="psl1" topHeight="60px" endWidth="350px">
+              <f:facet name="center">
+                <af:panelStretchLayout id="psl2">
+                  <f:facet name="center">
+                    <af:panelAccordion discloseMany="false" id="pa1">
+                      <af:showDetailItem id="pane1" text="Please enter your username and password "
+                                         inlineStyle="background-color:#dddddd; color:White;">
+                        <af:panelGroupLayout id="pgl1" layout="horizontal" inlineStyle="width:452px; height:176px;">
+                          <af:panelFormLayout id="pfl2"
+                                              inlineStyle="color:Blue; font-size:small; width:183px; height:154px;">
+                            <f:facet name="footer">
+                              <f:verbatim>Sunway ERP</f:verbatim>
+                            </f:facet>
+                            <af:activeImage id="ai1" source="#{resource['images:Sunway_Cloud-128.png']}"/>
+                          </af:panelFormLayout>
+                          <af:panelFormLayout id="pfl3" inlineStyle="color:White; width:288px; height:155px;">
+                            <af:inputText label="Username:" id="it1" value="#{loginBean.username}"/>
+                            <af:inputText label="Password:" id="it2" value="#{loginBean.password}" secret="true"/>
+                            <af:button text="Login" id="b1" action="#{loginBean.doLogin}"/>
+                            <af:spacer width="10" height="10" id="s7"/>
+                            <af:link text="Forgot my password?" id="l1"/>
+                          </af:panelFormLayout>
+                        </af:panelGroupLayout>
+                      </af:showDetailItem>
+                    </af:panelAccordion>
+                  </f:facet>
+                </af:panelStretchLayout>
+              </f:facet>
+                  <f:facet name="bottom">
+                                <af:panelGroupLayout layout="scroll" id="pgl3" inlineStyle="background-color:#065293;">
+                                    <af:spacer width="10" height="10" id="s12"/>
+                                    <af:outputText value="Copyright@ 2012. Sunway Software Solutions W. L. L Alrights Reserved"
+                                                   id="ot28"
+                                                   inlineStyle="font-size:smaller; font-family:Arial, Helvetica, sans-serif; font-weight:bolder; color:white;"/>
+                                </af:panelGroupLayout>
+                            </f:facet>
+            </af:panelStretchLayout>
+          </f:facet>
+        </af:panelSplitter>
+            
+            </af:form>
+        </af:document>
+    </f:view>
+</jsp:root>

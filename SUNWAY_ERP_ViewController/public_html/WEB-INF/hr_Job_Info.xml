@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="Job_Info">
+    <default-activity>hr_Current_Job</default-activity>
+    <data-control-scope>
+      <shared/>
+    </data-control-scope>
+    <view id="hr_Current_Job">
+      <page>/hr_Current_Job.jspx</page>
+      <train-stop>
+        <display-name>Current Job</display-name>
+      </train-stop>
+    </view>
+    <view id="hr_Previous_Exprience">
+      <page>/hr_Previous_Exprience.jspx</page>
+      <train-stop>
+        <display-name>Experience</display-name>
+      </train-stop>
+    </view>
+    <view id="hr_Education">
+      <page>/hr_Education.jspx</page>
+      <train-stop>
+        <display-name>Education</display-name>
+      </train-stop>
+    </view>
+    <task-flow-return id="Employee_OverView">
+      <outcome>
+        <name>Employee_OverView</name>
+      </outcome>
+    </task-flow-return>
+    <train/>
+    <control-flow-rule id="__1">
+      <from-activity-id>hr_Current_Job</from-activity-id>
+      <control-flow-case id="__2">
+        <from-outcome>back</from-outcome>
+        <to-activity-id>Employee_OverView</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__3">
+      <from-activity-id>hr_Education</from-activity-id>
+      <control-flow-case id="__9">
+        <from-outcome>back</from-outcome>
+        <to-activity-id>Employee_OverView</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__5">
+      <from-activity-id>hr_Previous_Exprience</from-activity-id>
+      <control-flow-case id="__7">
+        <from-outcome>back</from-outcome>
+        <to-activity-id>Employee_OverView</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+  </task-flow-definition>
+</adfc-config>

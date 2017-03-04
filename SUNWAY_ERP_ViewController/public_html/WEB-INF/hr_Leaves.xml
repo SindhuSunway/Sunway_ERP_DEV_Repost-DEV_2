@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="hr_Leaves">
+    <default-activity>hr_leaves</default-activity>
+    <data-control-scope>
+      <shared/>
+    </data-control-scope>
+    <view id="hr_leaves">
+      <page>/hr_leaves.jspx</page>
+      <train-stop/>
+    </view>
+    <view id="view1">
+      <train-stop/>
+    </view>
+    <task-flow-return id="hr_employee_OverView">
+      <outcome>
+        <name>hr_employee_OverView</name>
+      </outcome>
+    </task-flow-return>
+    <train/>
+    <control-flow-rule id="__1">
+      <from-activity-id>hr_leaves</from-activity-id>
+      <control-flow-case id="__2">
+        <from-outcome>Employee_OverView</from-outcome>
+        <to-activity-id>hr_employee_OverView</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+  </task-flow-definition>
+</adfc-config>

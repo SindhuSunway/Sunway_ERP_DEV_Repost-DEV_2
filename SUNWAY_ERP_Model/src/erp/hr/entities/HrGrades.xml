@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="HrGrades"
+  Version="12.1.3.10.8"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="HR_GRADES"
+  AliasName="HrGrades"
+  BindingStyle="OracleName">
+  <ViewAccessor
+    Name="HrLookupTblView1"
+    ViewObjectName="erp.hr.views.HrLookupTblView"
+    RowLevelBinds="true">
+    <ParameterMap>
+      <PIMap Variable="BindLookupType">
+        <TransientExpression
+          trustMode="untrusted"><![CDATA['GRADE']]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
+  <Attribute
+    Name="Grade"
+    IsNotNull="true"
+    Precision="32"
+    ColumnName="GRADE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="HR_GRADES"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="32"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="GradeDesc"
+    Precision="100"
+    ColumnName="GRADE_DESC"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="HR_GRADES">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Notes"
+    Precision="1000"
+    ColumnName="NOTES"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="HR_GRADES">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1000"/>
+    </DesignTime>
+  </Attribute>
+  <Key
+    Name="SysC007094"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007094"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="erp.hr.entities.HrGrades.Grade"/>
+    </AttrArray>
+  </Key>
+</Entity>

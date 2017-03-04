@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="inv_Sales">
+    <default-activity>inv_sales</default-activity>
+    <data-control-scope>
+      <shared/>
+    </data-control-scope>
+    <managed-bean id="__7">
+      <managed-bean-name>NewItemCreationBean</managed-bean-name>
+      <managed-bean-class>erp.view.NewItemCreationClass</managed-bean-class>
+      <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean id="__8">
+      <managed-bean-name>UpdateBean</managed-bean-name>
+      <managed-bean-class>erp.view.UpdateBeanClass</managed-bean-class>
+      <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean id="__9">
+      <managed-bean-name>QuantityBean</managed-bean-name>
+      <managed-bean-class>erp.view.QuantityUpdate</managed-bean-class>
+      <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean id="__10">
+      <managed-bean-name>DiscountBean</managed-bean-name>
+      <managed-bean-class>erp.view.DiscountUpdate</managed-bean-class>
+      <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <view id="inv_sales">
+      <page>/inv_Sales.jspx</page>
+    </view>
+    <task-flow-return id="Inv_main_task">
+      <outcome>
+        <name>Inv_main_task</name>
+      </outcome>
+    </task-flow-return>
+    <control-flow-rule id="__5">
+      <from-activity-id>inv_sales</from-activity-id>
+      <control-flow-case id="__6">
+        <from-outcome>back</from-outcome>
+        <to-activity-id>Inv_main_task</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__1">
+        <from-outcome>refresh</from-outcome>
+        <to-activity-id>inv_sales</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+  </task-flow-definition>
+</adfc-config>

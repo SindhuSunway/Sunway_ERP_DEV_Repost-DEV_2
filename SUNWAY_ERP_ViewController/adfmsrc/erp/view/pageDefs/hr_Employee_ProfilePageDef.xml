@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.2.1" id="hr_Employee_ProfilePageDef"
+                Package="erp.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="HrEmplInfoView1" RangeSize="25" DataControl="HR_AppModuleDataControl"
+              id="HrEmplInfoView1Iterator"/>
+    <searchRegion Criteria="Search_Employee" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="HrEmplInfoView1Iterator" id="SearchEmployeeQuery"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="HrEmplInfoView1Iterator" id="EmployeeNo">
+      <AttrNames>
+        <Item Value="EmployeeNo"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="HrEmplInfoView1Iterator" StaticList="false" Uses="LOV_Prefix" id="Prefix" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="HrEmplInfoView1Iterator" id="FirstName">
+      <AttrNames>
+        <Item Value="FirstName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplInfoView1Iterator" id="MiddleName">
+      <AttrNames>
+        <Item Value="MiddleName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplInfoView1Iterator" id="LastName">
+      <AttrNames>
+        <Item Value="LastName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplInfoView1Iterator" id="DateOfBirth">
+      <AttrNames>
+        <Item Value="DateOfBirth"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="HrEmplInfoView1Iterator" StaticList="false" Uses="LOV_Gender" id="Gender" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject"/>
+    <list IterBinding="HrEmplInfoView1Iterator" StaticList="false" Uses="LOV_MarStatus" id="MarStatus"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="HrEmplInfoView1Iterator" id="Nationality">
+      <AttrNames>
+        <Item Value="Nationality"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="HrEmplInfoView1Iterator" StaticList="false" Uses="LOV_EmplStatus" id="EmplStatus"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="HrEmplInfoView1Iterator" id="Department">
+      <AttrNames>
+        <Item Value="Department"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplInfoView1Iterator" id="Grade">
+      <AttrNames>
+        <Item Value="Grade"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplInfoView1Iterator" id="EmplId">
+      <AttrNames>
+        <Item Value="EmplId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplInfoView1Iterator" id="EmplPic">
+      <AttrNames>
+        <Item Value="EmplPic"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplInfoView1Iterator" id="Notesremarks">
+      <AttrNames>
+        <Item Value="Notesremarks"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="HrEmplInfoView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <tree IterBinding="HrEmplInfoView1Iterator" id="HrEmplInfoView1">
+      <nodeDefinition DefName="erp.hr.views.HrEmplInfoView" Name="HrEmplInfoView10">
+        <AttrNames>
+          <Item Value="EmployeeNo"/>
+          <Item Value="FirstName"/>
+          <Item Value="LastName"/>
+          <Item Value="EmplStatus"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

@@ -1,0 +1,756 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <f:view>
+        <af:document title="Contact Info" id="d1">
+            <af:messages id="m1"/>
+            <af:form id="f1" usesUpload="true">
+                <af:panelSplitter id="ps1" splitterPosition="75" orientation="vertical">
+                    <f:facet name="first">
+                        <af:panelGridLayout id="pgl5" inlineStyle="background-color:#065293;">
+                            <af:gridRow marginTop="5px" height="auto" id="gr1">
+                                <af:gridCell marginStart="5px" width="28%" id="gc1" halign="stretch">
+                                    <af:image id="i1" inlineStyle="width:190px; height:65px;"
+                                              source="#{resource['images:sunway_new_logo.png']}"/>
+                                    <af:outputText value="Sunway ERP" id="ot3"
+                                                   inlineStyle="color:Orange; font-weight:bold;"/>
+                                </af:gridCell>
+                                <af:gridCell marginStart="5px" width="35%" id="gc2">
+                                    <af:outputLabel value="HR Application" id="ol1"
+                                                    inlineStyle="color:Orange; font-size:medium;"/>
+                                </af:gridCell>
+                                <af:gridCell marginStart="5px" width="10%" marginEnd="5px" id="gc3"
+                                             inlineStyle="text-align:left;">
+                                    <af:panelGridLayout id="pgl13">
+                                        <af:gridRow marginTop="5px" height="auto" id="gr12">
+                                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc14">
+                                                <af:outputText value="#{'Welcome:&#160;'}#{securityContext.userName}"
+                                                               id="ot1" inlineStyle="color:White;"/>
+                                            </af:gridCell>
+                                        </af:gridRow>
+                                        <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr13">
+                                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc26">
+                                                <af:panelGroupLayout id="pgl15" layout="horizontal">
+                                                    <af:commandButton text="Logout" id="cb2"
+                                                                      action="#{loginBean.doLogout}"
+                                                                      icon="#{resource['images:logout-1-16.png']}"/>
+                                                    <af:spacer width="10" height="10" id="s1"/>
+                                                    <af:commandButton text="Help" id="cb1" action="help"
+                                                                      icon="#{resource['images:Help-1-16.png']}"/>
+                                                </af:panelGroupLayout>
+                                                <af:separator id="s3"/>
+                                            </af:gridCell>
+                                        </af:gridRow>
+                                    </af:panelGridLayout>
+                                </af:gridCell>
+                            </af:gridRow>
+                        </af:panelGridLayout>
+                    </f:facet>
+                    <f:facet name="second">
+                        <af:panelStretchLayout startWidth="250px" id="psl1" topHeight="100px">
+                            <f:facet name="center">
+                                <af:panelSplitter id="ps2" splitterPosition="450">
+                                    <f:facet name="second">
+                                        <af:panelGroupLayout id="pgl4" layout="scroll">
+                                            <af:panelStretchLayout id="psl2">
+                                                <f:facet name="center">
+                                                    <af:panelTabbed position="above" id="pt1">
+                                                        <af:showDetailItem text="Employee Contact Information" id="sdi2"
+                                                                           stretchChildren="first">
+                                                            <f:facet name="toolbar"/>
+                                                            <af:panelHeader text=" " id="ph2">
+                                                                <f:facet name="toolbar">
+                                                                    <af:group id="g1">
+                                                                        <af:inputText value="#{bindings.EmployeeNo.inputValue}"
+                                                                                      label="#{bindings.EmployeeNo.hints.label}"
+                                                                                      required="#{bindings.EmployeeNo.hints.mandatory}"
+                                                                                      readOnly="true"
+                                                                                      columns="#{bindings.EmployeeNo.hints.displayWidth}"
+                                                                                      maximumLength="#{bindings.EmployeeNo.hints.precision}"
+                                                                                      shortDesc="#{bindings.EmployeeNo.hints.tooltip}"
+                                                                                      id="it1">
+                                                                            <f:validator binding="#{bindings.EmployeeNo.validator}"/>
+                                                                            <af:convertNumber groupingUsed="false"
+                                                                                              pattern="#{bindings.EmployeeNo.format}"/>
+                                                                        </af:inputText>
+                                                                        <af:spacer width="75" height="10" id="s329"/>
+                                                                    </af:group>
+                                                                </f:facet>
+                                                                <f:facet name="menuBar">
+                                                                    <af:group id="g15">
+                                                                        <af:spacer width="10" height="10" id="s5"/>
+                                                                        <af:button actionListener="#{bindings.Commit.execute}"
+                                                                                   text="Save" id="b5"
+                                                                                   inlineStyle="color:Green;"
+                                                                                   icon="#{resource['images:Save.png']}"/>
+                                                                        <af:button actionListener="#{bindings.Rollback.execute}"
+                                                                                   text="Cancel" immediate="true"
+                                                                                   id="b9" inlineStyle="color:Red;"
+                                                                                   icon="#{resource['images:cancel.png']}">
+                                                                            <af:resetActionListener/>
+                                                                        </af:button>
+                                                                    </af:group>
+                                                                </f:facet>
+                                                                <af:separator id="s38"/>
+                                                                <af:panelBox text="Address" id="pb2"
+                                                                             icon="#{resource['images:contacts2-icon-64.png']}"
+                                                                             showDisclosure="false">
+                                                                    <f:facet name="toolbar">
+                                                                        <af:group id="g11">
+                                                                            <af:button actionListener="#{bindings.Previous2.execute}"
+                                                                                       text="Previous"
+                                                                                       disabled="#{!bindings.Previous2.enabled}"
+                                                                                       partialSubmit="true" id="b8"
+                                                                                       icon="#{resource['images:previous-16.png']}"/>
+                                                                            <af:button actionListener="#{bindings.Next2.execute}"
+                                                                                       text="Next"
+                                                                                       disabled="#{!bindings.Next2.enabled}"
+                                                                                       partialSubmit="true" id="b10"
+                                                                                       icon="#{resource['images:next-16.png']}"/>
+                                                                            <af:spacer width="10" height="10" id="s9"/>
+                                                                            <af:button text="Edit/Update" id="b25"
+                                                                                       inlineStyle="color:Blue;"
+                                                                                       icon="#{resource['images:edit-16.png']}">
+                                                                                <af:showPopupBehavior popupId="p15"/>
+                                                                            </af:button>
+                                                                        </af:group>
+                                                                    </f:facet>
+                                                                    <af:popup childCreation="deferred"
+                                                                              autoCancel="disabled" id="p15"
+                                                                              animate="true"
+                                                                              contentDelivery="lazyUncached"
+                                                                              launcherVar="l15" eventContext="launcher">
+                                                                        <af:dialog id="d16" resize="on"
+                                                                                   contentWidth="800"
+                                                                                   contentHeight="400">
+                                                                            <f:facet name="buttonBar"/>
+                                                                            <af:panelGroupLayout id="pgl39">
+                                                                                <af:panelBox text="Edit Employee Address"
+                                                                                             id="pb33"
+                                                                                             showDisclosure="false">
+                                                                                    <f:facet name="toolbar">
+                                                                                        <af:button actionListener="#{bindings.CreateInsert.execute}"
+                                                                                                   text="Add a New Record"
+                                                                                                   disabled="#{!bindings.CreateInsert.enabled}"
+                                                                                                   id="b2"/>
+                                                                                    </f:facet>
+                                                                                    <af:separator id="s291"/>
+                                                                                    <af:panelFormLayout id="pfl3"
+                                                                                                        inlineStyle="background-color:#e7e7e7;">
+                                                                                        <af:inputText value="#{bindings.EmployeeNo.inputValue}"
+                                                                                                      label="#{bindings.EmployeeNo.hints.label}"
+                                                                                                      required="#{bindings.EmployeeNo.hints.mandatory}"
+                                                                                                      columns="#{bindings.EmployeeNo.hints.displayWidth}"
+                                                                                                      maximumLength="#{bindings.EmployeeNo.hints.precision}"
+                                                                                                      shortDesc="#{bindings.EmployeeNo.hints.tooltip}"
+                                                                                                      id="it14"
+                                                                                                      readOnly="true">
+                                                                                            <f:validator binding="#{bindings.EmployeeNo.validator}"/>
+                                                                                            <af:convertNumber groupingUsed="false"
+                                                                                                              pattern="#{bindings.EmployeeNo.format}"/>
+                                                                                        </af:inputText>
+                                                                                    </af:panelFormLayout>
+                                                                                    <af:spacer width="10" height="10"
+                                                                                               id="s295"/>
+                                                                                    <af:panelGridLayout id="pgl10"
+                                                                                                        inlineStyle="background-color:#e7e7e7;">
+                                                                                        <af:gridRow marginTop="5px"
+                                                                                                    height="auto"
+                                                                                                    marginBottom="5px"
+                                                                                                    id="gr7">
+                                                                                            <af:gridCell marginStart="5px"
+                                                                                                         width="50%"
+                                                                                                         id="gc15">
+                                                                                                <af:inputText value="#{bindings.Street.inputValue}"
+                                                                                                              label="#{bindings.Street.hints.label}"
+                                                                                                              required="#{bindings.Street.hints.mandatory}"
+                                                                                                              columns="25"
+                                                                                                              maximumLength="#{bindings.Street.hints.precision}"
+                                                                                                              shortDesc="#{bindings.Street.hints.tooltip}"
+                                                                                                              id="it15">
+                                                                                                    <f:validator binding="#{bindings.Street.validator}"/>
+                                                                                                </af:inputText>
+                                                                                                <af:inputText value="#{bindings.City.inputValue}"
+                                                                                                              label="#{bindings.City.hints.label}"
+                                                                                                              required="#{bindings.City.hints.mandatory}"
+                                                                                                              columns="25"
+                                                                                                              maximumLength="#{bindings.City.hints.precision}"
+                                                                                                              shortDesc="#{bindings.City.hints.tooltip}"
+                                                                                                              id="it17">
+                                                                                                    <f:validator binding="#{bindings.City.validator}"/>
+                                                                                                </af:inputText>
+                                                                                                <af:inputText value="#{bindings.State.inputValue}"
+                                                                                                              label="#{bindings.State.hints.label}"
+                                                                                                              required="#{bindings.State.hints.mandatory}"
+                                                                                                              columns="25"
+                                                                                                              maximumLength="#{bindings.State.hints.precision}"
+                                                                                                              shortDesc="#{bindings.State.hints.tooltip}"
+                                                                                                              id="it20">
+                                                                                                    <f:validator binding="#{bindings.State.validator}"/>
+                                                                                                </af:inputText>
+                                                                                                <af:inputText value="#{bindings.Country.inputValue}"
+                                                                                                              label="#{bindings.Country.hints.label}"
+                                                                                                              required="#{bindings.Country.hints.mandatory}"
+                                                                                                              columns="25"
+                                                                                                              maximumLength="#{bindings.Country.hints.precision}"
+                                                                                                              shortDesc="#{bindings.Country.hints.tooltip}"
+                                                                                                              id="it21">
+                                                                                                    <f:validator binding="#{bindings.Country.validator}"/>
+                                                                                                </af:inputText>
+                                                                                            </af:gridCell>
+                                                                                            <af:gridCell marginStart="5px"
+                                                                                                         width="50%"
+                                                                                                         marginEnd="5px"
+                                                                                                         id="gc16">
+                                                                                                <af:selectOneChoice value="#{bindings.AddressType.inputValue}"
+                                                                                                                    label="#{bindings.AddressType.label}"
+                                                                                                                    required="#{bindings.AddressType.hints.mandatory}"
+                                                                                                                    shortDesc="#{bindings.AddressType.hints.tooltip}"
+                                                                                                                    id="soc4">
+                                                                                                    <f:selectItems value="#{bindings.AddressType.items}"
+                                                                                                                   id="si4"/>
+                                                                                                    <f:validator binding="#{bindings.AddressType.validator}"/>
+                                                                                                </af:selectOneChoice>
+                                                                                                <af:selectOneChoice value="#{bindings.Preferred.inputValue}"
+                                                                                                                    label="#{bindings.Preferred.label}"
+                                                                                                                    required="#{bindings.Preferred.hints.mandatory}"
+                                                                                                                    shortDesc="#{bindings.Preferred.hints.tooltip}"
+                                                                                                                    id="soc11">
+                                                                                                    <f:selectItems value="#{bindings.Preferred.items}"
+                                                                                                                   id="si11"/>
+                                                                                                    <f:validator binding="#{bindings.Preferred.validator}"/>
+                                                                                                </af:selectOneChoice>
+                                                                                            </af:gridCell>
+                                                                                        </af:gridRow>
+                                                                                    </af:panelGridLayout>
+                                                                                    <af:separator id="s292"/>
+                                                                                    <af:spacer width="10" height="10"
+                                                                                               id="s294"/>
+                                                                                    <af:panelFormLayout id="pfl4">
+                                                                                        <f:facet name="footer"/>
+                                                                                        <af:inputDate value="#{bindings.EffectFrom.inputValue}"
+                                                                                                      label="#{bindings.EffectFrom.hints.label}"
+                                                                                                      required="#{bindings.EffectFrom.hints.mandatory}"
+                                                                                                      columns="#{bindings.EffectFrom.hints.displayWidth}"
+                                                                                                      shortDesc="#{bindings.EffectFrom.hints.tooltip}"
+                                                                                                      id="id3">
+                                                                                            <f:validator binding="#{bindings.EffectFrom.validator}"/>
+                                                                                            <af:convertDateTime pattern="#{bindings.EffectFrom.format}"/>
+                                                                                        </af:inputDate>
+                                                                                    </af:panelFormLayout>
+                                                                                    <af:separator id="s293"/>
+                                                                                </af:panelBox>
+                                                                            </af:panelGroupLayout>
+                                                                        </af:dialog>
+                                                                    </af:popup>
+                                                                    <af:separator id="s2"/>
+                                                                    <af:panelGridLayout id="pgl1">
+                                                                        <af:gridRow marginTop="5px" height="auto"
+                                                                                    marginBottom="5px" id="gr6">
+                                                                            <af:gridCell marginStart="5px" width="50%"
+                                                                                         id="gc12">
+                                                                                <af:selectOneChoice value="#{bindings.AddressType.inputValue}"
+                                                                                                    label="#{bindings.AddressType.label}"
+                                                                                                    required="#{bindings.AddressType.hints.mandatory}"
+                                                                                                    shortDesc="#{bindings.AddressType.hints.tooltip}"
+                                                                                                    readOnly="true"
+                                                                                                    id="soc6">
+                                                                                    <f:selectItems value="#{bindings.AddressType.items}"
+                                                                                                   id="si6"/>
+                                                                                    <f:validator binding="#{bindings.AddressType.validator}"/>
+                                                                                </af:selectOneChoice>
+                                                                            </af:gridCell>
+                                                                            <af:gridCell marginStart="5px" width="50%"
+                                                                                         marginEnd="5px" id="gc13">
+                                                                                <af:selectOneChoice value="#{bindings.Preferred.inputValue}"
+                                                                                                    label="#{bindings.Preferred.label}"
+                                                                                                    required="#{bindings.Preferred.hints.mandatory}"
+                                                                                                    shortDesc="#{bindings.Preferred.hints.tooltip}"
+                                                                                                    readOnly="true"
+                                                                                                    id="soc7">
+                                                                                    <f:selectItems value="#{bindings.Preferred.items}"
+                                                                                                   id="si7"/>
+                                                                                    <f:validator binding="#{bindings.Preferred.validator}"/>
+                                                                                </af:selectOneChoice>
+                                                                            </af:gridCell>
+                                                                        </af:gridRow>
+                                                                    </af:panelGridLayout>
+                                                                    <af:separator id="s55"/>
+                                                                    <af:spacer width="10" height="10" id="s11"/>
+                                                                    <af:panelGridLayout id="pgl2">
+                                                                        <af:gridRow marginTop="5px" height="auto"
+                                                                                    marginBottom="5px" id="gr3">
+                                                                            <af:gridCell marginStart="5px" width="50%"
+                                                                                         id="gc6">
+                                                                                <af:inputText value="#{bindings.Street.inputValue}"
+                                                                                              label="#{bindings.Street.hints.label}"
+                                                                                              required="#{bindings.Street.hints.mandatory}"
+                                                                                              readOnly="true"
+                                                                                              columns="#{bindings.Street.hints.displayWidth}"
+                                                                                              maximumLength="#{bindings.Street.hints.precision}"
+                                                                                              shortDesc="#{bindings.Street.hints.tooltip}"
+                                                                                              id="it2">
+                                                                                    <f:validator binding="#{bindings.Street.validator}"/>
+                                                                                </af:inputText>
+                                                                                <af:inputText value="#{bindings.City.inputValue}"
+                                                                                              label="#{bindings.City.hints.label}"
+                                                                                              required="#{bindings.City.hints.mandatory}"
+                                                                                              readOnly="true"
+                                                                                              columns="#{bindings.City.hints.displayWidth}"
+                                                                                              maximumLength="#{bindings.City.hints.precision}"
+                                                                                              shortDesc="#{bindings.City.hints.tooltip}"
+                                                                                              id="it3">
+                                                                                    <f:validator binding="#{bindings.City.validator}"/>
+                                                                                </af:inputText>
+                                                                                <af:inputText value="#{bindings.State.inputValue}"
+                                                                                              label="#{bindings.State.hints.label}"
+                                                                                              required="#{bindings.State.hints.mandatory}"
+                                                                                              readOnly="true"
+                                                                                              columns="#{bindings.State.hints.displayWidth}"
+                                                                                              maximumLength="#{bindings.State.hints.precision}"
+                                                                                              shortDesc="#{bindings.State.hints.tooltip}"
+                                                                                              id="it4">
+                                                                                    <f:validator binding="#{bindings.State.validator}"/>
+                                                                                </af:inputText>
+                                                                                <af:inputText value="#{bindings.Country.inputValue}"
+                                                                                              label="#{bindings.Country.hints.label}"
+                                                                                              required="#{bindings.Country.hints.mandatory}"
+                                                                                              readOnly="true"
+                                                                                              columns="#{bindings.Country.hints.displayWidth}"
+                                                                                              maximumLength="#{bindings.Country.hints.precision}"
+                                                                                              shortDesc="#{bindings.Country.hints.tooltip}"
+                                                                                              id="it9">
+                                                                                    <f:validator binding="#{bindings.Country.validator}"/>
+                                                                                </af:inputText>
+                                                                            </af:gridCell>
+                                                                            <af:gridCell marginStart="5px" width="50%"
+                                                                                         marginEnd="5px" id="gc7">
+                                                                                <af:inputDate value="#{bindings.EffectFrom.inputValue}"
+                                                                                              readOnly="true"
+                                                                                              label="#{bindings.EffectFrom.hints.label}"
+                                                                                              required="#{bindings.EffectFrom.hints.mandatory}"
+                                                                                              columns="#{bindings.EffectFrom.hints.displayWidth}"
+                                                                                              shortDesc="#{bindings.EffectFrom.hints.tooltip}"
+                                                                                              id="id2">
+                                                                                    <f:validator binding="#{bindings.EffectFrom.validator}"/>
+                                                                                    <af:convertDateTime pattern="#{bindings.EffectFrom.format}"/>
+                                                                                </af:inputDate>
+                                                                            </af:gridCell>
+                                                                        </af:gridRow>
+                                                                    </af:panelGridLayout>
+                                                                </af:panelBox>
+                                                                <af:panelBox text="Phone Nos:" id="pb20"
+                                                                             showDisclosure="false"
+                                                                             icon="#{resource['images:phone2.png']}">
+                                                                    <f:facet name="toolbar">
+                                                                        <af:group id="g3">
+                                                                            <af:button actionListener="#{bindings.Previous.execute}"
+                                                                                       text="Previous"
+                                                                                       disabled="#{!bindings.Previous.enabled}"
+                                                                                       partialSubmit="true" id="b3"
+                                                                                       icon="#{resource['images:previous-16.png']}"/>
+                                                                            <af:button actionListener="#{bindings.Next.execute}"
+                                                                                       text="Next"
+                                                                                       disabled="#{!bindings.Next.enabled}"
+                                                                                       partialSubmit="true" id="b4"
+                                                                                       icon="#{resource['images:next-16.png']}"/>
+                                                                            <af:spacer width="10" height="10" id="s6"/>
+                                                                            <af:button text="Edit/Update" id="b11"
+                                                                                       inlineStyle="color:Blue;"
+                                                                                       icon="#{resource['images:edit-16.png']}">
+                                                                                <af:showPopupBehavior popupId="p2"/>
+                                                                            </af:button>
+                                                                        </af:group>
+                                                                    </f:facet>
+                                                                    <af:popup childCreation="deferred"
+                                                                              autoCancel="disabled" id="p2"
+                                                                              animate="true"
+                                                                              contentDelivery="lazyUncached"
+                                                                              launcherVar="l2" eventContext="launcher">
+                                                                        <af:dialog id="d3" resize="on"
+                                                                                   contentWidth="800"
+                                                                                   contentHeight="400">
+                                                                            <f:facet name="buttonBar"/>
+                                                                            <af:panelGroupLayout id="pgl11">
+                                                                                <af:panelBox text="Edit Employee Phone No."
+                                                                                             id="pb1"
+                                                                                             showDisclosure="false">
+                                                                                    <f:facet name="toolbar">
+                                                                                        <af:button actionListener="#{bindings.CreateInsert1.execute}"
+                                                                                                   text="Add a New Record"
+                                                                                                   id="b12"/>
+                                                                                    </f:facet>
+                                                                                    <af:separator id="s15"/>
+                                                                                    <af:panelFormLayout id="pfl5"
+                                                                                                        inlineStyle="background-color:#e7e7e7;">
+                                                                                        <af:inputText value="#{bindings.EmployeeNo1.inputValue}"
+                                                                                                      label="#{bindings.EmployeeNo1.hints.label}"
+                                                                                                      required="#{bindings.EmployeeNo1.hints.mandatory}"
+                                                                                                      columns="#{bindings.EmployeeNo1.hints.displayWidth}"
+                                                                                                      maximumLength="#{bindings.EmployeeNo1.hints.precision}"
+                                                                                                      shortDesc="#{bindings.EmployeeNo1.hints.tooltip}"
+                                                                                                      id="it22"
+                                                                                                      readOnly="true">
+                                                                                            <f:validator binding="#{bindings.EmployeeNo1.validator}"/>
+                                                                                            <af:convertNumber groupingUsed="false"
+                                                                                                              pattern="#{bindings.EmployeeNo1.format}"/>
+                                                                                        </af:inputText>
+                                                                                    </af:panelFormLayout>
+                                                                                    <af:separator id="s17"/>
+                                                                                    <af:panelGridLayout id="pgl12"
+                                                                                                        inlineStyle="background-color:#e7e7e7;">
+                                                                                        <af:gridRow marginTop="5px"
+                                                                                                    height="auto"
+                                                                                                    id="gr8">
+                                                                                            <af:gridCell marginStart="5px"
+                                                                                                         width="50%"
+                                                                                                         id="gc17">
+                                                                                                <af:inputText value="#{bindings.CountryCode.inputValue}"
+                                                                                                              label="#{bindings.CountryCode.hints.label}"
+                                                                                                              required="#{bindings.CountryCode.hints.mandatory}"
+                                                                                                              columns="#{bindings.CountryCode.hints.displayWidth}"
+                                                                                                              maximumLength="#{bindings.CountryCode.hints.precision}"
+                                                                                                              shortDesc="#{bindings.CountryCode.hints.tooltip}"
+                                                                                                              id="it23">
+                                                                                                    <f:validator binding="#{bindings.CountryCode.validator}"/>
+                                                                                                    <af:convertNumber groupingUsed="false"
+                                                                                                                      pattern="#{bindings.CountryCode.format}"/>
+                                                                                                </af:inputText>
+                                                                                                <af:inputText value="#{bindings.PhoneNo.inputValue}"
+                                                                                                              label="#{bindings.PhoneNo.hints.label}"
+                                                                                                              required="#{bindings.PhoneNo.hints.mandatory}"
+                                                                                                              columns="#{bindings.PhoneNo.hints.displayWidth}"
+                                                                                                              maximumLength="#{bindings.PhoneNo.hints.precision}"
+                                                                                                              shortDesc="#{bindings.PhoneNo.hints.tooltip}"
+                                                                                                              id="it24">
+                                                                                                    <f:validator binding="#{bindings.PhoneNo.validator}"/>
+                                                                                                    <af:convertNumber groupingUsed="false"
+                                                                                                                      pattern="#{bindings.PhoneNo.format}"/>
+                                                                                                </af:inputText>
+                                                                                                <af:inputText value="#{bindings.Extesion.inputValue}"
+                                                                                                              label="#{bindings.Extesion.hints.label}"
+                                                                                                              required="#{bindings.Extesion.hints.mandatory}"
+                                                                                                              columns="#{bindings.Extesion.hints.displayWidth}"
+                                                                                                              maximumLength="#{bindings.Extesion.hints.precision}"
+                                                                                                              shortDesc="#{bindings.Extesion.hints.tooltip}"
+                                                                                                              id="it25">
+                                                                                                    <f:validator binding="#{bindings.Extesion.validator}"/>
+                                                                                                    <af:convertNumber groupingUsed="false"
+                                                                                                                      pattern="#{bindings.Extesion.format}"/>
+                                                                                                </af:inputText>
+                                                                                            </af:gridCell>
+                                                                                            <af:gridCell marginStart="5px"
+                                                                                                         width="50%"
+                                                                                                         marginEnd="5px"
+                                                                                                         id="gc18">
+                                                                                                <af:selectOneChoice value="#{bindings.PhoneType.inputValue}"
+                                                                                                                    label="#{bindings.PhoneType.label}"
+                                                                                                                    required="#{bindings.PhoneType.hints.mandatory}"
+                                                                                                                    shortDesc="#{bindings.PhoneType.hints.tooltip}"
+                                                                                                                    id="soc12">
+                                                                                                    <f:selectItems value="#{bindings.PhoneType.items}"
+                                                                                                                   id="si12"/>
+                                                                                                    <f:validator binding="#{bindings.PhoneType.validator}"/>
+                                                                                                </af:selectOneChoice>
+                                                                                                <af:selectOneChoice value="#{bindings.Prefered.inputValue}"
+                                                                                                                    label="#{bindings.Prefered.label}"
+                                                                                                                    required="#{bindings.Prefered.hints.mandatory}"
+                                                                                                                    shortDesc="#{bindings.Prefered.hints.tooltip}"
+                                                                                                                    id="soc14">
+                                                                                                    <f:selectItems value="#{bindings.Prefered.items}"
+                                                                                                                   id="si14"/>
+                                                                                                    <f:validator binding="#{bindings.Prefered.validator}"/>
+                                                                                                </af:selectOneChoice>
+                                                                                            </af:gridCell>
+                                                                                        </af:gridRow>
+                                                                                        <af:gridRow marginTop="5px"
+                                                                                                    height="auto"
+                                                                                                    id="gr9">
+                                                                                            <af:gridCell marginStart="5px"
+                                                                                                         width="50%"
+                                                                                                         id="gc19"/>
+                                                                                            <af:gridCell marginStart="5px"
+                                                                                                         width="50%"
+                                                                                                         marginEnd="5px"
+                                                                                                         id="gc20"/>
+                                                                                        </af:gridRow>
+                                                                                        <af:gridRow marginTop="5px"
+                                                                                                    height="auto"
+                                                                                                    marginBottom="5px"
+                                                                                                    id="gr10">
+                                                                                            <af:gridCell marginStart="5px"
+                                                                                                         width="50%"
+                                                                                                         id="gc21"/>
+                                                                                            <af:gridCell marginStart="5px"
+                                                                                                         width="50%"
+                                                                                                         marginEnd="5px"
+                                                                                                         id="gc22"/>
+                                                                                        </af:gridRow>
+                                                                                    </af:panelGridLayout>
+                                                                                </af:panelBox>
+                                                                            </af:panelGroupLayout>
+                                                                        </af:dialog>
+                                                                    </af:popup>
+                                                                    <af:separator id="s20"/>
+                                                                    <af:panelGridLayout id="pgl6">
+                                                                        <af:gridRow marginTop="5px" height="auto"
+                                                                                    marginBottom="5px" id="gr2">
+                                                                            <af:gridCell marginStart="5px" width="50%"
+                                                                                         id="gc4">
+                                                                                <af:selectOneChoice value="#{bindings.PhoneType.inputValue}"
+                                                                                                    label="#{bindings.PhoneType.label}"
+                                                                                                    required="#{bindings.PhoneType.hints.mandatory}"
+                                                                                                    shortDesc="#{bindings.PhoneType.hints.tooltip}"
+                                                                                                    readOnly="true"
+                                                                                                    id="soc8">
+                                                                                    <f:selectItems value="#{bindings.PhoneType.items}"
+                                                                                                   id="si8"/>
+                                                                                    <f:validator binding="#{bindings.PhoneType.validator}"/>
+                                                                                </af:selectOneChoice>
+                                                                            </af:gridCell>
+                                                                            <af:gridCell marginStart="5px" width="50%"
+                                                                                         marginEnd="5px" id="gc5">
+                                                                                <af:selectOneChoice value="#{bindings.Prefered.inputValue}"
+                                                                                                    label="#{bindings.Prefered.label}"
+                                                                                                    required="#{bindings.Prefered.hints.mandatory}"
+                                                                                                    shortDesc="#{bindings.Prefered.hints.tooltip}"
+                                                                                                    readOnly="true"
+                                                                                                    id="soc9">
+                                                                                    <f:selectItems value="#{bindings.Prefered.items}"
+                                                                                                   id="si9"/>
+                                                                                    <f:validator binding="#{bindings.Prefered.validator}"/>
+                                                                                </af:selectOneChoice>
+                                                                            </af:gridCell>
+                                                                        </af:gridRow>
+                                                                    </af:panelGridLayout>
+                                                                    <af:separator id="s13"/>
+                                                                    <af:spacer width="10" height="10" id="s14"/>
+                                                                    <af:panelGridLayout id="pgl7">
+                                                                        <af:gridRow marginTop="5px" height="auto"
+                                                                                    marginBottom="5px" id="gr5">
+                                                                            <af:gridCell marginStart="5px" width="50%"
+                                                                                         id="gc10">
+                                                                                <af:panelFormLayout id="pfl1">
+                                                                                    <af:inputText value="#{bindings.CountryCode.inputValue}"
+                                                                                                  label="#{bindings.CountryCode.hints.label}"
+                                                                                                  required="#{bindings.CountryCode.hints.mandatory}"
+                                                                                                  readOnly="true"
+                                                                                                  columns="#{bindings.CountryCode.hints.displayWidth}"
+                                                                                                  maximumLength="#{bindings.CountryCode.hints.precision}"
+                                                                                                  shortDesc="#{bindings.CountryCode.hints.tooltip}"
+                                                                                                  id="it10">
+                                                                                        <f:validator binding="#{bindings.CountryCode.validator}"/>
+                                                                                        <af:convertNumber groupingUsed="false"
+                                                                                                          pattern="#{bindings.CountryCode.format}"/>
+                                                                                    </af:inputText>
+                                                                                    <af:inputText value="#{bindings.PhoneNo.inputValue}"
+                                                                                                  label="#{bindings.PhoneNo.hints.label}"
+                                                                                                  required="#{bindings.PhoneNo.hints.mandatory}"
+                                                                                                  readOnly="true"
+                                                                                                  columns="#{bindings.PhoneNo.hints.displayWidth}"
+                                                                                                  maximumLength="#{bindings.PhoneNo.hints.precision}"
+                                                                                                  shortDesc="#{bindings.PhoneNo.hints.tooltip}"
+                                                                                                  id="it11">
+                                                                                        <f:validator binding="#{bindings.PhoneNo.validator}"/>
+                                                                                        <af:convertNumber groupingUsed="false"
+                                                                                                          pattern="#{bindings.PhoneNo.format}"/>
+                                                                                    </af:inputText>
+                                                                                    <af:inputText value="#{bindings.Extesion.inputValue}"
+                                                                                                  label="#{bindings.Extesion.hints.label}"
+                                                                                                  required="#{bindings.Extesion.hints.mandatory}"
+                                                                                                  readOnly="true"
+                                                                                                  columns="#{bindings.Extesion.hints.displayWidth}"
+                                                                                                  maximumLength="#{bindings.Extesion.hints.precision}"
+                                                                                                  shortDesc="#{bindings.Extesion.hints.tooltip}"
+                                                                                                  id="it12">
+                                                                                        <f:validator binding="#{bindings.Extesion.validator}"/>
+                                                                                        <af:convertNumber groupingUsed="false"
+                                                                                                          pattern="#{bindings.Extesion.format}"/>
+                                                                                    </af:inputText>
+                                                                                    <f:facet name="footer"/>
+                                                                                </af:panelFormLayout>
+                                                                            </af:gridCell>
+                                                                            <af:gridCell marginStart="5px" width="50%"
+                                                                                         marginEnd="5px" id="gc11"/>
+                                                                        </af:gridRow>
+                                                                    </af:panelGridLayout>
+                                                                </af:panelBox>
+                                                                <af:panelBox text="Emails" id="pb19"
+                                                                             icon="#{resource['images:email2.png']}"
+                                                                             showDisclosure="false">
+                                                                    <f:facet name="toolbar">
+                                                                        <af:group id="g14">
+                                                                            <af:button actionListener="#{bindings.Previous1.execute}"
+                                                                                       text="Previous"
+                                                                                       disabled="#{!bindings.Previous1.enabled}"
+                                                                                       partialSubmit="true" id="b6"
+                                                                                       icon="#{resource['images:previous-16.png']}"/>
+                                                                            <af:button actionListener="#{bindings.Next1.execute}"
+                                                                                       text="Next"
+                                                                                       disabled="#{!bindings.Next1.enabled}"
+                                                                                       partialSubmit="true" id="b7"
+                                                                                       icon="#{resource['images:next-16.png']}"/>
+                                                                            <af:spacer width="10" height="10" id="s8"/>
+                                                                            <af:button text="Edit/Update" id="b26"
+                                                                                       inlineStyle="color:Blue;"
+                                                                                       icon="#{resource['images:edit-16.png']}">
+                                                                                <af:showPopupBehavior popupId="p16"/>
+                                                                            </af:button>
+                                                                        </af:group>
+                                                                    </f:facet>
+                                                                    <af:popup childCreation="deferred"
+                                                                              autoCancel="disabled" id="p16"
+                                                                              animate="true"
+                                                                              contentDelivery="lazyUncached"
+                                                                              launcherVar="l16" eventContext="launcher">
+                                                                        <af:dialog id="d17" resize="on"
+                                                                                   contentWidth="800"
+                                                                                   contentHeight="400">
+                                                                            <f:facet name="buttonBar"/>
+                                                                            <af:panelGroupLayout id="pgl40">
+                                                                                <af:panelBox text="Edit Employee Emails"
+                                                                                             id="pb34"
+                                                                                             showDisclosure="false">
+                                                                                    <f:facet name="toolbar">
+                                                                                        <af:button actionListener="#{bindings.CreateInsert2.execute}"
+                                                                                                   text="Add a New Record "
+                                                                                                   id="b13"/>
+                                                                                    </f:facet>
+                                                                                    <af:separator id="s296"/>
+                                                                                    <af:panelFormLayout id="pfl11"
+                                                                                                        inlineStyle="background-color:#e7e7e7;">
+                                                                                        <f:facet name="footer"/>
+                                                                                        <af:inputText value="#{bindings.EmployeeNo2.inputValue}"
+                                                                                                      label="#{bindings.EmployeeNo2.hints.label}"
+                                                                                                      required="#{bindings.EmployeeNo2.hints.mandatory}"
+                                                                                                      columns="#{bindings.EmployeeNo2.hints.displayWidth}"
+                                                                                                      maximumLength="#{bindings.EmployeeNo2.hints.precision}"
+                                                                                                      shortDesc="#{bindings.EmployeeNo2.hints.tooltip}"
+                                                                                                      id="it26"
+                                                                                                      readOnly="true">
+                                                                                            <f:validator binding="#{bindings.EmployeeNo2.validator}"/>
+                                                                                            <af:convertNumber groupingUsed="false"
+                                                                                                              pattern="#{bindings.EmployeeNo2.format}"/>
+                                                                                        </af:inputText>
+                                                                                    </af:panelFormLayout>
+                                                                                    <af:separator id="s19"/>
+                                                                                    <af:panelFormLayout id="pfl6"
+                                                                                                        inlineStyle="background-color:#e7e7e7;">
+                                                                                        <af:selectOneChoice value="#{bindings.EmailType.inputValue}"
+                                                                                                            label="#{bindings.EmailType.label}"
+                                                                                                            required="#{bindings.EmailType.hints.mandatory}"
+                                                                                                            shortDesc="#{bindings.EmailType.hints.tooltip}"
+                                                                                                            id="soc15">
+                                                                                            <f:selectItems value="#{bindings.EmailType.items}"
+                                                                                                           id="si15"/>
+                                                                                            <f:validator binding="#{bindings.EmailType.validator}"/>
+                                                                                        </af:selectOneChoice>
+                                                                                        <af:inputText value="#{bindings.EmailAddress.inputValue}"
+                                                                                                      label="#{bindings.EmailAddress.hints.label}"
+                                                                                                      required="#{bindings.EmailAddress.hints.mandatory}"
+                                                                                                      columns="#{bindings.EmailAddress.hints.displayWidth}"
+                                                                                                      maximumLength="#{bindings.EmailAddress.hints.precision}"
+                                                                                                      shortDesc="#{bindings.EmailAddress.hints.tooltip}"
+                                                                                                      id="it27">
+                                                                                            <f:validator binding="#{bindings.EmailAddress.validator}"/>
+                                                                                        </af:inputText>
+                                                                                        <af:selectOneChoice value="#{bindings.Prefered1.inputValue}"
+                                                                                                            label="#{bindings.Prefered1.label}"
+                                                                                                            required="#{bindings.Prefered1.hints.mandatory}"
+                                                                                                            shortDesc="#{bindings.Prefered1.hints.tooltip}"
+                                                                                                            id="soc16">
+                                                                                            <f:selectItems value="#{bindings.Prefered1.items}"
+                                                                                                           id="si16"/>
+                                                                                            <f:validator binding="#{bindings.Prefered1.validator}"/>
+                                                                                        </af:selectOneChoice>
+                                                                                    </af:panelFormLayout>
+                                                                                    <af:separator id="s297"/>
+                                                                                </af:panelBox>
+                                                                            </af:panelGroupLayout>
+                                                                        </af:dialog>
+                                                                    </af:popup>
+                                                                    <af:separator id="s363"/>
+                                                                    <af:panelGridLayout id="pgl9">
+                                                                        <af:gridRow marginTop="5px" height="auto"
+                                                                                    marginBottom="5px" id="gr4">
+                                                                            <af:gridCell marginStart="5px" width="50%"
+                                                                                         id="gc8">
+                                                                                <af:selectOneChoice value="#{bindings.EmailType.inputValue}"
+                                                                                                    label="#{bindings.EmailType.label}"
+                                                                                                    required="#{bindings.EmailType.hints.mandatory}"
+                                                                                                    shortDesc="#{bindings.EmailType.hints.tooltip}"
+                                                                                                    readOnly="true"
+                                                                                                    id="soc10">
+                                                                                    <f:selectItems value="#{bindings.EmailType.items}"
+                                                                                                   id="si10"/>
+                                                                                    <f:validator binding="#{bindings.EmailType.validator}"/>
+                                                                                </af:selectOneChoice>
+                                                                            </af:gridCell>
+                                                                            <af:gridCell id="gc9" width="50%">
+                                                                                <af:selectOneChoice value="#{bindings.Prefered1.inputValue}"
+                                                                                                    label="#{bindings.Prefered1.label}"
+                                                                                                    required="#{bindings.Prefered1.hints.mandatory}"
+                                                                                                    shortDesc="#{bindings.Prefered1.hints.tooltip}"
+                                                                                                    readOnly="true"
+                                                                                                    id="soc13">
+                                                                                    <f:selectItems value="#{bindings.Prefered1.items}"
+                                                                                                   id="si13"/>
+                                                                                    <f:validator binding="#{bindings.Prefered1.validator}"/>
+                                                                                </af:selectOneChoice>
+                                                                            </af:gridCell>
+                                                                        </af:gridRow>
+                                                                    </af:panelGridLayout>
+                                                                    <af:separator id="s94"/>
+                                                                    <af:spacer width="10" height="10" id="s16"/>
+                                                                    <af:inputText value="#{bindings.EmailAddress.inputValue}"
+                                                                                  label="#{bindings.EmailAddress.hints.label}"
+                                                                                  required="#{bindings.EmailAddress.hints.mandatory}"
+                                                                                  readOnly="true"
+                                                                                  columns="#{bindings.EmailAddress.hints.displayWidth}"
+                                                                                  maximumLength="#{bindings.EmailAddress.hints.precision}"
+                                                                                  shortDesc="#{bindings.EmailAddress.hints.tooltip}"
+                                                                                  id="it13">
+                                                                        <f:validator binding="#{bindings.EmailAddress.validator}"/>
+                                                                    </af:inputText>
+                                                                </af:panelBox>
+                                                            </af:panelHeader>
+                                                        </af:showDetailItem>
+                                                    </af:panelTabbed>
+                                                </f:facet>
+                                                <f:facet name="top">
+                                                    <af:navigationPane hint="bar" id="np1"
+                                                                       inlineStyle="color:#065293; background-color:#065293;">
+                                                        <af:commandNavigationItem id="ni1" text="Employee Data"
+                                                                                  inlineStyle="background-color:#065293; color:Orange; font-size:small; text-align:left; font-weight:bold;"
+                                                                                  icon="#{resource['images:profile-32.png']}"/>
+                                                    </af:navigationPane>
+                                                </f:facet>
+                                            </af:panelStretchLayout>
+                                        </af:panelGroupLayout>
+                                    </f:facet>
+                                </af:panelSplitter>
+                            </f:facet>
+                            <f:facet name="bottom">
+                                <af:panelGroupLayout layout="scroll" id="pgl3" inlineStyle="background-color:#065293;">
+                                    <af:spacer width="10" height="10" id="s12"/>
+                                    <af:outputText value="Copyright@ 2012. Sunway Software Solutions W. L. L Alrights Reserved"
+                                                   id="ot28"
+                                                   inlineStyle="font-size:smaller; font-family:Arial, Helvetica, sans-serif; font-weight:bolder; color:white;"/>
+                                </af:panelGroupLayout>
+                            </f:facet>
+                            <f:facet name="top">
+                                <af:group id="g2">
+                                    <af:train value="#{controllerContext.currentViewPort.taskFlowContext.trainModel}"
+                                              id="t1"/>
+                                    <af:button text="Main Menu" id="b1" icon="#{resource['images:back-16.png']}"
+                                               action="back" inlineStyle="color:Blue;"/>
+                                </af:group>
+                            </f:facet>
+                        </af:panelStretchLayout>
+                    </f:facet>
+                </af:panelSplitter>
+            </af:form>
+        </af:document>
+    </f:view>
+</jsp:root>

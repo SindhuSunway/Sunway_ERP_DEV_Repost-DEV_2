@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <metadata-resource id="__1">/WEB-INF/Main_app_Entrance.xml</metadata-resource>
+  <managed-bean id="__2">
+    <managed-bean-name>loginBean</managed-bean-name>
+    <managed-bean-class>erp.view.LoginBean</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+</adfc-config>

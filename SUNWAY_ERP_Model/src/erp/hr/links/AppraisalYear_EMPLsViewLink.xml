@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="AppraisalYear_EMPLsViewLink"
+  Version="12.1.3.10.8"
+  InheritPersonalization="merge">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="erp.hr.links.AppraisalYear_EMPLsViewLink_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <ViewLinkDefEnd
+    Name="HrAppraisalYearView"
+    Cardinality="1"
+    Source="true"
+    Owner="erp.hr.views.HrAppraisalYearView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="HrAppraisalYearView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="erp.hr.views.HrAppraisalYearView.EmployeeNo"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="HrEmplInfoView1"
+    Cardinality="-1"
+    Owner="erp.hr.views.HrEmplInfoView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="HrEmplInfoView1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="erp.hr.views.HrEmplInfoView.EmployeeNo"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="erp.model.SUNWAY_ERP_ModelBundle"/>
+  </ResourceBundle>
+</ViewLink>

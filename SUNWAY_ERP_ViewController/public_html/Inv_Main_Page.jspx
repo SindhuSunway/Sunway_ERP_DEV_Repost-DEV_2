@@ -1,0 +1,158 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <f:view>
+        <af:document title="Inventory Main Page" id="d1">
+            <af:messages id="m1"/>
+            <af:form id="f1">
+           <af:panelSplitter id="ps1" splitterPosition="75" orientation="vertical">
+                    <f:facet name="first">
+                        <af:panelGroupLayout id="pgl11">
+                            <af:panelGridLayout id="pgl5" inlineStyle="background-color:#065293;">
+                                <af:gridRow marginTop="5px" height="auto" id="gr1">
+                                    <af:gridCell marginStart="5px" width="28%" id="gc1">
+                                        <af:image source="#{resource['images:sunway_new_logo.png']}" id="i1"
+                                                  inlineStyle="width:190px; height:65px;"/>
+                                        <af:outputText value="Sunway ERP" id="ot1"
+                                                       inlineStyle="color:White; font-weight:bold;"/>
+                                    </af:gridCell>
+                                    <af:gridCell marginStart="5px" width="35%" id="gc2">
+                                        <af:outputLabel value="Inventory Management Application" id="ol1"
+                                                        inlineStyle="color:White; font-size:medium;"/>
+                                    </af:gridCell>
+                                    <af:gridCell marginStart="5px" width="10%" marginEnd="5px" id="gc3"
+                                                 inlineStyle="text-align:left;">
+                                        <af:panelGridLayout id="pgl12">
+                                            <af:gridRow marginTop="5px" height="auto" id="gr2">
+                                                <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc10">
+                                                    <af:outputText value="#{'Welcome:&#160;'}#{securityContext.userName}"
+                                                                   id="ot2" inlineStyle="color:White;"/>
+                                                </af:gridCell>
+                                            </af:gridRow>
+                                            <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr5">
+                                                <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc11">
+                                                    <af:panelGroupLayout id="pgl13" layout="horizontal">
+                                                        <af:commandButton text="Logout" id="cb2"
+                                                                          action="#{loginBean.doLogout}"
+                                                                          icon="#{resource['images:logout-1-16.png']}"/>
+                                                        <af:spacer width="10" height="10" id="s1"/>
+                                                        <af:commandButton text="Help" id="cb1" action="help"
+                                                                          icon="#{resource['images:Help-1-16.png']}"/>
+                                                    </af:panelGroupLayout>
+                                                    <af:separator id="s3"/>
+                                                </af:gridCell>
+                                            </af:gridRow>
+                                        </af:panelGridLayout>
+                                    </af:gridCell>
+                                </af:gridRow>
+                            </af:panelGridLayout>
+                        </af:panelGroupLayout>
+                    </f:facet>
+                    <f:facet name="second">
+                        <af:panelStretchLayout startWidth="250px" id="psl1" topHeight="35px" bottomHeight="50px">
+                            <f:facet name="center">
+                                <af:panelGroupLayout id="pgl1" layout="scroll">
+                                    <af:separator id="s6"/>
+                                    <af:panelHeader text="Inventory Application Main Menu" id="ph2">
+                                        <f:facet name="context"/>
+                                        <f:facet name="toolbar"/>
+                                        <f:facet name="menuBar"/>
+                                        <f:facet name="legend"/>
+                                        <f:facet name="info"/>
+                                        <af:separator id="s2" inlineStyle="color:Black; font-weight:bolder;"/>
+                                        <af:panelGridLayout id="pgl4">
+                                            <af:gridRow marginTop="5px" height="auto" id="gr3">
+                                                <af:gridCell marginStart="5px" width="34%" id="gc4">
+                                                    <af:panelGroupLayout id="pgl7" layout="horizontal">
+                                                        <af:panelFormLayout id="pfl1">
+                                                            <af:image source="#{resource['images:inventory-1-128.png']}"
+                                                                      id="i6"/>
+                                                        </af:panelFormLayout>
+                                                        <af:panelFormLayout id="pfl7">
+                                                            <af:link text="Inventory" id="l1" action="inventory"
+                                                                     inlineStyle="color:#003194;"/>
+                                                        </af:panelFormLayout>
+                                                    </af:panelGroupLayout>
+                                                </af:gridCell>
+                                                <af:gridCell marginStart="5px" width="33%" id="gc5">
+                                                    <af:panelGroupLayout id="pgl9" layout="horizontal">
+                                                        <af:panelFormLayout id="pfl3">
+                                                            <af:image id="i2"
+                                                                      source="#{resource['images:sale-shopping-bag -128-.png']}"/>
+                                                        </af:panelFormLayout>
+                                                        <af:panelFormLayout id="pfl9">
+                                                            <af:link text="Sale" id="l4" action="sale"
+                                                                     inlineStyle="color:#003194;"/>
+                                                        </af:panelFormLayout>
+                                                    </af:panelGroupLayout>
+                                                </af:gridCell>
+                                                <af:gridCell marginStart="5px" width="33%" marginEnd="5px" id="gc6">
+                                                    <af:panelGroupLayout id="pgl8" layout="horizontal">
+                                                        <af:panelFormLayout id="pfl2">
+                                                            <af:image source="#{resource['images:purchase_order-128.png']}"
+                                                                      id="i3"/>
+                                                        </af:panelFormLayout>
+                                                        <af:panelFormLayout id="pfl8" inlineStyle="color:#003194;">
+                                                            <af:link text="Purchase Order" id="l2" action="purchase"
+                                                                     inlineStyle="color:#003194;"/>
+                                                        </af:panelFormLayout>
+                                                    </af:panelGroupLayout>
+                                                </af:gridCell>
+                                            </af:gridRow>
+                                        </af:panelGridLayout>
+                                        <af:separator id="s4"/>
+                                        <af:spacer width="10" height="10" id="s5"/>
+                                        <af:panelGridLayout id="pgl2">
+                                            <af:gridRow marginTop="5px" height="auto" id="gr4">
+                                                <af:gridCell marginStart="5px" rowSpan="2" width="34%" id="gc7">
+                                                    <af:panelGroupLayout id="pgl6" layout="horizontal">
+                                                        <af:panelFormLayout id="pfl5">
+                                                            <af:image source="#{resource['images:setting-128.png']}"
+                                                                      id="i4"/>
+                                                        </af:panelFormLayout>
+                                                        <af:panelFormLayout id="pfl6">
+                                                            <af:link text="Settings" id="l5" action="settings"
+                                                                     inlineStyle="color:#003194;"/>
+                                                        </af:panelFormLayout>
+                                                    </af:panelGroupLayout>
+                                                </af:gridCell>
+                                                <af:gridCell id="gc9" width="33%">
+                                                    <af:panelGroupLayout id="pgl10" layout="horizontal">
+                                                        <af:panelFormLayout id="pfl4">
+                                                            <af:image source="#{resource['images:reports-01-128.png']}"
+                                                                      id="i5"/>
+                                                        </af:panelFormLayout>
+                                                        <af:panelFormLayout id="pfl10">
+                                                            <af:link text="Reports" id="l3" action="reports"
+                                                                     inlineStyle="color:#003194;"/>
+                                                        </af:panelFormLayout>
+                                                    </af:panelGroupLayout>
+                                                </af:gridCell>
+                                                <af:gridCell marginStart="5px" rowSpan="2" width="33%" id="gc8"/>
+                                            </af:gridRow>
+                                        </af:panelGridLayout>
+                                    </af:panelHeader>
+                                </af:panelGroupLayout>
+                            </f:facet>
+                            <f:facet name="bottom">
+                                <af:panelGroupLayout layout="scroll" id="pgl3" inlineStyle="background-color:#065293;">
+                                    <af:spacer width="10" height="10" id="s12"/>
+                                    <af:outputText value="Copyright@ 2012. Sunway Software Solutions W. L. L Alrights Reserved"
+                                                   id="ot28"
+                                                   inlineStyle="font-size:smaller; font-family:Arial, Helvetica, sans-serif; font-weight:bolder; color:white;"/>
+                                </af:panelGroupLayout>
+                            </f:facet>
+                            <f:facet name="top">
+                                <af:menuBar id="mb1">
+                                    <af:commandMenuItem text="ERP" id="cmi1"
+                                                        icon="#{resource['images:back-16.png']}" action="erp"/>
+                                </af:menuBar>
+                            </f:facet>
+                        </af:panelStretchLayout>
+                    </f:facet>
+                </af:panelSplitter>
+            </af:form>
+        </af:document>
+    </f:view>
+</jsp:root>

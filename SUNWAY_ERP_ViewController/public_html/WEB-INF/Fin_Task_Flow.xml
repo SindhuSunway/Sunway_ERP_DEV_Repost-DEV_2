@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="Fin_Task_Flow">
+    <default-activity>Fin_Main_Task_Flow</default-activity>
+    <data-control-scope>
+      <shared/>
+    </data-control-scope>
+    <managed-bean id="__1">
+      <managed-bean-name>AccBalanceReportBean</managed-bean-name>
+      <managed-bean-class>erp.view.AccBalanceReportClass</managed-bean-class>
+      <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean id="__3">
+      <managed-bean-name>FinSalesBean</managed-bean-name>
+      <managed-bean-class>erp.view.FinSalesReport</managed-bean-class>
+      <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean id="__5">
+      <managed-bean-name>FinPurchaseReportBean</managed-bean-name>
+      <managed-bean-class>erp.view.FinPurchaseReport</managed-bean-class>
+      <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <view id="Fin_Main_Task_Flow">
+      <page>/fin_Main_Page.jspx</page>
+    </view>
+    <task-flow-return id="erp">
+      <outcome>
+        <name>erp</name>
+      </outcome>
+    </task-flow-return>
+    <view id="Receivables">
+      <page>/fin_Receivables.jspx</page>
+    </view>
+    <view id="Payables">
+      <page>/fin_Payables.jspx</page>
+    </view>
+    <view id="Payroll">
+      <page>/fin_Payroll.jspx</page>
+    </view>
+    <view id="General_Ledger">
+      <page>/fin_General_Ledger.jspx</page>
+    </view>
+    <view id="Reports">
+      <page>/fin_Reports.jspx</page>
+    </view>
+    <view id="Settings">
+      <?audit suppress oracle.ide.xml.validation-incomplete?>
+      <page>/fin_Settings.jspx</page>
+    </view>
+    <view id="Payment"></view>
+    <view id="Cust_Credit_acc">
+      <page>/fin_Cust_Credit_acc.jspx</page>
+    </view>
+    <view id="Finance_charges">
+      <page>/fin_Finance_charges.jspx</page>
+    </view>
+    <view id="Payments">
+      <page>/fin_Payments.jspx</page>
+    </view>
+    <view id="Commissions">
+      <page>/fin_Commissions.jspx</page>
+    </view>
+    <view id="Partners">
+      <page>/inv_Partners.jspx</page>
+    </view>
+    <view id="Help">
+      <page>/help.jspx</page>
+    </view>
+    <control-flow-rule id="__9">
+      <from-activity-id>Receivables</from-activity-id>
+      <control-flow-case id="__22">
+        <from-outcome>payment</from-outcome>
+        <to-activity-id>Payment</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__41">
+      <from-activity-id>Payment</from-activity-id>
+      <control-flow-case id="__42">
+        <from-outcome>rec</from-outcome>
+        <to-activity-id>Receivables</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__23">
+      <from-activity-id>*</from-activity-id>
+      <control-flow-case id="__39">
+        <from-outcome>erp</from-outcome>
+        <to-activity-id>erp</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__2">
+        <from-outcome>pay</from-outcome>
+        <to-activity-id>Payables</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__4">
+        <from-outcome>fin_main</from-outcome>
+        <to-activity-id>Fin_Main_Task_Flow</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__10">
+        <from-outcome>comm</from-outcome>
+        <to-activity-id>Commissions</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__12">
+        <from-outcome>rec</from-outcome>
+        <to-activity-id>Receivables</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__14">
+        <from-outcome>payroll</from-outcome>
+        <to-activity-id>Payroll</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__16">
+        <from-outcome>settings</from-outcome>
+        <to-activity-id>Settings</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__18">
+        <from-outcome>partners</from-outcome>
+        <to-activity-id>Partners</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__19">
+        <from-outcome>GL</from-outcome>
+        <to-activity-id>General_Ledger</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__20">
+        <from-outcome>Payments</from-outcome>
+        <to-activity-id>Payments</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__21">
+        <from-outcome>reports</from-outcome>
+        <to-activity-id>Reports</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__26">
+        <from-outcome>finance_charges</from-outcome>
+        <to-activity-id>Finance_charges</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__27">
+        <from-outcome>credit</from-outcome>
+        <to-activity-id>Cust_Credit_acc</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__6">
+        <from-outcome>help</from-outcome>
+        <to-activity-id>Help</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__7">
+      <from-activity-id>Help</from-activity-id>
+      <control-flow-case id="__8">
+        <from-outcome>back</from-outcome>
+        <to-activity-id>Fin_Main_Task_Flow</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+  </task-flow-definition>
+</adfc-config>

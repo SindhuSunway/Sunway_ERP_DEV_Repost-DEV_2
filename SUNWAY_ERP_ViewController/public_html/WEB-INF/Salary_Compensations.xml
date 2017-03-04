@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="Salary_Compensations">
+    <default-activity>hr_Compentsations_Salary</default-activity>
+    <data-control-scope>
+      <shared/>
+    </data-control-scope>
+    <view id="hr_Compentsations_Salary">
+      <page>/hr_Compentsations_Salary.jspx</page>
+      <train-stop>
+        <display-name>Compensations </display-name>
+      </train-stop>
+    </view>
+    <view id="hr_Bank_info">
+      <page>/hr_Bank_info.jspx</page>
+      <train-stop>
+        <display-name>Employee Bank</display-name>
+      </train-stop>
+    </view>
+    <task-flow-return id="employee_overview">
+      <outcome>
+        <name>employee_overview</name>
+      </outcome>
+    </task-flow-return>
+    <train/>
+    <control-flow-rule id="__3">
+      <from-activity-id>hr_Compentsations_Salary</from-activity-id>
+      <control-flow-case id="__4">
+        <from-outcome>back</from-outcome>
+        <to-activity-id>employee_overview</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__1">
+      <from-activity-id>hr_Bank_info</from-activity-id>
+      <control-flow-case id="__2">
+        <from-outcome>back</from-outcome>
+        <to-activity-id>employee_overview</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+  </task-flow-definition>
+</adfc-config>

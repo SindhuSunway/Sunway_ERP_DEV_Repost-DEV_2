@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="Inv_Task_Flow">
+    <default-activity>Inv_Main_Task_Flow</default-activity>
+    <data-control-scope>
+      <shared/>
+    </data-control-scope>
+    <managed-bean id="__9">
+      <managed-bean-name>InventoryVarianceBean</managed-bean-name>
+      <managed-bean-class>erp.view.InventoryVarianceReport</managed-bean-class>
+      <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean id="__10">
+      <managed-bean-name>InventoryMasterBean</managed-bean-name>
+      <managed-bean-class>erp.view.InventoryMasterReport</managed-bean-class>
+      <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean id="__11">
+      <managed-bean-name>InvItemReportBean</managed-bean-name>
+      <managed-bean-class>erp.view.InvItemReport</managed-bean-class>
+      <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean id="__12">
+      <managed-bean-name>SalesReportBean</managed-bean-name>
+      <managed-bean-class>erp.view.SalesReport</managed-bean-class>
+      <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean id="__13">
+      <managed-bean-name>PurchaseReportBean</managed-bean-name>
+      <managed-bean-class>erp.view.PurchaseReportClass</managed-bean-class>
+      <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean id="__20">
+      <managed-bean-name>Inv_uploadBean</managed-bean-name>
+      <managed-bean-class>erp.view.Inv_uploadBean</managed-bean-class>
+      <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean id="__23">
+      <managed-bean-name>Inv_uploadItemPicBean</managed-bean-name>
+      <managed-bean-class>erp.view.Inv_uploadItemPicBean</managed-bean-class>
+      <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean id="__3">
+      <managed-bean-name>InvStatusBean</managed-bean-name>
+      <managed-bean-class>erp.view.InvStatusReport</managed-bean-class>
+      <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <view id="Inv_Main_Task_Flow">
+      <page>/Inv_Main_Page.jspx</page>
+    </view>
+    <view id="Settings"></view>
+    <task-flow-return id="erp">
+      <outcome>
+        <name>erp</name>
+      </outcome>
+    </task-flow-return>
+    <view id="Inventory_reports">
+      <page>/inv_Inventory_reports.jspx</page>
+    </view>
+    <view id="Help">
+      <page>/help.jspx</page>
+    </view>
+    <view id="inv_Inventory">
+      <page>/inv_Inventory.jspx</page>
+    </view>
+    <task-flow-call id="inv_Sales">
+      <task-flow-reference>
+        <document>/WEB-INF/inv_Sales.xml</document>
+        <id>inv_Sales</id>
+      </task-flow-reference>
+    </task-flow-call>
+    <task-flow-call id="inv_Purchase">
+      <task-flow-reference>
+        <document>/WEB-INF/inv_Purchase.xml</document>
+        <id>inv_Purchase</id>
+      </task-flow-reference>
+    </task-flow-call>
+    <control-flow-rule id="__2">
+      <from-activity-id>*</from-activity-id>
+      <control-flow-case id="__5">
+        <from-outcome>erp</from-outcome>
+        <to-activity-id>erp</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__17">
+        <from-outcome>settings</from-outcome>
+        <to-activity-id>Settings</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__18">
+        <from-outcome>inv_main</from-outcome>
+        <to-activity-id>Inv_Main_Task_Flow</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__1">
+        <from-outcome>sale</from-outcome>
+        <to-activity-id>inv_Sales</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__8">
+        <from-outcome>reports</from-outcome>
+        <to-activity-id>Inventory_reports</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__14">
+        <from-outcome>help</from-outcome>
+        <to-activity-id>Help</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__21">
+        <from-outcome>inventory</from-outcome>
+        <to-activity-id>inv_Inventory</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__27">
+        <from-outcome>purchase</from-outcome>
+        <to-activity-id>inv_Purchase</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__15">
+      <from-activity-id>Help</from-activity-id>
+      <control-flow-case id="__16">
+        <from-outcome>back</from-outcome>
+        <to-activity-id>Inv_Main_Task_Flow</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+  </task-flow-definition>
+</adfc-config>

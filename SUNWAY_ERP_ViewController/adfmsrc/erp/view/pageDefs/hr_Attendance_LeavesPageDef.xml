@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.2.1" id="hr_Attendance_LeavesPageDef"
+                Package="erp.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="HrEmplLeavesView2" RangeSize="25" DataControl="HR_AppModuleDataControl"
+              id="HrEmplLeavesView2Iterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="HrEmplLeavesView2Iterator" id="EmployeeNo">
+      <AttrNames>
+        <Item Value="EmployeeNo"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="HrEmplLeavesView2Iterator" StaticList="false" Uses="LOV_LeaveType" id="LeaveType"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="HrEmplLeavesView2Iterator" id="LeaveCode">
+      <AttrNames>
+        <Item Value="LeaveCode"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplLeavesView2Iterator" id="StartDate">
+      <AttrNames>
+        <Item Value="StartDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplLeavesView2Iterator" id="EndDate">
+      <AttrNames>
+        <Item Value="EndDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplLeavesView2Iterator" id="TotalDaysOnVac">
+      <AttrNames>
+        <Item Value="TotalDaysOnVac"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplLeavesView2Iterator" id="LeaveBalance">
+      <AttrNames>
+        <Item Value="LeaveBalance"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="HrEmplLeavesView2Iterator" StaticList="false" Uses="LOV_LeaveStatus" id="LeaveStatus"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="HrEmplLeavesView2Iterator" id="DateReported">
+      <AttrNames>
+        <Item Value="DateReported"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplLeavesView2Iterator" id="Delegation">
+      <AttrNames>
+        <Item Value="Delegation"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplLeavesView2Iterator" id="NotesToDelegation">
+      <AttrNames>
+        <Item Value="NotesToDelegation"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="HrEmplLeavesView2Iterator" StaticList="false" Uses="LOV_Approver" id="Approver"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="HrEmplLeavesView2Iterator" id="NotesApprover">
+      <AttrNames>
+        <Item Value="NotesApprover"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HrEmplLeavesView2Iterator" id="Notesremarks">
+      <AttrNames>
+        <Item Value="Notesremarks"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="HrEmplLeavesView2Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="HrEmplLeavesView2Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="HrEmplLeavesView2Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="HR_AppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction"
+            DataControl="HR_AppModuleDataControl"/>
+    <tree IterBinding="HrEmplLeavesView2Iterator" id="HrEmplLeavesView2">
+      <nodeDefinition DefName="erp.hr.views.HrEmplLeavesView" Name="HrEmplLeavesView20">
+        <AttrNames>
+          <Item Value="EmployeeNo"/>
+          <Item Value="LeaveType"/>
+          <Item Value="LeaveCode"/>
+          <Item Value="StartDate"/>
+          <Item Value="EndDate"/>
+          <Item Value="DateReported"/>
+          <Item Value="TotalDaysOnVac"/>
+          <Item Value="LeaveBalance"/>
+          <Item Value="LeaveStatus"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <list IterBinding="HrEmplLeavesView2Iterator" StaticList="false" Uses="LOV_ExitPermit" id="ExitPermit"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <action IterBinding="HrEmplLeavesView2Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+  </bindings>
+</pageDefinition>

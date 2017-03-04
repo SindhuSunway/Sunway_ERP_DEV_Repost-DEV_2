@@ -1,0 +1,220 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <f:view>
+        <af:document title="Settings.jspx" id="d1">
+            <af:messages id="m1"/>
+            <af:form id="f1">
+               <af:panelSplitter id="ps1" splitterPosition="75" orientation="vertical">
+                    <f:facet name="first">
+                        <af:panelStretchLayout id="psl2" topHeight="126px" bottomHeight="0px"
+                                               inlineStyle="text-align:start;">
+                            <f:facet name="bottom"/>
+                            <f:facet name="center">
+                                <af:panelGridLayout id="pgl5" inlineStyle="background-color:#065293;">
+                                    <af:gridRow marginTop="5px" height="auto" id="gr1">
+                                        <af:gridCell marginStart="5px" width="28%" id="gc1">
+                                            <af:image source="#{resource['images:sunway_new_logo.png']}" id="i1"
+                                                      inlineStyle="width:190px; height:65px;"/>
+                                        </af:gridCell>
+                                        <af:gridCell marginStart="5px" width="35%" id="gc2">
+                                            <af:outputLabel value="Finance Management Application" id="ol1"
+                                                            inlineStyle="color:#00f600; font-size:medium;"/>
+                                        </af:gridCell>
+                                        <af:gridCell marginStart="5px" width="10%" marginEnd="5px" id="gc3"
+                                                     inlineStyle="text-align:left;">
+                                            <af:panelGridLayout id="pgl6">
+                                                <af:gridRow marginTop="5px" height="auto" id="gr3">
+                                                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px"
+                                                                 id="gc4">
+                                                        <af:outputText value="#{'Welcome:&#160;'}#{securityContext.userName}"
+                                                                       id="ot1" inlineStyle="color:White;"/>
+                                                    </af:gridCell>
+                                                </af:gridRow>
+                                                <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr4">
+                                                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px"
+                                                                 id="gc5">
+                                                        <af:panelGroupLayout id="pgl7" layout="horizontal">
+                                                            <af:commandButton text="Logout" id="cb2"
+                                                                              action="#{loginBean.doLogout}"
+                                                                              icon="#{resource['images:logout-1-16.png']}"/>
+                                                            <af:spacer width="10" height="10" id="s1"/>
+                                                            <af:commandButton text="Help" id="cb1" action="help"/>
+                                                        </af:panelGroupLayout>
+                                                        <af:separator id="s4"/>
+                                                    </af:gridCell>
+                                                </af:gridRow>
+                                            </af:panelGridLayout>
+                                        </af:gridCell>
+                                    </af:gridRow>
+                                    <af:gridRow marginTop="5px" height="auto" id="gr2"/>
+                                </af:panelGridLayout>
+                            </f:facet>
+                        </af:panelStretchLayout>
+                    </f:facet>
+                    <f:facet name="second">
+                        <af:panelStretchLayout startWidth="250px" id="psl1" topHeight="26px">
+                            <f:facet name="center">
+                                <af:panelSplitter id="ps2" splitterPosition="445">
+                                    <f:facet name="first">
+                                        <af:panelStretchLayout id="psl3" topHeight="31px"
+                                                               inlineStyle="background-color:#dddddd;">
+                                            <f:facet name="bottom"/>
+                                            <f:facet name="center">
+                                                <af:panelGroupLayout layout="vertical" id="pgl1">
+                                                    <af:panelHeader text="Chart of Accounts" id="ph1">
+                                                        <af:query id="qryId1" headerText="Search" disclosed="true"
+                                                                  value="#{bindings.FinChartOfAccountsViewCriteriaQuery.queryDescriptor}"
+                                                                  model="#{bindings.FinChartOfAccountsViewCriteriaQuery.queryModel}"
+                                                                  queryListener="#{bindings.FinChartOfAccountsViewCriteriaQuery.processQuery}"
+                                                                  queryOperationListener="#{bindings.FinChartOfAccountsViewCriteriaQuery.processQueryOperation}"
+                                                                  resultComponentId="::resId1" saveQueryMode="hidden"/>
+                                                    </af:panelHeader>
+                                                </af:panelGroupLayout>
+                                            </f:facet>
+                                        </af:panelStretchLayout>
+                                    </f:facet>
+                                    <f:facet name="second">
+                                        <af:panelStretchLayout id="psl4" topHeight="63px">
+                                            <f:facet name="center">
+                                                <af:panelGroupLayout id="pgl4" layout="scroll">
+                                                    <af:panelTabbed position="above" id="pt1"
+                                                                    inlineStyle="background-color:transparent;"
+                                                                    shortDesc="Invoices">
+                                                        <af:showDetailItem id="tab1" text="Chart of Accounts">
+                                                            <af:popup childCreation="deferred" autoCancel="disabled"
+                                                                      id="p1" contentDelivery="lazyUncached"
+                                                                      animate="true" launcherVar="l1"
+                                                                      eventContext="launcher">
+                                                                <af:dialog id="d2" resize="on" contentWidth="650"
+                                                                           contentHeight="400">
+                                                                    <f:facet name="buttonBar"/>
+                                                                    <af:panelGroupLayout id="pgl2">
+                                                                        <af:panelBox text="Edit/Update Chart of Accounts"
+                                                                                     id="pb2" showDisclosure="false">
+                                                                            <f:facet name="toolbar">
+                                                                                <af:button actionListener="#{bindings.CreateInsert.execute}"
+                                                                                           text="Create a New Account"
+                                                                                           id="b2"/>
+                                                                            </f:facet>
+                                                                            <af:separator id="s3"/>
+                                                                            <af:panelFormLayout id="pfl1">
+                                                                                <af:inputText value="#{bindings.GlAccountClassTypeKey.inputValue}"
+                                                                                              label="#{bindings.GlAccountClassTypeKey.hints.label}"
+                                                                                              required="#{bindings.GlAccountClassTypeKey.hints.mandatory}"
+                                                                                              columns="#{bindings.GlAccountClassTypeKey.hints.displayWidth}"
+                                                                                              maximumLength="#{bindings.GlAccountClassTypeKey.hints.precision}"
+                                                                                              shortDesc="#{bindings.GlAccountClassTypeKey.hints.tooltip}"
+                                                                                              id="it1">
+                                                                                    <f:validator binding="#{bindings.GlAccountClassTypeKey.validator}"/>
+                                                                                </af:inputText>
+                                                                                <af:inputText value="#{bindings.ParentGlAccount.inputValue}"
+                                                                                              label="#{bindings.ParentGlAccount.hints.label}"
+                                                                                              required="#{bindings.ParentGlAccount.hints.mandatory}"
+                                                                                              columns="#{bindings.ParentGlAccount.hints.displayWidth}"
+                                                                                              maximumLength="#{bindings.ParentGlAccount.hints.precision}"
+                                                                                              shortDesc="#{bindings.ParentGlAccount.hints.tooltip}"
+                                                                                              id="it2">
+                                                                                    <f:validator binding="#{bindings.ParentGlAccount.validator}"/>
+                                                                                </af:inputText>
+                                                                                <af:inputText value="#{bindings.AccountCode.inputValue}"
+                                                                                              label="#{bindings.AccountCode.hints.label}"
+                                                                                              required="#{bindings.AccountCode.hints.mandatory}"
+                                                                                              columns="#{bindings.AccountCode.hints.displayWidth}"
+                                                                                              maximumLength="#{bindings.AccountCode.hints.precision}"
+                                                                                              shortDesc="#{bindings.AccountCode.hints.tooltip}"
+                                                                                              id="it3">
+                                                                                    <f:validator binding="#{bindings.AccountCode.validator}"/>
+                                                                                </af:inputText>
+                                                                                <af:inputText value="#{bindings.AccountName.inputValue}"
+                                                                                              label="#{bindings.AccountName.hints.label}"
+                                                                                              required="#{bindings.AccountName.hints.mandatory}"
+                                                                                              columns="#{bindings.AccountName.hints.displayWidth}"
+                                                                                              maximumLength="#{bindings.AccountName.hints.precision}"
+                                                                                              shortDesc="#{bindings.AccountName.hints.tooltip}"
+                                                                                              id="it4">
+                                                                                    <f:validator binding="#{bindings.AccountName.validator}"/>
+                                                                                </af:inputText>
+                                                                                <af:inputText value="#{bindings.Description.inputValue}"
+                                                                                              label="#{bindings.Description.hints.label}"
+                                                                                              required="#{bindings.Description.hints.mandatory}"
+                                                                                              columns="55"
+                                                                                              maximumLength="#{bindings.Description.hints.precision}"
+                                                                                              shortDesc="#{bindings.Description.hints.tooltip}"
+                                                                                              id="it5" rows="3">
+                                                                                    <f:validator binding="#{bindings.Description.validator}"/>
+                                                                                </af:inputText>
+                                                                            </af:panelFormLayout>
+                                                                        </af:panelBox>
+                                                                    </af:panelGroupLayout>
+                                                                </af:dialog>
+                                                            </af:popup>
+                                                            <af:panelHeader text=" " id="ph2">
+                                                                <f:facet name="context"/>
+                                                                <f:facet name="menuBar">
+                                                                    <af:group id="g1">
+                                                                        <af:button actionListener="#{bindings.Commit.execute}"
+                                                                                   text="Save" id="b3"
+                                                                                   inlineStyle="color:Green;"/>
+                                                                        <af:button actionListener="#{bindings.Rollback.execute}"
+                                                                                   text="Cancel" immediate="true"
+                                                                                   id="b4" inlineStyle="color:Red;">
+                                                                            <af:resetActionListener/>
+                                                                        </af:button>
+                                                                    </af:group>
+                                                                </f:facet>
+                                                                <f:facet name="toolbar"/>
+                                                                <af:panelBox text="Chart of Accounts" id="pb1"
+                                                                             showDisclosure="false">
+                                                                    <f:facet name="toolbar">
+                                                                        <af:button text="Edit/Update" id="b1"
+                                                                                   inlineStyle="color:Blue;">
+                                                                            <af:showPopupBehavior popupId="p1"/>
+                                                                        </af:button>
+                                                                    </f:facet>
+                                                                    <af:separator id="s2"/>
+                                                                </af:panelBox>
+                                                            </af:panelHeader>
+                                                        </af:showDetailItem>
+                                                        <af:showDetailItem text="Configure Ledger" id="sdi2"/>
+                                                        <af:showDetailItem text="Payment Methods" id="sdi3"/>
+                                                        <af:showDetailItem text="Time Period" id="sdi4"/>
+                                                        <af:showDetailItem text="Accounting Tags" id="sdi5"/>
+                                                        <af:showDetailItem text="Accounting Tags Usage" id="sdi6"/>
+                                                        <af:showDetailItem text="View Configuration" id="sdi7"/>
+                                                    </af:panelTabbed>
+                                                </af:panelGroupLayout>
+                                            </f:facet>
+                                            <f:facet name="top">
+                                                <af:navigationPane hint="bar" id="np1"
+                                                                   inlineStyle="color:#065293; background-color:#065293;">
+                                                    <af:commandNavigationItem id="ni1" text="Finance Settings"
+                                                                              inlineStyle="color:#00f600; font-size:small;"
+                                                                              icon="#{resource['images:calendar.png']}"/>
+                                                </af:navigationPane>
+                                            </f:facet>
+                                        </af:panelStretchLayout>
+                                    </f:facet>
+                                </af:panelSplitter>
+                            </f:facet>
+                            <f:facet name="bottom">
+                                <af:panelGroupLayout layout="scroll" id="pgl3" inlineStyle="background-color:#065293;">
+                                    <af:spacer width="10" height="10" id="s12"/>
+                                    <af:outputText value="Copyright@ 2012. Sunway Software Solutions W. L. L Alrights Reserved"
+                                                   id="ot28"
+                                                   inlineStyle="font-size:smaller; font-family:Arial, Helvetica, sans-serif; font-weight:bolder; color:white;"/>
+                                </af:panelGroupLayout>
+                            </f:facet>
+                            <f:facet name="top">
+                                <af:menuBar id="mb1">
+                                    <af:commandMenuItem text="Main Menu" id="cmi1"/>
+                                </af:menuBar>
+                            </f:facet>
+                        </af:panelStretchLayout>
+                    </f:facet>
+                </af:panelSplitter>
+            </af:form>
+        </af:document>
+    </f:view>
+</jsp:root>

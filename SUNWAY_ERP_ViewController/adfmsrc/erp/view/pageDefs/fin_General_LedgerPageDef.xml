@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.2.1" id="fin_General_LedgerPageDef"
+                Package="erp.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="FinTransactionsView1" RangeSize="25" DataControl="fin_AppModuleDataControl"
+              id="FinTransactionsView1Iterator"/>
+    <searchRegion Criteria="FinTransactionsViewCriteria" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="FinTransactionsView1Iterator" id="FinTransactionsViewCriteriaQuery"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="FinTransactionsView1Iterator" id="TransactionId">
+      <AttrNames>
+        <Item Value="TransactionId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="FinTransactionsView1Iterator" id="TransactionType">
+      <AttrNames>
+        <Item Value="TransactionType"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="FinTransactionsView1Iterator" id="PartyId">
+      <AttrNames>
+        <Item Value="PartyId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="FinTransactionsView1Iterator" id="FiscalType">
+      <AttrNames>
+        <Item Value="FiscalType"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="FinTransactionsView1Iterator" id="PostedAmountFrom">
+      <AttrNames>
+        <Item Value="PostedAmountFrom"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="FinTransactionsView1Iterator" id="PostedAmountThru">
+      <AttrNames>
+        <Item Value="PostedAmountThru"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="FinTransactionsView1Iterator" id="IsPosted">
+      <AttrNames>
+        <Item Value="IsPosted"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="FinTransactionsView1Iterator" id="PostedDate">
+      <AttrNames>
+        <Item Value="PostedDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="FinTransactionsView1Iterator" id="PostedAmount">
+      <AttrNames>
+        <Item Value="PostedAmount"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="FinTransactionsView1Iterator" id="SchedulePostingDate">
+      <AttrNames>
+        <Item Value="SchedulePostingDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="FinTransactionsView1Iterator" id="Amount">
+      <AttrNames>
+        <Item Value="Amount"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="FinTransactionsView1Iterator" id="TransactionDate">
+      <AttrNames>
+        <Item Value="TransactionDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="FinTransactionsView1Iterator" id="PaymentId">
+      <AttrNames>
+        <Item Value="PaymentId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="FinTransactionsView1Iterator" id="InvoiceId">
+      <AttrNames>
+        <Item Value="InvoiceId"/>
+      </AttrNames>
+    </attributeValues>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="fin_AppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction"
+            DataControl="fin_AppModuleDataControl"/>
+    <tree IterBinding="FinTransactionsView1Iterator" id="FinTransactionsView1">
+      <nodeDefinition DefName="erp.hr.views.FinTransactionsView" Name="FinTransactionsView10">
+        <AttrNames>
+          <Item Value="TransactionId"/>
+          <Item Value="TransactionType"/>
+          <Item Value="TransactionDate"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <list IterBinding="FinTransactionsView1Iterator" StaticList="false" Uses="LOV_DebitAccount" id="DebitAccount"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="FinTransactionsView1Iterator" StaticList="false" Uses="LOV_CreditAccount" id="CreditAccount"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="FinTransactionsView1Iterator" StaticList="false" Uses="LOV_ItemCode" id="ItemCode"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <action IterBinding="FinTransactionsView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+  </bindings>
+</pageDefinition>

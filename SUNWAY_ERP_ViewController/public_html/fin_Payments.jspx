@@ -1,0 +1,118 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <f:view>
+        <af:document title="Payments" id="d1">
+            <af:form id="f1">
+                  <af:panelSplitter id="ps1" splitterPosition="75" orientation="vertical">
+                    <f:facet name="first">
+                        <af:panelStretchLayout id="psl2" topHeight="126px" bottomHeight="0px"
+                                               inlineStyle="text-align:start;">
+                            <f:facet name="bottom"/>
+                            <f:facet name="center">
+                                <af:panelGridLayout id="pgl5" inlineStyle="background-color:#065293;">
+                                    <af:gridRow marginTop="5px" height="auto" id="gr1">
+                                        <af:gridCell marginStart="5px" width="28%" id="gc1">
+                                            <af:image source="#{resource['images:sunway_new_logo.png']}" id="i1"
+                                                      inlineStyle="width:190px; height:65px;"/>
+                                        </af:gridCell>
+                                        <af:gridCell marginStart="5px" width="35%" id="gc2">
+                                            <af:outputLabel value="Finance Management Application" id="ol1"
+                                                            inlineStyle="color:#00f600; font-size:medium;"/>
+                                        </af:gridCell>
+                                        <af:gridCell marginStart="5px" width="5%" marginEnd="5px" id="gc3"
+                                                     inlineStyle="text-align:right;">
+                                            <af:commandButton text="Logout" id="cb2" action="back"/>
+                                            <af:spacer width="10" height="10" id="s1"/>
+                                            <af:commandButton text="Help" id="cb1" action="help"/>
+                                        </af:gridCell>
+                                    </af:gridRow>
+                                    <af:gridRow marginTop="5px" height="auto" id="gr2"/>
+                                </af:panelGridLayout>
+                            </f:facet>
+                        </af:panelStretchLayout>
+                    </f:facet>
+                    <f:facet name="second">
+                        <af:panelStretchLayout startWidth="250px" id="psl1" topHeight="26px">
+                            <f:facet name="center">
+                                <af:panelSplitter id="ps2" splitterPosition="445">
+                                    <f:facet name="first">
+                                        <af:panelAccordion id="pa1"
+                                                           inlineStyle="font-size:small; color:White; background-color:#dddddd;">
+                                            <af:showDetailItem text="Find Payment" id="sdi1"
+                                                               inlineStyle="color:White; background-color:#dddddd;">
+                                                <af:panelGroupLayout id="pgl5">
+                                                    <af:navigationPane hint="list" id="np4">
+                                                        <af:spacer width="10" height="10" id="s4"/>
+                                                        <af:spacer width="10" height="10" id="s5"/>
+                                                        <af:spacer width="10" height="10" id="s3"/>
+                                                    </af:navigationPane>
+                                                </af:panelGroupLayout>
+                                            </af:showDetailItem>
+                                        </af:panelAccordion>
+                                    </f:facet>
+                                    <f:facet name="second">
+                                        <af:panelGroupLayout layout="scroll" id="pgl4"
+                                                             inlineStyle=" ">
+                                            
+                                              <af:navigationPane hint="bar" id="np1"
+                                                               inlineStyle="color:#065293; background-color:#065293;">
+                                                <af:commandNavigationItem id="ni1" text="Payments"
+                                                                          inlineStyle="color:#00f600; font-size:small;"
+                                                                          icon="#{resource['images:calendar.png']}"/>
+                                                                           </af:navigationPane>
+                                            <af:panelTabbed position="above" id="pt2"
+                                                            inlineStyle="background-color:transparent;"
+                                                            shortDesc="Payments ">
+                                                <af:showDetailItem id="sdi4" text="Find Payment"/>
+                                                <af:showDetailItem text="Make Payment" id="sdi5"/>
+                                                <af:showDetailItem text="Pay Multiple Vendors(Check Run)" id="sdi6"/>
+                                                <af:showDetailItem text="Print Checks " id="sdi11"/>
+                                                <af:showDetailItem text="Confirm Sent Payments " id="sdi12"/>
+                                            </af:panelTabbed>
+                                        </af:panelGroupLayout>
+                                    </f:facet>
+                                </af:panelSplitter>
+                            </f:facet>
+                            <f:facet name="bottom">
+                                <af:panelGroupLayout layout="scroll" id="pgl3" inlineStyle="background-color:#065293;">
+                                    <af:spacer width="10" height="10" id="s12"/>
+                                    <af:outputText value="Copyright@ 2012. Sunway Software Solutions W. L. L Alrights Reserved"
+                                                   id="ot28"
+                                                   inlineStyle="font-size:smaller; font-family:Arial, Helvetica, sans-serif; font-weight:bolder; color:white;"/>
+                                </af:panelGroupLayout>
+                            </f:facet>
+                            <f:facet name="top">
+                                <af:navigationPane hint="buttons" id="np2"
+                                                   inlineStyle=" ">
+                                    <af:commandNavigationItem id="ni2" text="   My Home"
+                                                              inlineStyle=" " action="fin_main"
+                                                              shortDesc="Back to the main Finance page"/>
+                                    <af:commandNavigationItem text="Receivables" id="cni1"
+                                                              inlineStyle="background-color:transparent;"
+                                                              action="rec" shortDesc="Accounts Receivable"/>
+                                    <af:commandNavigationItem text="Payables" id="cni2" action="pay"
+                                                              inlineStyle="background-color:transparent;"
+                                                              shortDesc="Accounts Payable"/>
+                                    <af:commandNavigationItem text="Payroll" id="cni3" action="payroll"
+                                                              inlineStyle="font-size:small;"
+                                                              shortDesc="Payroll Process"/>
+                                    <af:commandNavigationItem text="Partners" id="cni10"
+                                                              shortDesc="Partners Information"/>
+                                    <af:commandNavigationItem text="General Ledger" id="cni4" action="GL"
+                                                              shortDesc="Company Accounts "/>
+                                      <af:commandNavigationItem text="Finance Reports" id="cni5" action="reports"/>
+                                    <af:commandNavigationItem text="Finance Settings" id="cni6" action="settings"
+                                                              shortDesc="Finance Settings"/>
+                                    <af:commandNavigationItem text="Sunway ERP Suite" id="cni7" action="erp"
+                                                              shortDesc="Back to the main ERP Page"/>
+                                </af:navigationPane>
+                            </f:facet>
+                        </af:panelStretchLayout>
+                    </f:facet>
+                </af:panelSplitter>
+            </af:form>
+        </af:document>
+    </f:view>
+</jsp:root>
